@@ -313,25 +313,17 @@
   <section class="section-padding bg-[#070707] border-t border-zinc-900">
     <div class="container-custom">
       <div class="text-center mb-12 md:mb-16 reveal">
-        <h2 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tighter">What we'll build for you.</h2>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tighter">How we'll Scale your Brand.</h2>
         <p class="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">Snapshot of the complete TikTok Shop growth engine we build for your brand - end to end.</p>
       </div>
 
-      <div class="reveal diagram-scroll-wrap" style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; overflow:hidden; padding:2rem 1rem;">
-        <style>
-          @media (max-width: 768px) {
-            .diagram-scroll-wrap { padding: 0.75rem !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
-            .diagram-svg { min-width: 820px; display: block; }
-            .diagram-hint { display: flex !important; }
-          }
-          @media (min-width: 769px) {
-            .diagram-hint { display: none !important; }
-          }
-        </style>
-        <!-- Mobile scroll hint -->
-        <div class="diagram-hint" style="display:none; align-items:center; gap:6px; margin-bottom:8px; padding:0 4px;">
-          <span style="font-size:11px; color:#9ca3af; font-weight:600;">← Scroll to explore →</span>
-        </div>
+      <!-- Mobile: static image -->
+      <div class="reveal md:hidden" style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; overflow:hidden; padding:1rem;">
+        <img src="/diagram.png" alt="TikTok Shop Growth Engine" style="width:100%; height:auto; display:block; border-radius:8px;" />
+      </div>
+
+      <!-- Desktop: interactive SVG -->
+      <div class="reveal hidden md:block diagram-scroll-wrap" style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; overflow:hidden; padding:2rem 1rem;">
         <svg class="diagram-svg" width="100%" viewBox="0 0 900 1020" xmlns="http://www.w3.org/2000/svg" style="font-family:'Inter',sans-serif;">
           <defs>
             <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
