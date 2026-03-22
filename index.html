@@ -131,6 +131,7 @@
 
     /* Global */
     html, body { overflow-x: hidden; width: 100%; }
+    * { box-sizing: border-box; }
     .container-custom { padding: 0 1.25rem; }
     section, header, footer, nav { overflow-x: hidden; }
     img { max-width: 100%; height: auto; display: block; }
@@ -138,103 +139,132 @@
 
     /* Section spacing */
     .section-padding { padding: 56px 0; }
-    header.section-padding { padding-top: 40px; padding-bottom: 48px; }
+    header.section-padding { padding-top: 40px; padding-bottom: 56px; }
 
-    /* Nav */
-    .sticky-nav { padding: 10px 0; }
-    .nav-pill { padding: 10px 14px; justify-content: space-between; gap: 8px; }
+    /* ── NAV ── */
+    .sticky-nav { padding: 8px 0; }
+    .nav-pill {
+      padding: 8px 12px;
+      justify-content: space-between;
+      gap: 0;
+      border-radius: 14px;
+    }
     .nav-links { display: none; }
     .nav-cta { display: none; }
-    .nav-brand { font-size: 1rem; margin: 0; text-align: left; }
+    .nav-brand { font-size: 0.95rem; margin: 0; text-align: left; flex: 1; }
 
-    /* Hero — fix line break issue */
-    .hero-h1-mobile { font-size: 2.2rem !important; line-height: 1.15 !important; }
+    /* ── HERO ── */
+    .hero-h1 { font-size: 2.15rem !important; line-height: 1.12 !important; letter-spacing: -0.02em !important; }
 
-    /* VSL block */
+    /* ── VSL ── */
     .result-block { margin-bottom: 1.5rem; border-radius: 12px; }
-    .result-content { min-height: 220px; }
+    .result-content { min-height: 210px; }
     .result-header { padding: 0.875rem 1rem; }
     .result-footer { padding: 1.25rem; }
 
-    /* Button — full width on mobile */
+    /* ── BUTTONS ── */
     .btn-primary {
       width: 100%;
       display: flex !important;
       align-items: center;
       justify-content: center;
-      padding: 1rem 1.5rem;
-      font-size: 0.8rem;
+      padding: 1rem 1.25rem;
+      font-size: 0.82rem;
       min-height: 52px;
-      box-sizing: border-box;
     }
 
-    /* Cards */
-    .card { padding: 1.5rem; border-radius: 10px; }
+    /* ── CARDS ── */
+    .card { padding: 1.25rem; border-radius: 10px; }
 
-    /* Diagram — scroll hint */
-    .diagram-scroll-wrap {
-      overflow-x: auto !important;
-      -webkit-overflow-scrolling: touch;
-      padding: 0.75rem !important;
-      border-radius: 12px;
-      cursor: grab;
-    }
-    .diagram-scroll-wrap:active { cursor: grabbing; }
+    /* ── DIAGRAM ── */
+    .diagram-scroll-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch; padding: 0.75rem !important; border-radius: 12px; }
     .diagram-svg { min-width: 820px !important; width: 820px !important; }
 
-    /* Pain points — stack left-aligned */
-    .pain-grid-mobile { display: flex !important; flex-direction: column; gap: 2rem; text-align: left; }
+    /* ── PAIN POINTS ── */
+    .pain-grid-mobile { display: flex !important; flex-direction: column; gap: 1.75rem; }
     .pain-grid-mobile > div { text-align: left !important; }
 
-    /* Process cards — single column */
+    /* ── PROCESS ── */
     .process-grid-mobile { grid-template-columns: 1fr !important; gap: 1rem !important; }
 
-    /* Reviews — single column */
+    /* ── REVIEWS ── */
     .reviews-grid-mobile { grid-template-columns: 1fr !important; gap: 1rem !important; }
+    .review-card { padding: 1.25rem 1rem; }
 
-    /* VS section */
+    /* ── VS SECTION ── */
     .vs-grid-mobile { grid-template-columns: 1fr !important; }
     .vs-col-right-mobile { border-left: none !important; border-top: 1px solid #1f1f1f !important; }
     .vs-hide-badge { display: none !important; }
 
-    /* Services grid — 2 columns on mobile */
+    /* ── SERVICES ── */
     .services-grid-mobile { grid-template-columns: 1fr 1fr !important; }
-    .services-grid-mobile > div { padding: 1.25rem 1rem !important; font-size: 0.85rem; }
+    .services-grid-mobile > div { padding: 1.1rem 0.9rem !important; font-size: 0.82rem; }
 
-    /* Accordion */
-    .accordion-header { padding: 1.1rem 0; font-size: 0.95rem; min-height: 52px; }
-    .accordion-content { font-size: 0.9rem; }
-
-    /* FAQ heading */
+    /* ── ACCORDION ── */
+    .accordion-header { padding: 1rem 0; font-size: 0.95rem; min-height: 52px; }
+    .accordion-content { font-size: 0.88rem; }
     .faq-heading-mobile { font-size: 2rem !important; margin-bottom: 2rem !important; }
 
-    /* Booking section */
-    .booking-heading-mobile { font-size: 2rem !important; line-height: 1.1 !important; margin-bottom: 1.25rem !important; }
-    .booking-sub-mobile { font-size: 1rem !important; margin-bottom: 1.5rem !important; }
+    /* ── BOOKING ── */
+    .booking-heading-mobile { font-size: 1.9rem !important; line-height: 1.1 !important; margin-bottom: 1rem !important; }
+    .booking-sub-mobile { font-size: 0.95rem !important; margin-bottom: 1.5rem !important; }
     .calendly-wrap { border-radius: 10px; }
     .calendly-inline-widget { height: 680px !important; }
 
-    /* Footer */
-    .footer-inner { padding: 40px 0 32px; }
-    .footer-title { font-size: 1.4rem; }
-    .footer-grid-mobile { gap: 2rem !important; }
+    /* ── FOOTER ── */
+    .footer-wrap { overflow-x: hidden; }
+    .footer-inner { padding: 36px 0 28px; }
+    .footer-title { font-size: 1.3rem; }
+    .footer-subtitle { font-size: 0.95rem; margin-top: 1rem; }
+    .footer-copy { max-width: 100%; font-size: 0.88rem; }
+
+    /* Footer grid — single column, tight gap */
+    .footer-grid-mobile {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 1.75rem !important;
+    }
+
+    /* Footer link columns — no padding override */
     .footer-pl-mobile { padding-left: 0 !important; }
-    .footer-input { width: 100%; max-width: 100%; box-sizing: border-box; min-height: 48px; }
-    .footer-news-btn { width: 100%; max-width: 100%; min-height: 48px; cursor: pointer; display: block; }
-    .footer-link { padding: 0.6rem 0; min-height: 44px; display: flex; align-items: center; }
-    .footer-copy { max-width: 100%; }
+    .footer-col-title { font-size: 0.8rem; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+
+    /* Footer Links + Socials side by side on mobile */
+    .footer-cols-mobile {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1rem !important;
+    }
+
+    /* Footer inputs full width */
+    .footer-input {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: 48px;
+      display: block;
+    }
+    .footer-news-btn {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: 48px;
+      cursor: pointer;
+      display: block;
+      border-radius: 10px;
+    }
+    .footer-link { padding: 0.35rem 0; min-height: 36px; display: flex; align-items: center; font-size: 0.9rem; }
+    .footer-legal-text { font-size: 0.75rem !important; }
+    .footer-bottom { font-size: 0.7rem; padding: 14px 0; }
 
     /* Touch targets */
-    .footer-news-btn, .btn-primary { touch-action: manipulation; }
+    .btn-primary, .footer-news-btn, .nav-cta, .mobile-cta-btn { touch-action: manipulation; }
   }
 
   @media (max-width: 480px) {
     .container-custom { padding: 0 1rem; }
-    .nav-brand { font-size: 0.95rem; }
-    .hero-h1-mobile { font-size: 1.9rem !important; }
+    .nav-brand { font-size: 0.9rem; }
+    .hero-h1 { font-size: 1.85rem !important; }
     .services-grid-mobile { grid-template-columns: 1fr !important; }
-    .review-card { padding: 1.25rem 1rem; }
-    .card { padding: 1.25rem; }
+    .footer-cols-mobile { grid-template-columns: 1fr 1fr !important; }
   }
 
   /* Reduced motion */
@@ -244,12 +274,20 @@
     .card, .result-block, .review-card, .yt-card { transition: none !important; }
   }
 
-  /* Large screens */
-  @media (min-width: 1400px) {
-    .container-custom { max-width: 1200px; }
+  /* Footer desktop — restore 2-col layout */
+  @media (min-width: 769px) {
+    .footer-inner { padding: 80px 0; }
+    .footer-grid-top {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 4rem !important;
+      align-items: start;
+    }
   }
 
-  /* Focus for accessibility */
+  /* Large screens */
+  @media (min-width: 1400px) { .container-custom { max-width: 1200px; } }
+
+  /* Focus accessibility */
   a:focus-visible, button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
@@ -786,27 +824,34 @@
   <!-- ── 13. FOOTER ── -->
   <footer class="footer-wrap">
     <div class="container-custom footer-inner">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start footer-grid-mobile">
-        <div class="md:col-span-6">
+      <div class="footer-grid-top" style="display:grid; grid-template-columns:1fr; gap:2.5rem;">
+
+        <!-- Brand + Newsletter -->
+        <div>
           <div class="footer-title">AVANTA BRANDS.</div>
           <div class="footer-subtitle">Join The TikTok Shop Growth Newsletter</div>
           <p class="footer-copy">Sign up below and be the first to know about creator trends, GMV tactics, and TikTok Shop updates. We hate spam too.</p>
           <input class="footer-input" type="email" placeholder="Enter Your Email Address" />
           <button class="footer-news-btn" type="button">Learn From Us</button>
         </div>
-        <div class="md:col-span-3 md:pl-10 footer-pl-mobile">
-          <div class="footer-col-title">Links</div>
-          <a class="footer-link" href="#client-reviews">Reviews</a>
-          <a class="footer-link" href="#faq">FAQs</a>
-          <a class="footer-link" href="#">Trainings</a>
+
+        <!-- Links + Socials side by side -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div>
+            <div class="footer-col-title">Links</div>
+            <a class="footer-link" href="#client-reviews">Reviews</a>
+            <a class="footer-link" href="#faq">FAQs</a>
+            <a class="footer-link" href="#">Trainings</a>
+          </div>
+          <div>
+            <div class="footer-col-title">Socials</div>
+            <a class="footer-link" href="https://www.youtube.com/@AvantaBrands" target="_blank" rel="noopener">YouTube</a>
+            <a class="footer-link" href="https://www.instagram.com/avantabrands" target="_blank" rel="noopener">Instagram</a>
+            <a class="footer-link" href="https://www.tiktok.com/@avantabrands" target="_blank" rel="noopener">TikTok</a>
+            <a class="footer-link" href="https://www.linkedin.com/company/avantabrands" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
         </div>
-        <div class="md:col-span-3 md:pl-10 footer-pl-mobile">
-          <div class="footer-col-title">Socials</div>
-          <a class="footer-link" href="https://www.youtube.com/@AvantaBrands" target="_blank" rel="noopener">YouTube</a>
-          <a class="footer-link" href="https://www.instagram.com/avantabrands" target="_blank" rel="noopener">Instagram</a>
-          <a class="footer-link" href="https://www.tiktok.com/@avantabrands" target="_blank" rel="noopener">TikTok</a>
-          <a class="footer-link" href="https://www.linkedin.com/company/avantabrands" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
+
       </div>
     </div>
     <div style="border-top:1px solid #1f1f1f; padding:18px 0; background:#000;">
@@ -816,7 +861,7 @@
           <span style="color:#3f3f46; font-weight:900;"> / </span>
           <a href="/privacy.html" style="color:#a1a1aa; text-decoration:none;">Privacy Policy</a>
         </div>
-        <p style="color:#71717a; font-size:0.85rem; line-height:1.6; max-width:980px; margin:0 auto;">
+        <p class="footer-legal-text" style="color:#71717a; font-size:0.85rem; line-height:1.6; max-width:980px; margin:0 auto;">
           This website is operated and maintained by Avanta Brands LLC. Use of the website is governed by its Terms &amp; Conditions and Privacy Policy. This site is not part of, endorsed by, or affiliated with TikTok, ByteDance, or any related entities. TikTok and TikTok Shop are trademarks of ByteDance Ltd. Results shared on this page are for informational purposes only and do not guarantee specific outcomes or financial performance. Individual results may vary.
         </p>
       </div>
