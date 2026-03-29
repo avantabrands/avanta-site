@@ -294,19 +294,8 @@
     /* Hero headline max width for readability */
     header .container-custom h1 { max-width: 900px; margin-left: auto; margin-right: auto; }
 
-    /* VSL red glow like Client Ascension */
-    .vsl-wrap {
-      position: relative;
-    }
-    .vsl-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(255,0,0,0.15), rgba(255,0,0,0.03));
-      pointer-events: none;
-      z-index: 1;
-    }
+    /* VSL clean white container like Dahaus */
+    .vsl-wrap { position: relative; }
 
     /* Tighter container on large screens for hero */
     header .container-custom { max-width: 900px; }
@@ -362,7 +351,7 @@
       </p>
 
       <!-- ── 2. VSL ── -->
-      <div class="reveal vsl-wrap max-w-4xl mx-auto mb-10 md:mb-14" style="transition-delay:0.2s; border-radius:16px; overflow:hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06); background:#0d0d0d;">
+      <div class="reveal vsl-wrap max-w-4xl mx-auto mb-10 md:mb-14" style="transition-delay:0.2s; border-radius:16px; overflow:hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06); background:#ffffff;">
         <script src="https://fast.wistia.com/player.js" async></script>
         <script src="https://fast.wistia.com/embed/2hn0mwp40u.js" async type="module"></script>
         <style>wistia-player[media-id='2hn0mwp40u']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/2hn0mwp40u/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
