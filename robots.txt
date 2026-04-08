@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avantabrands.co/sitemap.xml
