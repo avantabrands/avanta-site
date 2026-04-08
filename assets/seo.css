@@ -379,9 +379,7 @@ img {
 }
 
 .breadcrumbs {
-  margin-top: 1.5rem;
-  color: var(--muted);
-  font-size: 0.92rem;
+  display: none;
 }
 
 .breadcrumbs a {
