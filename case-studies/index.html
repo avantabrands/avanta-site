@@ -27,6 +27,42 @@
       background: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(11, 11, 11, 0.98));
       box-shadow: var(--shadow);
     }
+    .hero-proof-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.25rem;
+      align-items: start;
+      margin-top: 1.6rem;
+    }
+    .hero-proof-stack {
+      display: grid;
+      gap: 1rem;
+    }
+    .hero-proof-card {
+      padding: 1.15rem;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(11, 11, 11, 0.98));
+      box-shadow: var(--shadow);
+    }
+    .hero-proof-card h3 {
+      margin: 0 0 0.65rem;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+    .hero-proof-card p {
+      color: #c9c9d1;
+      margin: 0;
+    }
+    .hero-proof-image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+    .hero-proof-image-grid .proof-frame figcaption {
+      font-size: 0.86rem;
+    }
     .proof-showcase + .proof-showcase {
       margin-top: 1rem;
     }
@@ -133,6 +169,8 @@
       margin-top: 1.2rem;
     }
     @media (max-width: 960px) {
+      .hero-proof-grid,
+      .hero-proof-image-grid,
       .metric-strip,
       .proof-grid {
         grid-template-columns: 1fr;
@@ -148,6 +186,35 @@
       <div class="eyebrow">Client Work</div>
       <h1 class="page-title">Results we can stand behind.</h1>
       <p class="lead">These are real accounts, real timelines, and real numbers. We share what happened, what we built, and what moved - without rounding up or leaving out the context that matters.</p>
+      <div class="hero-proof-grid">
+        <div class="hero-proof-stack">
+          <div class="hero-proof-card">
+            <div class="proof-tag">Featured Proof</div>
+            <h3>$672,343 GMV. 41,330 orders. 7.49-7.58 ROI.</h3>
+            <p>Visitors should not have to scroll to verify the work. The strongest screenshots and the strongest numbers now sit at the top of the page where trust gets built fastest.</p>
+          </div>
+          <div class="metric-strip">
+            <div class="metric-chip"><strong>$672,343</strong><span>Annual GMV shown in campaign dashboard</span></div>
+            <div class="metric-chip"><strong>41,330</strong><span>Orders in the annual campaign view</span></div>
+            <div class="metric-chip"><strong>7.49-7.58</strong><span>ROI range shown in GMV Max screenshots</span></div>
+            <div class="metric-chip"><strong>$130.11K</strong><span>Top affiliate GMV row in the report</span></div>
+          </div>
+          <div class="proof-actions">
+            <a class="cta" href="/case-studies/beauty-brand-tiktok-shop-scale/">Open Full Case Study</a>
+            <a class="cta secondary" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Strategy Call</a>
+          </div>
+        </div>
+        <div class="hero-proof-image-grid">
+          <figure class="proof-frame">
+            <img src="/assets/case-studies/annual-performance.jpeg" alt="Annual TikTok Shop campaign performance screenshot showing GMV, orders, items sold, and campaigns joined." />
+            <figcaption>Annual campaign dashboard with GMV, orders, items sold, and campaign totals.</figcaption>
+          </figure>
+          <figure class="proof-frame">
+            <img src="/assets/case-studies/store-growth-grid.jpeg" alt="TikTok Shop store growth screenshot showing gross sales, GMV, orders, buyers, and first-time buyers." />
+            <figcaption>Store-level growth showing buyers, first-time buyers, order volume, and average order value.</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -165,13 +232,6 @@
             <h2>Campaign performance, GMV Max efficiency, affiliate contribution, and store growth in one proof set.</h2>
             <p>This brand came in with strong product-market fit and zero TikTok Shop infrastructure. Within the first 90 days, we built out their creator program, optimized their listings, and established a content cadence that held. Here is what that looked like in numbers.</p>
           </div>
-        </div>
-
-        <div class="metric-strip">
-          <div class="metric-chip"><strong>$672,343</strong><span>Annual GMV shown in campaign dashboard</span></div>
-          <div class="metric-chip"><strong>41,330</strong><span>Orders in the annual campaign view</span></div>
-          <div class="metric-chip"><strong>7.49-7.58</strong><span>ROI range shown in GMV Max screenshots</span></div>
-          <div class="metric-chip"><strong>$130.11K</strong><span>Top affiliate GMV row in the report</span></div>
         </div>
 
         <div class="proof-grid">
