@@ -151,6 +151,16 @@
   .explore-title { font-size: 1.35rem; font-weight: 900; letter-spacing: -0.03em; margin: 0.8rem 0 0.55rem; }
   .explore-copy { color: #a1a1aa; line-height: 1.65; font-size: 0.96rem; }
   .explore-arrow { margin-top: 1rem; display: inline-block; color: #fff; font-weight: 800; }
+  .proof-panel { background: linear-gradient(180deg, #111111, #0c0c0c); border: 1px solid var(--border); border-radius: 22px; overflow: hidden; transition: transform 0.35s ease, border-color 0.35s ease; text-decoration: none; color: inherit; display: block; }
+  .proof-panel:hover { transform: translateY(-6px); border-color: #3b3b3b; }
+  .proof-panel img { width: 100%; height: auto; display: block; background: #fff; }
+  .proof-body { padding: 1.35rem 1.4rem 1.5rem; }
+  .proof-kicker { color: #ff7d76; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.12em; }
+  .proof-title { margin: 0.65rem 0 0.5rem; font-size: 1.35rem; font-weight: 900; letter-spacing: -0.03em; }
+  .proof-copy { color: #a1a1aa; line-height: 1.65; font-size: 0.96rem; }
+  .proof-metrics { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+  .proof-chip { padding: 0.6rem 0.8rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); color: #f4f4f5; font-weight: 800; font-size: 0.84rem; }
+  .proof-section-copy { color: #a1a1aa; max-width: 50rem; margin: 0 auto; }
 
   .yt-card { position: relative; width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #0e0e0e; box-shadow: 0 10px 30px rgba(0,0,0,0.35); transition: transform 0.35s ease, border-color 0.35s ease; text-decoration: none; color: inherit; }
   .yt-card:hover { transform: translateY(-6px); border-color: #333; }
@@ -403,6 +413,47 @@
       </div>
     </div>
   </header>
+
+  <!-- ── 2A. PROOF SNAPSHOT ── -->
+  <section class="section-padding border-t border-zinc-900 bg-[#070707]">
+    <div class="container-custom">
+      <div class="text-center mb-12 md:mb-16 reveal">
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tighter">Real TikTok Shop proof, right under the VSL.</h2>
+        <p class="proof-section-copy text-base md:text-lg">If a prospect wants immediate confidence after watching the video, these screenshots show the kind of campaign scale, GMV movement, and store growth Avanta is talking about. Each one routes into the full case study.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+        <a class="proof-panel reveal" href="/case-studies/beauty-brand-tiktok-shop-scale/" style="transition-delay:0s;">
+          <img src="/assets/case-studies/annual-performance.jpeg" alt="Annual campaign performance dashboard showing TikTok Shop GMV and orders." />
+          <div class="proof-body">
+            <div class="proof-kicker">Campaign Performance</div>
+            <div class="proof-title">$672,343 GMV shown in annual campaign view</div>
+            <div class="proof-copy">The supplied dashboard shows 41,330 orders, 44,784 items sold, and three major platform campaigns. This is the kind of proof page buyers actually want to see.</div>
+            <div class="proof-metrics">
+              <span class="proof-chip">$672,343 GMV</span>
+              <span class="proof-chip">41,330 Orders</span>
+              <span class="proof-chip">3 Campaigns</span>
+            </div>
+          </div>
+        </a>
+        <a class="proof-panel reveal" href="/case-studies/beauty-brand-tiktok-shop-scale/" style="transition-delay:0.1s;">
+          <img src="/assets/case-studies/store-growth-grid.jpeg" alt="Store dashboard showing gross sales, GMV, buyers, and first-time buyers." />
+          <div class="proof-body">
+            <div class="proof-kicker">Store Growth</div>
+            <div class="proof-title">$358,587 gross sales with strong buyer growth</div>
+            <div class="proof-copy">The store-growth dashboard shows GMV, first-time buyer growth, order volume, and AOV in one snapshot. It gives the homepage immediate credibility without moving the VSL.</div>
+            <div class="proof-metrics">
+              <span class="proof-chip">18,634 Orders</span>
+              <span class="proof-chip">18,015 First-Time Buyers</span>
+              <span class="proof-chip">$19.24 AOV</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="text-center mt-10 md:mt-12 reveal">
+        <a href="/case-studies/beauty-brand-tiktok-shop-scale/" class="btn-primary">Open Full Case Study →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ── 3. WHAT WE'LL BUILD FOR YOU ── -->
   <section class="section-padding bg-[#070707] border-t border-zinc-900">
