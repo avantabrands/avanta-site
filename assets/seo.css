@@ -368,6 +368,10 @@ code {
 }
 
 @media (max-width: 960px) {
+  .container {
+    width: min(var(--max), calc(100% - 1.4rem));
+  }
+
   .hero-grid,
   .content-grid,
   .footer-grid,
@@ -381,28 +385,93 @@ code {
   .toc {
     position: static;
   }
+
+  .hero {
+    padding: 3.75rem 0 2.25rem;
+  }
+
+  .hero p,
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-panel,
+  .sidebar-card,
+  .article-card,
+  .feature-card,
+  .metric-card {
+    padding: 1.15rem;
+  }
+
+  .section {
+    padding: 1rem 0 2.4rem;
+  }
+
+  .section h2 {
+    margin-bottom: 0.55rem;
+  }
 }
 
 @media (max-width: 640px) {
   .site-nav-inner {
-    flex-direction: column;
     align-items: flex-start;
+    padding: 0.85rem 0;
   }
 
   .nav-links {
+    width: 100%;
     gap: 0.8rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
 
   .hero {
-    padding-top: 3rem;
+    padding-top: 2.8rem;
   }
 
   .hero h1,
   .page-title {
     font-size: 2.25rem;
+    line-height: 1;
   }
 
   .cta {
     width: 100%;
+    min-height: 52px;
+  }
+
+  .site-nav .cta {
+    width: auto;
+    min-height: 46px;
+    padding: 0.8rem 1rem;
+  }
+
+  .breadcrumbs {
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .article-card h3,
+  .feature-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .stat {
+    font-size: 1.7rem;
   }
 }
