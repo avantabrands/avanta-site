@@ -378,19 +378,6 @@ img {
   color: #f4f4f5;
 }
 
-.breadcrumbs {
-  display: none;
-}
-
-.breadcrumbs a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.breadcrumbs a:hover {
-  color: var(--text);
-}
-
 .site-footer {
   margin-top: 4rem;
   padding: 3rem 0;
@@ -575,11 +562,6 @@ code {
     width: auto;
     min-height: 46px;
     padding: 0.8rem 1rem;
-  }
-
-  .breadcrumbs {
-    font-size: 0.84rem;
-    line-height: 1.5;
   }
 
   .section-intro p,
