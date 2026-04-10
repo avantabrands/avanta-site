@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/index.original-backup-2026-04-08.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
