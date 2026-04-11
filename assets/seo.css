@@ -71,14 +71,6 @@ img {
   white-space: nowrap;
 }
 
-.brand span {
-  color: inherit;
-}
-
-.brand span::before {
-  content: " ";
-}
-
 .brand::after {
   content: ".";
 }
