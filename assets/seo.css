@@ -63,14 +63,24 @@ img {
 }
 
 .brand {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 900;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.045em;
   text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .brand span {
-  color: var(--accent);
+  color: inherit;
+}
+
+.brand span::before {
+  content: " ";
+}
+
+.brand::after {
+  content: ".";
 }
 
 .nav-links {
