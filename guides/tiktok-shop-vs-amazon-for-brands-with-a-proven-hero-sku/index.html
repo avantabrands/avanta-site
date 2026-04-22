@@ -15,6 +15,296 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    .compare-shell {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .hero.hero-article {
+      padding: 4.2rem 0 2.6rem;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(255, 59, 48, 0.14), transparent 26%),
+        linear-gradient(180deg, rgba(22, 8, 8, 0.82), rgba(8, 8, 8, 0));
+    }
+
+    .hero-kicker-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.9fr);
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+
+    .hero-copy-card,
+    .hero-side-stack,
+    .compare-rail,
+    .section-block,
+    .faq-grid,
+    .cta-panel {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy-card {
+      padding: 2rem;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        linear-gradient(180deg, rgba(20, 20, 20, 0.96), rgba(12, 12, 12, 0.98));
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.38);
+    }
+
+    .hero-copy-card h1 {
+      max-width: 12ch;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-side-stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero-insight,
+    .hero-pulse,
+    .compare-card,
+    .section-block,
+    .faq-card-article,
+    .cta-panel {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(10, 10, 10, 0.98));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-insight {
+      padding: 1.25rem;
+    }
+
+    .hero-insight h3,
+    .hero-pulse h3,
+    .compare-card h3,
+    .section-block h2,
+    .faq-card-article h3 {
+      margin-top: 0;
+    }
+
+    .hero-pulse {
+      padding: 1.2rem;
+      background:
+        linear-gradient(180deg, rgba(255, 59, 48, 0.12), rgba(255, 255, 255, 0.02));
+    }
+
+    .mini-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.38rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #d4d4d8;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .compare-rail {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .compare-card {
+      padding: 1.35rem;
+      overflow: hidden;
+    }
+
+    .compare-card.amazon {
+      background:
+        linear-gradient(180deg, rgba(27, 27, 27, 0.98), rgba(13, 13, 13, 0.98));
+    }
+
+    .compare-card.tiktok {
+      background:
+        linear-gradient(180deg, rgba(40, 12, 12, 0.98), rgba(16, 10, 10, 0.98));
+      border-color: rgba(255, 59, 48, 0.18);
+    }
+
+    .compare-card p {
+      color: #d4d4d8;
+      margin-bottom: 0.9rem;
+    }
+
+    .compare-points {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .compare-points li {
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #f3f4f6;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .article-flow {
+      display: grid;
+      gap: 1.15rem;
+    }
+
+    .section-block {
+      padding: 1.5rem;
+    }
+
+    .section-block p {
+      color: #d4d4d8;
+      margin: 0.85rem 0 0;
+    }
+
+    .section-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .section-grid-2 .feature-card {
+      background: rgba(255, 255, 255, 0.02);
+      box-shadow: none;
+    }
+
+    .insight-band {
+      margin-top: 1rem;
+      padding: 1rem 1.05rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 59, 48, 0.18);
+      background: linear-gradient(180deg, rgba(255, 59, 48, 0.12), rgba(255, 255, 255, 0.02));
+    }
+
+    .insight-band strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+    }
+
+    .sticky-summary {
+      position: sticky;
+      top: 6rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .summary-card {
+      padding: 1.2rem;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, rgba(18, 18, 18, 0.98), rgba(10, 10, 10, 0.98));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    .summary-stat {
+      display: block;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      margin-top: 0.35rem;
+    }
+
+    .summary-card p,
+    .summary-card li {
+      color: #d4d4d8;
+    }
+
+    .summary-card ul {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .summary-card li {
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .faq-card-article {
+      padding: 1.15rem;
+    }
+
+    .faq-card-article p {
+      margin: 0.65rem 0 0;
+      color: #d4d4d8;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.35rem;
+      margin-top: 1.25rem;
+      background:
+        linear-gradient(180deg, rgba(54, 14, 14, 0.96), rgba(22, 12, 12, 0.98));
+      border-color: rgba(255, 59, 48, 0.14);
+    }
+
+    .cta-panel p {
+      margin: 0;
+      color: #f4f4f5;
+      font-size: 1.05rem;
+    }
+
+    .cta-panel .button-row {
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 960px) {
+      .hero-kicker-grid,
+      .compare-rail,
+      .article-layout,
+      .section-grid-2,
+      .faq-grid,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .sticky-summary {
+        position: static;
+      }
+
+      .hero-copy-card,
+      .hero-insight,
+      .hero-pulse,
+      .compare-card,
+      .section-block,
+      .faq-card-article,
+      .cta-panel {
+        padding: 1.15rem;
+      }
+
+      .cta-panel .button-row {
+        justify-content: stretch;
+      }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -71,40 +361,75 @@
 <body>
   <nav class="site-nav"><div class="container site-nav-inner"><a class="brand" href="/">AVANTA BRANDS</a><div class="nav-links"><a href="/services/">Services</a><a class="active" href="/guides/">Guides</a><a href="/case-studies/">Case Studies</a><a href="/resources/">Resources</a></div><a class="cta" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Free Strategy Call</a></div></nav>
 
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Channel Strategy</div>
-        <h1>Your hero SKU is already proven. Here is what happens when you take it to TikTok Shop.</h1>
-        <p class="lead">Amazon tells you what people buy after they have already decided. TikTok Shop changes the equation - it creates the decision. If you have a product with strong reviews, repeat purchases, and a conversion rate that holds up, you already have the hardest part of TikTok Shop figured out. What you do not have yet is the demand engine that makes a cold audience stop, watch, and add to cart. That is what this comparison is actually about.</p>
-        <div class="hero-actions">
-          <a class="cta" href="/resources/free-tiktok-shop-growth-plan/">Get Free Growth Plan</a>
-          <a class="cta secondary" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Free Strategy Call</a>
+  <header class="hero hero-article">
+    <div class="container compare-shell">
+      <div class="hero-kicker-grid">
+        <div class="hero-copy-card">
+          <div class="eyebrow">Channel Strategy</div>
+          <h1>Your hero SKU is already proven. Here is what happens when you take it to TikTok Shop.</h1>
+          <p class="lead">Amazon tells you what people buy after they have already decided. TikTok Shop changes the equation - it creates the decision. If you have a product with strong reviews, repeat purchases, and a conversion rate that holds up, you already have the hardest part of TikTok Shop figured out. What you do not have yet is the demand engine that makes a cold audience stop, watch, and add to cart.</p>
+          <div class="hero-actions">
+            <a class="cta" href="/resources/free-tiktok-shop-growth-plan/">Get Free Growth Plan</a>
+            <a class="cta secondary" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Free Strategy Call</a>
+          </div>
+        </div>
+
+        <div class="hero-side-stack">
+          <div class="hero-insight">
+            <span class="mini-label">Quick Read</span>
+            <h3>What changes</h3>
+            <ul class="panel-list">
+              <li>Amazon captures existing demand. TikTok Shop generates new demand from scratch.</li>
+              <li>Creator-led content turns your best-performing SKU into a repeatable sales machine.</li>
+              <li>Brands that expand to TikTok Shop often see Amazon branded search lift within 60 to 90 days.</li>
+            </ul>
+          </div>
+          <div class="hero-pulse">
+            <span class="mini-label">Operator Read</span>
+            <h3>The real shift</h3>
+            <p>On Amazon, rank is the lever. On TikTok Shop, creator output is the lever. That changes who does the selling, how scale happens, and where margin gets protected.</p>
+          </div>
         </div>
       </div>
-      <aside class="hero-panel card">
-        <ul class="panel-list">
-          <li>Amazon captures existing demand. TikTok Shop generates new demand from scratch.</li>
-          <li>Creator-led content turns your best-performing SKU into a repeatable sales machine.</li>
-          <li>Brands that expand to TikTok Shop typically see a measurable lift in Amazon branded search within 60 to 90 days.</li>
-        </ul>
-      </aside>
+
+      <div class="compare-rail">
+        <div class="compare-card amazon">
+          <span class="mini-label">Amazon</span>
+          <h3>Demand capture</h3>
+          <p>People arrive with intent already formed. The listing closes the sale.</p>
+          <ul class="compare-points">
+            <li>Rank, reviews, and listing quality decide most outcomes</li>
+            <li>Competitors sit next to you on every search result</li>
+            <li>Growth depends on holding visibility and conversion rate together</li>
+          </ul>
+        </div>
+        <div class="compare-card tiktok">
+          <span class="mini-label">TikTok Shop</span>
+          <h3>Demand creation</h3>
+          <p>The video creates the desire first. The listing only needs to support the close.</p>
+          <ul class="compare-points">
+            <li>Creators, hooks, and product fit create the buying moment</li>
+            <li>Strong content can move units before search behavior even begins</li>
+            <li>Halo effects can lift TikTok GMV, Amazon search, and DTC awareness together</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="section">
-    <div class="container content-grid">
-      <article>
-        <section id="jobs">
+    <div class="container article-layout">
+      <article class="article-flow">
+        <section id="jobs" class="section-block">
           <h2>Two channels, two completely different jobs</h2>
           <p>Amazon is a search engine with a checkout attached. Someone types in "collagen peptides unflavored" and your listing either wins the placement or it does not. The work on Amazon is about holding rank, protecting your listing from hijackers, and squeezing conversion rate through images and A+ content. That is real work and it compounds - but it depends entirely on people who are already looking for what you sell.</p>
           <p>TikTok Shop is a different machine. Nobody opens TikTok to shop. They open it to be entertained, and the right video catches them mid-scroll and creates a purchase they were not planning to make. When a creator holds up your product, explains what it actually does, and delivers that message to an audience that trusts them, you get a conversion that Amazon's algorithm could never produce on its own.</p>
           <p>The brands that win on TikTok Shop do not treat it as a second Amazon. They treat it as the top of a funnel that feeds everything - TikTok GMV, Amazon branded search, and direct site revenue all move together once the content engine is running. That halo effect is real and it is measurable. Amazon-native brands with proven hero SKUs are positioned to capture it faster than anyone.</p>
         </section>
 
-        <section id="changes">
+        <section id="changes" class="section-block">
           <h2>What changes when you move from Amazon to TikTok Shop</h2>
-          <div class="grid-2">
+          <div class="section-grid-2">
             <div class="feature-card">
               <h3>Your listing becomes conversion support, not the primary pitch</h3>
               <p>On Amazon, your listing does all the selling. On TikTok Shop, the creator does the selling - your listing just needs to be clean enough not to lose the sale after the video lands. That means a strong thumbnail, tight copy, and a price that holds up against the emotional momentum the video created.</p>
@@ -124,70 +449,88 @@
           </div>
         </section>
 
-        <section id="advantage">
+        <section id="advantage" class="section-block">
           <h2>Where Amazon-native brands have a built-in advantage</h2>
           <p>If you have been selling on Amazon for two or more years, you already have data that most TikTok Shop entrants are guessing at. You know your average order value, your repeat purchase rate, and the exact language your customers use in reviews. That review library is a content brief. The specific phrases customers use to describe what your product does - those are the hooks creators should be testing on TikTok Shop.</p>
           <p>A hero SKU with 800-plus reviews and a 4.6-star average is not just a strong Amazon listing. It is proof that the product works, that the value proposition resonates, and that people are willing to pay the price. TikTok Shop creators are not going to take a risk on a product they cannot sell. A brand with that kind of track record gets access to better creators, higher-quality content, and faster response rates when you are recruiting.</p>
           <p>The operational advantage matters too. You already have inventory management, fulfillment, and supply chain infrastructure. TikTok Shop orders do not require a separate warehouse - if you are already on Amazon FBA, you can fulfill TikTok Shop orders through Multi-Channel Fulfillment. The barrier to expansion is lower than most brands assume, and the upside is a second revenue channel that actively grows the first one. For a deeper look at how this works in practice, Avanta's <a class="text-link" href="/guides/why-amazon-brands-should-expand-to-tiktok-shop/">guide on why Amazon brands should expand to TikTok Shop</a> breaks it down by stage.</p>
-          <div class="band">
+          <div class="insight-band">
             <strong>Simple rule:</strong>
             Amazon captures the audience you already have. TikTok Shop builds the audience you have not reached yet. If your product is proven, running both is not optional - it is the play.
           </div>
         </section>
 
-        <section id="launch">
+        <section id="launch" class="section-block">
           <h2>What to get right before you launch</h2>
           <p>The brands that struggle on TikTok Shop after a strong Amazon track record usually make the same mistake - they treat creator recruitment like influencer marketing. They send samples to large accounts, wait, and hope. That is not a system. A working TikTok Shop affiliate operation has structure: tiered creator targeting by niche fit and proven GMV history, onboarding that includes a clear content brief, and a community layer that keeps creators engaged week over week.</p>
           <p>Creator fit matters more than follower count. A 25,000-follower creator in the wellness space who consistently drives affiliate revenue will outperform a 500,000-follower general lifestyle creator almost every time. The match between creator audience and product use case is what determines whether the video converts - and that match is something you build intentionally, not something you stumble into by sending product to whoever accepts. If you want to see how Avanta structures this for Amazon brands expanding to TikTok Shop, the <a class="text-link" href="/services/tiktok-shop-for-amazon-brands/">TikTok Shop for Amazon brands service page</a> covers the full approach.</p>
         </section>
 
-        <section id="faq">
+        <section id="faq" class="section-block">
           <h2>Frequently asked questions</h2>
-          <div class="accordion-item active">
-            <div class="accordion-header">Do I need a separate fulfillment setup for TikTok Shop if I am already on Amazon FBA?<span class="plus-icon">+</span></div>
-            <div class="accordion-content" style="max-height: 300px; padding-bottom: 2rem; opacity: 1;">Not always. Brands already using Amazon FBA can often fulfill TikTok Shop orders through Multi-Channel Fulfillment, but the operational fit still needs to be checked carefully before launch.</div>
-          </div>
-          <div class="accordion-item active">
-            <div class="accordion-header">How long does it take for a hero SKU to gain traction on TikTok Shop?<span class="plus-icon">+</span></div>
-            <div class="accordion-content" style="max-height: 300px; padding-bottom: 2rem; opacity: 1;">It depends on creator fit, offer clarity, and content quality, but strong products with a real affiliate pipeline often show early signal much faster than brands expect.</div>
-          </div>
-          <div class="accordion-item active">
-            <div class="accordion-header">What commission rate should I offer creators to stay competitive in my category?<span class="plus-icon">+</span></div>
-            <div class="accordion-content" style="max-height: 300px; padding-bottom: 2rem; opacity: 1;">The right rate depends on margin, product price, and category norms, but it has to be strong enough to attract creators who can actually sell, not just accept samples.</div>
-          </div>
-          <div class="accordion-item active">
-            <div class="accordion-header">Will running TikTok Shop actually increase my Amazon sales, or is that just a theory?<span class="plus-icon">+</span></div>
-            <div class="accordion-content" style="max-height: 300px; padding-bottom: 2rem; opacity: 1;">For many brands, creator-led demand on TikTok Shop can lift Amazon branded search and awareness as well as direct TikTok Shop GMV. The halo effect is real when the content engine is working.</div>
-          </div>
-          <div class="accordion-item active">
-            <div class="accordion-header">How do I find creators who have already driven sales in my product category?<span class="plus-icon">+</span></div>
-            <div class="accordion-content" style="max-height: 300px; padding-bottom: 2rem; opacity: 1;">You need a structured recruitment process based on category fit, creator sales history, output quality, and response rates - not a random outreach blast.</div>
+          <div class="faq-grid">
+            <div class="faq-card-article">
+              <h3>Do I need a separate fulfillment setup for TikTok Shop if I am already on Amazon FBA?</h3>
+              <p>Not always. Brands already using Amazon FBA can often fulfill TikTok Shop orders through Multi-Channel Fulfillment, but the operational fit still needs to be checked carefully before launch.</p>
+            </div>
+            <div class="faq-card-article">
+              <h3>How long does it take for a hero SKU to gain traction on TikTok Shop?</h3>
+              <p>It depends on creator fit, offer clarity, and content quality, but strong products with a real affiliate pipeline often show early signal much faster than brands expect.</p>
+            </div>
+            <div class="faq-card-article">
+              <h3>What commission rate should I offer creators to stay competitive in my category?</h3>
+              <p>The right rate depends on margin, product price, and category norms, but it has to be strong enough to attract creators who can actually sell, not just accept samples.</p>
+            </div>
+            <div class="faq-card-article">
+              <h3>Will running TikTok Shop actually increase my Amazon sales, or is that just a theory?</h3>
+              <p>For many brands, creator-led demand on TikTok Shop can lift Amazon branded search and awareness as well as direct TikTok Shop GMV. The halo effect is real when the content engine is working.</p>
+            </div>
+            <div class="faq-card-article">
+              <h3>How do I find creators who have already driven sales in my product category?</h3>
+              <p>You need a structured recruitment process based on category fit, creator sales history, output quality, and response rates - not a random outreach blast.</p>
+            </div>
           </div>
         </section>
+        <div class="cta-panel">
+          <p>If you have a proven hero SKU and you are not on TikTok Shop yet, you are leaving a compounding demand channel on the table. Get a growth plan built around your product and your numbers.</p>
+          <div class="button-row">
+            <a class="cta" href="/resources/free-tiktok-shop-growth-plan/">Get Free Growth Plan</a>
+            <a class="cta secondary" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Free Strategy Call</a>
+          </div>
+        </div>
       </article>
 
-      <aside class="toc">
-        <div class="sidebar-card">
-          <h3>Amazon comparison</h3>
-          <ul class="link-list">
+      <aside class="sticky-summary">
+        <div class="summary-card">
+          <span class="mini-label">At a glance</span>
+          <span class="summary-stat">2</span>
+          <p>completely different jobs:</p>
+          <ul>
+            <li>Amazon wins when intent already exists.</li>
+            <li>TikTok Shop wins when content creates the desire first.</li>
+          </ul>
+        </div>
+
+        <div class="summary-card">
+          <span class="mini-label">Read path</span>
+          <ul>
             <li><a href="#jobs">Two channel jobs</a></li>
-            <li><a href="#changes">What changes</a></li>
-            <li><a href="#advantage">Built-in advantages</a></li>
-            <li><a href="#launch">What to get right</a></li>
+            <li><a href="#changes">What changes operationally</a></li>
+            <li><a href="#advantage">Why Amazon brands have an edge</a></li>
+            <li><a href="#launch">What to get right before launch</a></li>
+          </ul>
+        </div>
+
+        <div class="summary-card">
+          <span class="mini-label">Next step</span>
+          <p>Pressure-test this against the operating side, not just the strategy side.</p>
+          <ul>
             <li><a href="/services/tiktok-shop-for-amazon-brands/">Amazon brand service</a></li>
             <li><a href="/guides/why-amazon-brands-should-expand-to-tiktok-shop/">Amazon expansion guide</a></li>
             <li><a href="/resources/free-tiktok-shop-growth-plan/">Free growth plan</a></li>
           </ul>
         </div>
       </aside>
-    </div>
-
-    <div class="container cta-strip">
-      <p>If you have a proven hero SKU and you are not on TikTok Shop yet, you are leaving a compounding demand channel on the table. Get a growth plan built around your product and your numbers.</p>
-      <div class="button-row">
-        <a class="cta" href="/resources/free-tiktok-shop-growth-plan/">Get Free Growth Plan</a>
-        <a class="cta secondary" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Free Strategy Call</a>
-      </div>
     </div>
   </main>
 
