@@ -18,37 +18,86 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "TikTok Shop Agency",
-    "serviceType": "TikTok Shop Partner agency",
-    "provider": {
-      "@type": "Organization",
-      "name": "Avanta Brands",
-      "url": "https://avantabrands.co/"
-    },
-    "areaServed": "United States",
-    "url": "https://avantabrands.co/services/tiktok-shop-agency/",
-    "description": "Avanta Brands manages TikTok Shop growth across creator recruitment, affiliate infrastructure, listing optimization, content operations, Spark Ads, and operator-led weekly execution.",
-    "offers": {
-      "@type": "Offer",
-      "url": "https://calendly.com/avantabrands/30min",
-      "availability": "https://schema.org/InStock"
-    },
-    "hasPart": [
+    "@graph": [
       {
         "@type": "Service",
-        "name": "Creator recruitment and affiliate management",
-        "url": "https://avantabrands.co/services/creator-affiliate-growth/"
+        "name": "TikTok Shop Agency",
+        "serviceType": "TikTok Shop Partner agency",
+        "provider": {
+          "@type": "Organization",
+          "name": "Avanta Brands",
+          "url": "https://avantabrands.co/"
+        },
+        "areaServed": "United States",
+        "url": "https://avantabrands.co/services/tiktok-shop-agency/",
+        "description": "Avanta Brands manages TikTok Shop growth across creator recruitment, affiliate infrastructure, listing optimization, content operations, Spark Ads, and operator-led weekly execution.",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://calendly.com/avantabrands/30min",
+          "availability": "https://schema.org/InStock"
+        },
+        "hasPart": [
+          {
+            "@type": "Service",
+            "name": "Creator recruitment and affiliate management",
+            "url": "https://avantabrands.co/services/creator-affiliate-growth/"
+          },
+          {
+            "@type": "Service",
+            "name": "TikTok Shop listing optimization",
+            "url": "https://avantabrands.co/services/listing-optimization/"
+          },
+          {
+            "@type": "Service",
+            "name": "TikTok Shop Spark Ads management",
+            "url": "https://avantabrands.co/services/tiktok-shop-spark-ads/"
+          }
+        ]
       },
       {
-        "@type": "Service",
-        "name": "TikTok Shop listing optimization",
-        "url": "https://avantabrands.co/services/listing-optimization/"
-      },
-      {
-        "@type": "Service",
-        "name": "TikTok Shop Spark Ads management",
-        "url": "https://avantabrands.co/services/tiktok-shop-spark-ads/"
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does a TikTok Shop agency do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A TikTok Shop agency handles creator recruitment, affiliate management, content strategy, listing optimization, Spark Ads, and weekly GMV reporting to scale brands on TikTok Shop."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does a TikTok Shop agency cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TikTok Shop agency pricing typically ranges from $2,500 to $15,000 per month depending on scope. Avanta Brands offers performance-aligned pricing with a $100K in 90 days guarantee."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Avanta Brands a TikTok Shop Partner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Avanta Brands is a TikTok Shop Partner agency specializing in creator systems, affiliate growth, Spark Ads, and full-channel management for US-based beauty, wellness, and CPG brands."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes Avanta Brands different from other TikTok Shop agencies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Avanta Brands is US-based, specializes in beauty and wellness, builds creator systems of 100-300 affiliates, and offers a performance guarantee: $100K in 90 days or you do not pay."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How fast can I see results with a TikTok Shop agency?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most brands see first sales within 30 days and meaningful scale within 60-90 days when working with a specialized TikTok Shop agency like Avanta Brands."
+            }
+          }
+        ]
       }
     ]
   }
