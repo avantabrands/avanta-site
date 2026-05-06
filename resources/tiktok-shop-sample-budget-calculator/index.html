@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free TikTok Shop Sample Budget Calculator | Avanta Brands</title>
+  <meta name="description" content="Calculate how many TikTok Shop creators you can sample based on your product cost, shipping, and total budget. Plan your creator outreach before you spend." />
+  <link rel="canonical" href="https://avantabrands.co/resources/tiktok-shop-sample-budget-calculator/" />
+  <meta property="og:title" content="Free TikTok Shop Sample Budget Calculator | Avanta Brands" />
+  <meta property="og:description" content="Plan your TikTok Shop creator sampling strategy: how many creators can you reach with your budget?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avantabrands.co/resources/tiktok-shop-sample-budget-calculator/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/assets/seo.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "TikTok Shop Sample Budget Calculator",
+    "url": "https://avantabrands.co/resources/tiktok-shop-sample-budget-calculator/",
+    "description": "Free calculator for planning TikTok Shop creator sample budgets based on product cost, shipping, and total available budget."
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2V1N1J2J2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2V1N1J2J2');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wfthm8hveu");
+  </script>
+
+  <style>
+    .calculator-wrap {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      max-width: 720px;
+      margin: 2rem auto;
+    }
+    .calc-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (max-width: 600px) {
+      .calc-row { grid-template-columns: 1fr; }
+    }
+    .calc-field label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .calc-field input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 700;
+      outline: none;
+    }
+    .calc-field input:focus {
+      border-color: var(--accent);
+    }
+    .calc-results {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      .calc-results { grid-template-columns: 1fr; }
+    }
+    .result-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .result-card .value {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin: 0.5rem 0;
+    }
+    .result-card .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+    .calc-note {
+      background: rgba(255,0,0,0.06);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 12px 12px 0;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a class="brand" href="/">AVANTA BRANDS</a>
+      <div class="nav-links">
+        <a href="/services/">Services</a>
+        <a href="/guides/">Guides</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a class="active" href="/resources/">Resources</a>
+      </div>
+      <a class="cta" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Strategy Call</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow">Free Tool</div>
+      <h1 class="page-title">TikTok Shop Sample Budget Calculator</h1>
+      <p class="lead">Figure out exactly how many creators you can sample with your budget. Plan your outreach before you spend a dollar.</p>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+
+      <div class="calculator-wrap">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="productCost">Product Cost per Unit ($)</label>
+            <input type="number" id="productCost" value="8" min="0" />
+          </div>
+          <div class="calc-field">
+            <label for="shippingCost">Shipping Cost per Sample ($)</label>
+            <input type="number" id="shippingCost" value="4" min="0" />
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="packagingCost">Packaging per Sample ($)</label>
+            <input type="number" id="packagingCost" value="1" min="0" />
+          </div>
+          <div class="calc-field">
+            <label for="totalBudget">Total Sample Budget ($)</label>
+            <input type="number" id="totalBudget" value="1000" min="1" />
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="approvalRate">Expected Approval Rate (%)</label>
+            <input type="number" id="approvalRate" value="25" min="1" max="100" />
+          </div>
+          <div class="calc-field">
+            <label for="postRate">Expected Post Rate (%)</label>
+            <input type="number" id="postRate" value="70" min="1" max="100" />
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="result-card">
+            <div class="label">Cost per Sample</div>
+            <div class="value" id="costPerSample">$0.00</div>
+            <div class="label">all-in</div>
+          </div>
+          <div class="result-card">
+            <div class="label">Creators You Can Sample</div>
+            <div class="value" id="totalSamples">0</div>
+            <div class="label">with your budget</div>
+          </div>
+          <div class="result-card">
+            <div class="label">Expected Videos</div>
+            <div class="value" id="expectedVideos">0</div>
+            <div class="label">at your post rate</div>
+          </div>
+        </div>
+
+        <div class="calc-note">
+          <strong>How this works:</strong> Total cost per sample = product cost + shipping + packaging. Total creators = budget ÷ cost per sample. Expected videos = total creators × post rate. Adjust approval rate to estimate how many creators you need to outreach to hit your sample target.
+        </div>
+      </div>
+
+      <h2>Why sample budgeting matters</h2>
+      <p>Most brands underestimate their sample costs by 30-50%. They count the product cost but forget shipping, packaging, and the samples that never turn into content. A $10 product that costs $5 to ship is actually a $15 sample. If you only budget for the product, you will run out of money halfway through your creator recruitment.</p>
+
+      <h2>How to use this calculator for planning</h2>
+      <p>Start with your total monthly sample budget. Enter your true all-in sample cost. The calculator tells you how many creators you can afford. Then work backward: if you need to sample 100 creators to generate 70 videos, and your budget only allows 50, you have three options:</p>
+      <ul>
+        <li>Increase your sample budget</li>
+        <li>Improve your post rate through better follow-up</li>
+        <li>Tighten creator vetting so fewer samples are wasted on non-posters</li>
+      </ul>
+
+      <h2>The sample budget formula</h2>
+      <p>Here is the math most brands miss:</p>
+      <div class="band">
+        <strong>Total sample cost = Product cost + Shipping + Packaging + Labor overhead</strong>
+      </div>
+      <p>Labor overhead is the time your team spends sourcing creators, coordinating samples, and following up. Even if you do not pay yourself a salary, your time has value. Factor it in.</p>
+
+      <h2>Budget benchmarks by stage</h2>
+      <ul>
+        <li><strong>Lean launch:</strong> $500-1,000/month for 30-60 creators</li>
+        <li><strong>Growth phase:</strong> $2,000-4,000/month for 100-200 creators</li>
+        <li><strong>Scale phase:</strong> $5,000-10,000/month for 300-500 creators</li>
+      </ul>
+
+      <h2>How to lower your sample cost per video</h2>
+      <p>The most efficient brands do not just send more samples. They send better samples to better creators:</p>
+      <ul>
+        <li><strong>Vet creators harder:</strong> A 25% approval rate with an 80% post rate is cheaper than a 75% approval rate with a 40% post rate</li>
+        <li><strong>Negotiate shipping rates:</strong> Bulk shipping discounts can cut per-unit costs by 20-40%</li>
+        <li><strong>Reduce packaging:</strong> Simple poly mailers work for most products and cost less than branded boxes</li>
+        <li><strong>Bundle samples:</strong> Send 2-3 products to creators who promote multiple SKUs</li>
+      </ul>
+
+      <div class="band">
+        <strong>Bottom line:</strong> Sample budgeting is not just about product cost. It is about understanding your true all-in cost per creator and planning your outreach volume accordingly. A brand that budgets accurately scales predictably. A brand that guesses burns out.
+      </div>
+
+      <div class="cta-strip">
+        <p>Want help planning your creator budget?</p>
+        <a class="cta" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Free Strategy Call</a>
+        <a class="cta secondary" href="/resources/tiktok-shop-cpa-calculator/">Try the CPA Calculator</a>
+      </div>
+
+      <p class="text-sm text-muted" style="margin-top:2rem;"><em>Disclaimer: This calculator provides estimates based on inputs you provide. Actual sample costs vary by product weight, shipping destination, carrier rates, and packaging choices. Use these figures for planning purposes only.</em></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">AVANTA BRANDS</div>
+        <p>A TikTok Shop growth partner for operators who need more than generic media buying.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="/about/">About</a><br />
+        <a href="/guides/">Guides</a><br />
+        <a href="/case-studies/">Case Studies</a><br />
+        <a href="/resources/">Resources</a>
+      </div>
+      <div>
+        <h3>Next Step</h3>
+        <a href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+    <div class="container footer-note">Avanta Brands runs TikTok Shop growth work across creators, listings, content, paid amplification, and weekly operating decisions.</div>
+  </footer>
+
+  <script>
+    function calculateSamples() {
+      const productCost = parseFloat(document.getElementById('productCost').value) || 0;
+      const shippingCost = parseFloat(document.getElementById('shippingCost').value) || 0;
+      const packagingCost = parseFloat(document.getElementById('packagingCost').value) || 0;
+      const totalBudget = parseFloat(document.getElementById('totalBudget').value) || 1;
+      const postRate = parseFloat(document.getElementById('postRate').value) || 0;
+
+      const costPerSample = productCost + shippingCost + packagingCost;
+      const totalSamples = costPerSample > 0 ? Math.floor(totalBudget / costPerSample) : 0;
+      const expectedVideos = Math.floor(totalSamples * (postRate / 100));
+
+      document.getElementById('costPerSample').textContent = '$' + costPerSample.toFixed(2);
+      document.getElementById('totalSamples').textContent = totalSamples;
+      document.getElementById('expectedVideos').textContent = expectedVideos;
+    }
+
+    ['productCost','shippingCost','packagingCost','totalBudget','approvalRate','postRate'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', calculateSamples);
+    });
+    calculateSamples();
+  </script>
+</body>
+</html>
