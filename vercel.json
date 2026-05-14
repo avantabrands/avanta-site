@@ -4,6 +4,21 @@
       "source": "/index.original-backup-2026-04-08.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/article1",
+      "destination": "/article1/",
+      "permanent": true
+    },
+    {
+      "source": "/article2",
+      "destination": "/article2/",
+      "permanent": true
+    },
+    {
+      "source": "/article3",
+      "destination": "/article3/",
+      "permanent": true
     }
   ]
 }
