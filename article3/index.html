@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Running TikTok Shop Actually Looks Like Week to Week | Avanta Brands</title>
+<link rel="canonical" href="https://avantabrands.co/article3/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:       #000000;
+    --black-card:  #0d0d0d;
+    --black-edge:  #141414;
+    --black-border:#1e1e1e;
+    --red:         #e8321a;
+    --red-dim:     rgba(232,50,26,0.08);
+    --white:       #ffffff;
+    --grey-1:      #a3a3a3;
+    --grey-2:      #525252;
+    --amber:       #f59e0b;
+    --amber-dim:   rgba(245,158,11,0.07);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black); color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(0,0,0,0.95); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--black-border);
+    padding: 0 24px; height: 60px; display: flex; align-items: center;
+  }
+  .nav-inner {
+    max-width: 800px; margin: 0 auto; width: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { font-size: 14px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); text-decoration: none; }
+  .nav-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-2); }
+
+  .hero {
+    max-width: 800px; margin: 0 auto; padding: 80px 24px 64px;
+    opacity: 0; transform: translateY(20px); animation: up 0.6s ease 0.05s forwards;
+  }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 28px; }
+  h1 { font-size: clamp(36px, 6vw, 68px); font-weight: 700; line-height: 1.02; letter-spacing: -0.03em; color: var(--white); margin-bottom: 28px; }
+  .hero-sub { font-size: 18px; color: var(--grey-1); line-height: 1.7; max-width: 580px; margin-bottom: 48px; }
+  .byline { display: flex; align-items: center; gap: 14px; padding-top: 32px; border-top: 1px solid var(--black-border); }
+  .byline-mark { width: 34px; height: 34px; border-radius: 50%; background: var(--red); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+  .byline-text { font-size: 13px; color: var(--grey-2); }
+  .byline-text strong { color: var(--white); font-weight: 600; display: block; }
+
+  /* OVERVIEW */
+  .overview-band {
+    background: var(--black-card); border-top: 1px solid var(--black-border);
+    border-bottom: 1px solid var(--black-border); padding: 44px 24px;
+    opacity: 0; animation: up 0.6s ease 0.2s forwards;
+  }
+  .overview-inner { max-width: 800px; margin: 0 auto; }
+  .band-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-2); margin-bottom: 24px; }
+  .ov-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+  .ov-card { background: var(--black-edge); border: 1px solid var(--black-border); border-radius: 8px; padding: 22px 18px; }
+  .ov-phase { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .ov-card h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .ov-card p { font-size: 12.5px; color: var(--grey-2); line-height: 1.55; }
+
+  /* ARTICLE */
+  .article { max-width: 800px; margin: 0 auto; padding: 72px 24px; }
+  .article h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin: 60px 0 20px; line-height: 1.15; }
+  .article h2:first-child { margin-top: 0; }
+  .article p { font-size: 16.5px; color: var(--grey-1); margin-bottom: 24px; line-height: 1.8; }
+  .article strong { color: var(--white); font-weight: 600; }
+  hr { border: none; border-top: 1px solid var(--black-border); margin: 52px 0; }
+
+  .pull { border-left: 3px solid var(--amber); padding: 20px 28px; margin: 40px 0; background: var(--amber-dim); border-radius: 0 6px 6px 0; }
+  .pull p { font-size: 20px; font-weight: 600; color: var(--white); margin: 0; line-height: 1.45; letter-spacing: -0.01em; }
+
+  /* READINESS */
+  .ready { background: var(--black-card); border: 1px solid var(--black-border); border-radius: 10px; padding: 32px; margin: 36px 0; }
+  .ready-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-2); margin-bottom: 22px; }
+  .ready-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .ready-item { display: flex; gap: 14px; align-items: flex-start; padding: 16px; background: var(--black-edge); border: 1px solid var(--black-border); border-radius: 6px; }
+  .ready-check { width: 22px; height: 22px; border-radius: 50%; background: var(--red-dim); border: 1px solid rgba(232,50,26,0.3); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--red); flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+  .ready-item-text { font-size: 13px; color: var(--grey-1); line-height: 1.5; }
+  .ready-item-text strong { color: var(--white); font-weight: 600; display: block; margin-bottom: 4px; font-size: 13px; }
+
+  /* PHASE BLOCK */
+  .phase { background: var(--black-card); border: 1px solid var(--black-border); border-radius: 10px; overflow: hidden; margin: 32px 0; }
+  .phase-head { padding: 24px 28px; border-bottom: 1px solid var(--black-border); display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+  .phase-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+  .phase-head h3 { font-size: 19px; font-weight: 700; color: var(--white); line-height: 1.25; letter-spacing: -0.01em; }
+  .phase-days { font-size: 12px; color: var(--grey-2); white-space: nowrap; padding-top: 4px; flex-shrink: 0; }
+  .phase-body { padding: 24px 28px; }
+  .phase-body p { font-size: 14px; color: var(--grey-1); margin-bottom: 18px; line-height: 1.75; }
+  .phase-body p:last-of-type { margin-bottom: 0; }
+  .check-list { list-style: none; margin: 0 0 18px; }
+  .check-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 13.5px; color: var(--grey-1); padding: 9px 0; border-bottom: 1px solid var(--black-border); line-height: 1.5; }
+  .check-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .check-list li::before { content: '✓'; color: var(--amber); flex-shrink: 0; font-weight: 700; }
+  .phase-nums { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-top: 1px solid var(--black-border); }
+  .pnum { padding: 18px 22px; border-right: 1px solid var(--black-border); text-align: center; }
+  .pnum:last-child { border-right: none; }
+  .pnum-val { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; color: var(--white); line-height: 1; margin-bottom: 6px; }
+  .pnum-val span { color: var(--amber); }
+  .pnum-label { font-size: 11px; color: var(--grey-2); line-height: 1.4; }
+
+  /* TIME BLOCK */
+  .time-block { background: var(--amber-dim); border: 1px solid rgba(245,158,11,0.15); border-radius: 10px; padding: 32px; margin: 40px 0; }
+  .time-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 22px; }
+  .time-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .time-item h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .time-item p { font-size: 13px; color: var(--grey-1); line-height: 1.6; margin: 0; }
+
+  /* HANDLE LIST */
+  .handle-list { list-style: none; margin: 28px 0; }
+  .handle-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 15px; color: var(--grey-1); padding: 14px 0; border-bottom: 1px solid var(--black-border); line-height: 1.6; }
+  .handle-list li:last-child { border-bottom: none; }
+  .h-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+
+  /* CTA */
+  .cta-section { background: var(--black-card); border-top: 1px solid var(--black-border); padding: 80px 24px; text-align: center; }
+  .cta-inner { max-width: 520px; margin: 0 auto; }
+  .cta-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-2); margin-bottom: 20px; }
+  .cta-section h2 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 700; letter-spacing: -0.02em; color: var(--white); margin-bottom: 16px; line-height: 1.1; }
+  .cta-section p { font-size: 15px; color: var(--grey-1); margin-bottom: 40px; line-height: 1.7; }
+  .btn { display: inline-block; background: var(--red); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px 44px; border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.15s; }
+  .btn:hover { opacity: 0.88; transform: translateY(-2px); }
+  .btn-note { margin-top: 14px; font-size: 12px; color: var(--grey-2); }
+
+  footer { padding: 24px; text-align: center; border-top: 1px solid var(--black-border); }
+  footer p { font-size: 12px; color: var(--grey-2); }
+
+  @keyframes up { to { opacity:1; transform:translateY(0); } }
+
+  @media (max-width: 620px) {
+    .ov-grid { grid-template-columns: 1fr; }
+    .ready-grid, .time-grid { grid-template-columns: 1fr; }
+    .phase-nums { grid-template-columns: 1fr; }
+    .pnum { border-right: none; border-bottom: 1px solid var(--black-border); }
+    .pnum:last-child { border-bottom: none; }
+    .phase-head { flex-direction: column; }
+    .nav-tag { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://avantabrands.co" class="logo">Avanta Brands.</a>
+    <span class="nav-tag">TikTok Shop Growth</span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">The Process</div>
+  <h1>What Running TikTok Shop Actually Looks Like Week to Week</h1>
+  <p class="hero-sub">The biggest operational fear founders have before starting is managing something they don't fully understand. This breaks down exactly what happens, who does what, and what your actual time commitment looks like across the first 90 days.</p>
+  <div class="byline">
+    <div class="byline-mark">AB</div>
+    <div class="byline-text">
+      <strong>Avanta Brands.</strong>
+      TikTok Shop Growth Agency · avantabrands.co
+    </div>
+  </div>
+</div>
+
+<div class="overview-band">
+  <div class="overview-inner">
+    <div class="band-label">The first 90 days at a glance</div>
+    <div class="ov-grid">
+      <div class="ov-card">
+        <div class="ov-phase">Days 1 to 30</div>
+        <h4>Foundation</h4>
+        <p>Shop setup, creator outreach, first samples shipped, first videos live.</p>
+      </div>
+      <div class="ov-card">
+        <div class="ov-phase">Days 31 to 60</div>
+        <h4>Pattern Hunt</h4>
+        <p>Content volume builds. We identify what converts. A Content Playbook takes shape from real data.</p>
+      </div>
+      <div class="ov-card">
+        <div class="ov-phase">Days 61 to 90</div>
+        <h4>Scale</h4>
+        <p>Top creators scaled. Spark Ads activated on proven content. GMV compounds week over week.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article">
+
+  <h2>What you actually need to bring</h2>
+
+  <p>One of the most common misconceptions is that launching on TikTok Shop requires a significant internal lift. It doesn't. Here is what you need to have ready before anything starts.</p>
+
+  <div class="ready">
+    <div class="ready-label">What you bring to the table</div>
+    <div class="ready-grid">
+      <div class="ready-item">
+        <div class="ready-check">✓</div>
+        <div class="ready-item-text">
+          <strong>Product samples</strong>
+          A budget to send product to creators. We handle logistics and tracking. You supply the units from your existing warehouse.
+        </div>
+      </div>
+      <div class="ready-item">
+        <div class="ready-check">✓</div>
+        <div class="ready-item-text">
+          <strong>Brand assets</strong>
+          Product images, any existing content, and a sense of what you want creators to communicate. Used to build the creator brief.
+        </div>
+      </div>
+      <div class="ready-item">
+        <div class="ready-check">✓</div>
+        <div class="ready-item-text">
+          <strong>15 minutes at onboarding</strong>
+          Admin access to TikTok Shop Seller Central to get the shop connected. One-time setup, takes about 15 minutes.
+        </div>
+      </div>
+      <div class="ready-item">
+        <div class="ready-check">✓</div>
+        <div class="ready-item-text">
+          <strong>30 minutes per week</strong>
+          A weekly call to review performance and approve any strategy decisions. That is the full ongoing commitment.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Phase 1: Foundation (Days 1 to 30)</h2>
+
+  <div class="phase">
+    <div class="phase-head">
+      <div>
+        <div class="phase-tag">Phase 1 · Days 1 to 30</div>
+        <h3>Shop setup, creator outreach, first videos live</h3>
+      </div>
+      <div class="phase-days">Weeks 1 to 4</div>
+    </div>
+    <div class="phase-body">
+      <p>Week one is operational. We connect your product catalog to TikTok Shop, configure the affiliate program, set commission rates, and build the creator brief from your brand assets and product details.</p>
+      <p>From week two, outreach runs daily. We target creators in your category with a history of posting consistently and generating actual sales, not just impressions. Product ships to accepted creators alongside a brief covering hooks, what to emphasize, and what to avoid.</p>
+      <ul class="check-list">
+        <li>TikTok Shop account connected and configured</li>
+        <li>Product listings optimized for the Shop tab</li>
+        <li>Affiliate commission structure live</li>
+        <li>Creator brief built and reviewed by you</li>
+        <li>50 to 100 creators in the outreach pipeline</li>
+        <li>First creator content live by days 14 to 21</li>
+      </ul>
+    </div>
+    <div class="phase-nums">
+      <div class="pnum">
+        <div class="pnum-val">50<span>-100</span></div>
+        <div class="pnum-label">creators contacted</div>
+      </div>
+      <div class="pnum">
+        <div class="pnum-val">20<span>-40</span></div>
+        <div class="pnum-label">videos live by day 30</div>
+      </div>
+      <div class="pnum">
+        <div class="pnum-val">10<span>-50</span></div>
+        <div class="pnum-label">first orders</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull">
+    <p>"The first month is not about revenue. It's about building the content volume that makes everything after it possible."</p>
+  </div>
+
+  <h2>Phase 2: Pattern Hunt (Days 31 to 60)</h2>
+
+  <div class="phase">
+    <div class="phase-head">
+      <div>
+        <div class="phase-tag">Phase 2 · Days 31 to 60</div>
+        <h3>Finding what converts and building the playbook</h3>
+      </div>
+      <div class="phase-days">Weeks 5 to 8</div>
+    </div>
+    <div class="phase-body">
+      <p>By this point there are 30 to 60 videos live across different creators. Most generate modest results. A smaller group converts significantly better. The job in phase two is understanding exactly why.</p>
+      <p>We analyze every performing video: the hook format, the language used, the product angle, the creator profile. These findings become your Content Playbook. Every new creator from this point gets briefed from the playbook, not from scratch. Results compound because we're repeating what works.</p>
+      <ul class="check-list">
+        <li>Creator roster expanding, 100 or more total in outreach</li>
+        <li>Top 10 to 15 performing creators identified</li>
+        <li>Content Playbook built from real performance data</li>
+        <li>New creator briefs updated with what's working</li>
+        <li>First Spark Ad candidates identified from organic winners</li>
+        <li>Weekly performance reports every Saturday</li>
+      </ul>
+    </div>
+    <div class="phase-nums">
+      <div class="pnum">
+        <div class="pnum-val">60<span>-100</span></div>
+        <div class="pnum-label">total videos live</div>
+      </div>
+      <div class="pnum">
+        <div class="pnum-val">50<span>-150</span></div>
+        <div class="pnum-label">orders per month</div>
+      </div>
+      <div class="pnum">
+        <div class="pnum-val">1<span>x</span></div>
+        <div class="pnum-label">content playbook documented</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Phase 3: Scale (Days 61 to 90)</h2>
+
+  <div class="phase">
+    <div class="phase-head">
+      <div>
+        <div class="phase-tag">Phase 3 · Days 61 to 90</div>
+        <h3>Amplifying what works and activating paid</h3>
+      </div>
+      <div class="phase-days">Weeks 9 to 12</div>
+    </div>
+    <div class="phase-body">
+      <p>Top creators get higher commissions and more product to maintain posting frequency. Their best performing videos become Spark Ads. You're not putting budget behind guesses. You're amplifying content that already converted organically.</p>
+      <p>New creators continue to enter the roster, all briefed from the playbook. The system gets more efficient every week because each iteration builds on what the last one proved.</p>
+      <ul class="check-list">
+        <li>Top creator incentive program active</li>
+        <li>Spark Ads running on 3 to 5 proven organic videos</li>
+        <li>Creator community built for engagement and retention</li>
+        <li>100 or more videos in the content library</li>
+        <li>Month 3 GMV target: category and product dependent</li>
+      </ul>
+    </div>
+    <div class="phase-nums">
+      <div class="pnum">
+        <div class="pnum-val">100<span>+</span></div>
+        <div class="pnum-label">videos in content library</div>
+      </div>
+      <div class="pnum">
+        <div class="pnum-val">3<span>-5</span></div>
+        <div class="pnum-label">Spark Ads running</div>
+      </div>
+      <div class="pnum">
+        <div class="pnum-val"><span>$</span>0</div>
+        <div class="pnum-label">guesswork with ad spend</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>What your involvement looks like week to week</h2>
+
+  <p>This is a full-service operation. You are not project managing creators, chasing shipments, or writing briefs. Here is your actual time commitment.</p>
+
+  <div class="time-block">
+    <div class="time-label">Your time commitment, honestly</div>
+    <div class="time-grid">
+      <div class="time-item">
+        <h4>Weekly call (30 minutes)</h4>
+        <p>Review the performance report. Approve or flag any strategy changes. That is the full commitment on a normal week.</p>
+      </div>
+      <div class="time-item">
+        <h4>Product shipment approvals</h4>
+        <p>We confirm sample batches before they go out. You approve the list. We handle fulfillment, tracking, and follow-up.</p>
+      </div>
+      <div class="time-item">
+        <h4>Brief sign-off at onboarding</h4>
+        <p>You review the creator brief once at the start. From there it updates automatically based on what's working.</p>
+      </div>
+      <div class="time-item">
+        <h4>Slack for anything urgent</h4>
+        <p>A dedicated channel for performance updates and fast decisions. Most weeks you won't need it. It's there when you do.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>What we handle end to end</h2>
+
+  <ul class="handle-list">
+    <li><span class="h-icon">🔍</span> Creator research, vetting, and outreach across your product category</li>
+    <li><span class="h-icon">📦</span> Sample coordination, tracking, and follow-up with every creator</li>
+    <li><span class="h-icon">📝</span> Brief writing, content guidance, and creative direction</li>
+    <li><span class="h-icon">📊</span> Performance tracking, weekly reports, and Content Playbook maintenance</li>
+    <li><span class="h-icon">💬</span> Creator community management to keep top performers active and posting</li>
+    <li><span class="h-icon">📈</span> Spark Ads setup and management using your proven organic content</li>
+    <li><span class="h-icon">🛍️</span> Shop listing optimization and ongoing account management</li>
+  </ul>
+
+</div>
+
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-label">You're Ready for the Call</div>
+    <h2>The growth plan shows exactly how this applies to your brand</h2>
+    <p>The document we built for you maps this framework to your specific product, category, and where your competitors currently stand. That's what the call is for.</p>
+    <a href="#growth-plan" class="btn">Go to Your Growth Plan →</a>
+    <p class="btn-note">Takes you to the page built specifically for your brand</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Avanta Brands · avantabrands.co</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>If You're Selling Online and Not on TikTok Shop, You're Funding Your Competitors | Avanta Brands</title>
+<link rel="canonical" href="https://avantabrands.co/article1/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:      #000000;
+    --black-card: #0d0d0d;
+    --black-edge: #141414;
+    --black-border:#1e1e1e;
+    --red:        #e8321a;
+    --red-dim:    rgba(232,50,26,0.08);
+    --white:      #ffffff;
+    --grey-1:     #a3a3a3;
+    --grey-2:     #525252;
+    --grey-3:     #262626;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--black-border);
+    padding: 0 24px;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 100%;
+  }
+  .nav-inner {
+    max-width: 800px; margin: 0 auto; width: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font-size: 14px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--white); text-decoration: none;
+  }
+  .nav-tag {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--grey-2);
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 800px; margin: 0 auto;
+    padding: 80px 24px 64px;
+    opacity: 0; transform: translateY(20px);
+    animation: up 0.6s ease 0.05s forwards;
+  }
+  .eyebrow {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 28px;
+  }
+  h1 {
+    font-size: clamp(36px, 6vw, 68px);
+    font-weight: 700; line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 28px;
+  }
+  .hero-sub {
+    font-size: 18px; font-weight: 400;
+    color: var(--grey-1); line-height: 1.7;
+    max-width: 580px; margin-bottom: 48px;
+  }
+  .byline {
+    display: flex; align-items: center; gap: 14px;
+    padding-top: 32px; border-top: 1px solid var(--black-border);
+  }
+  .byline-mark {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--red);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+  .byline-text { font-size: 13px; color: var(--grey-2); }
+  .byline-text strong { color: var(--white); font-weight: 600; display: block; font-size: 13px; }
+
+  /* COST BAND */
+  .band {
+    background: var(--black-card);
+    border-top: 1px solid var(--black-border);
+    border-bottom: 1px solid var(--black-border);
+    padding: 48px 24px;
+    opacity: 0; animation: up 0.6s ease 0.2s forwards;
+  }
+  .band-inner { max-width: 800px; margin: 0 auto; }
+  .band-label {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--grey-2); margin-bottom: 28px;
+  }
+  .cost-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;
+  }
+  .cost-item {
+    background: var(--black-edge);
+    border: 1px solid var(--black-border);
+    border-radius: 8px; padding: 24px 20px;
+  }
+  .cost-channel {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 12px;
+  }
+  .cost-num {
+    font-size: 38px; font-weight: 700;
+    letter-spacing: -0.03em; color: var(--white);
+    line-height: 1; margin-bottom: 10px;
+  }
+  .cost-item p { font-size: 13px; color: var(--grey-2); line-height: 1.5; }
+
+  /* ARTICLE */
+  .article { max-width: 800px; margin: 0 auto; padding: 72px 24px; }
+
+  .article h2 {
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 700; letter-spacing: -0.02em;
+    color: var(--white); margin: 60px 0 20px; line-height: 1.15;
+  }
+  .article h2:first-child { margin-top: 0; }
+
+  .article p {
+    font-size: 16.5px; color: var(--grey-1);
+    margin-bottom: 24px; line-height: 1.8; font-weight: 400;
+  }
+  .article strong { color: var(--white); font-weight: 600; }
+
+  hr { border: none; border-top: 1px solid var(--black-border); margin: 52px 0; }
+
+  /* PULL QUOTE */
+  .pull {
+    border-left: 3px solid var(--red);
+    padding: 20px 28px; margin: 40px 0;
+    background: var(--red-dim);
+    border-radius: 0 6px 6px 0;
+  }
+  .pull p {
+    font-size: 20px; font-weight: 600;
+    color: var(--white); margin: 0; line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+
+  /* HALO DIAGRAM */
+  .halo {
+    background: var(--black-card); border: 1px solid var(--black-border);
+    border-radius: 12px; padding: 36px; margin: 40px 0;
+  }
+  .halo-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--grey-2); margin-bottom: 28px;
+  }
+  .halo-flow {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .halo-node {
+    background: var(--black-edge); border: 1px solid var(--black-border);
+    border-radius: 6px; padding: 14px 18px;
+  }
+  .halo-node.lit {
+    border-color: var(--red);
+    background: var(--red-dim);
+  }
+  .halo-node-title {
+    font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px;
+  }
+  .halo-node.lit .halo-node-title { color: #ff8070; }
+  .halo-node-sub { font-size: 11px; color: var(--grey-2); }
+  .halo-arr { font-size: 16px; color: var(--grey-2); flex-shrink: 0; }
+  .halo-note {
+    margin-top: 24px; font-size: 13px; color: var(--grey-2);
+    line-height: 1.6; padding-top: 20px;
+    border-top: 1px solid var(--black-border);
+  }
+
+  /* BRAND CALLOUT */
+  .callout {
+    border-left: 3px solid var(--white);
+    padding: 28px 32px; margin: 40px 0;
+    background: var(--black-card);
+    border-radius: 0 8px 8px 0;
+  }
+  .callout-tag {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--grey-2); margin-bottom: 12px;
+  }
+  .callout h4 {
+    font-size: 17px; font-weight: 700;
+    color: var(--white); margin-bottom: 12px; line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .callout p { font-size: 14px; color: var(--grey-1); margin: 0; line-height: 1.7; }
+
+  /* WHO GRID */
+  .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 36px 0; }
+  .who-card {
+    background: var(--black-card); border: 1px solid var(--black-border);
+    border-radius: 8px; padding: 26px 22px;
+  }
+  .who-tag {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 12px;
+  }
+  .who-card h4 {
+    font-size: 15px; font-weight: 600;
+    color: var(--white); margin-bottom: 10px; line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .who-card p { font-size: 13px; color: var(--grey-2); margin: 0; line-height: 1.65; }
+
+  /* STAT ROW */
+  .stats {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
+    background: var(--black-card); border: 1px solid var(--black-border);
+    border-radius: 10px; overflow: hidden; margin: 40px 0;
+  }
+  .stat {
+    padding: 28px 22px; border-right: 1px solid var(--black-border); text-align: center;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-n {
+    font-size: 36px; font-weight: 700;
+    letter-spacing: -0.03em; color: var(--white);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .stat-n span { color: var(--red); }
+  .stat-d { font-size: 12px; color: var(--grey-2); line-height: 1.5; }
+
+  /* CTA */
+  .cta-section {
+    background: var(--black-card);
+    border-top: 1px solid var(--black-border);
+    padding: 80px 24px; text-align: center;
+  }
+  .cta-inner { max-width: 520px; margin: 0 auto; }
+  .cta-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--grey-2); margin-bottom: 20px;
+  }
+  .cta-section h2 {
+    font-size: clamp(28px, 4.5vw, 44px);
+    font-weight: 700; letter-spacing: -0.02em;
+    color: var(--white); margin-bottom: 16px; line-height: 1.1;
+  }
+  .cta-section p {
+    font-size: 15px; color: var(--grey-1);
+    margin-bottom: 40px; line-height: 1.7;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--red); color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 16px 44px; border-radius: 100px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn:hover { opacity: 0.88; transform: translateY(-2px); }
+  .btn-note { margin-top: 14px; font-size: 12px; color: var(--grey-2); }
+
+  footer {
+    padding: 24px; text-align: center;
+    border-top: 1px solid var(--black-border);
+  }
+  footer p { font-size: 12px; color: var(--grey-2); }
+
+  @keyframes up { to { opacity:1; transform:translateY(0); } }
+
+  @media (max-width: 620px) {
+    .cost-grid, .who-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid var(--black-border); }
+    .stat:last-child { border-bottom: none; }
+    .halo-flow { flex-direction: column; align-items: flex-start; }
+    .nav-tag { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="https://avantabrands.co" class="logo">Avanta Brands.</a>
+    <span class="nav-tag">TikTok Shop Growth</span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">The Opportunity</div>
+  <h1>If You're Selling Online and Not on TikTok Shop, You're Funding Your Competitors</h1>
+  <p class="hero-sub">Every sale a competitor makes on TikTok Shop lifts their Amazon search ranking. Every creator video they publish builds brand recognition you have to pay to compete against. Ignoring TikTok Shop is not a neutral decision.</p>
+  <div class="byline">
+    <div class="byline-mark">AB</div>
+    <div class="byline-text">
+      <strong>Avanta Brands.</strong>
+      TikTok Shop Growth Agency · avantabrands.co
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="band-inner">
+    <div class="band-label">The channels you're already on keep getting more expensive</div>
+    <div class="cost-grid">
+      <div class="cost-item">
+        <div class="cost-channel">Meta Ads</div>
+        <div class="cost-num">+89%</div>
+        <p>Average CPM increase over the past three years for ecom brands</p>
+      </div>
+      <div class="cost-item">
+        <div class="cost-channel">Amazon PPC</div>
+        <div class="cost-num">+50%</div>
+        <p>Average cost-per-click increase since 2021 across major product categories</p>
+      </div>
+      <div class="cost-item">
+        <div class="cost-channel">Google Shopping</div>
+        <div class="cost-num">+32%</div>
+        <p>Average CPC increase year over year as more sellers compete for the same placements</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article">
+
+  <h2>Every channel you're on charges you before a sale happens</h2>
+
+  <p>If you're running a Shopify store or selling on Amazon, you already know what the past few years have felt like. The same budget buys less reach. The same ad spend acquires fewer customers. You're not doing anything wrong. The channels themselves are getting more competitive and more expensive, and there is no ceiling in sight.</p>
+
+  <p>Meta wants more money per impression. Amazon wants more per click. Google wants more per visit. Every channel you rely on has the same model: <strong>you pay upfront, they keep the traffic, and you hope the math works out on the other side.</strong></p>
+
+  <p>TikTok Shop works differently. You pay after the sale happens, not before. Creators post videos featuring your product, those videos drive purchases, and you pay a commission on what actually converts. No upfront spend. No cost-per-click. No impression fees.</p>
+
+  <div class="pull">
+    <p>"The question is not whether TikTok Shop fits your brand. The question is whether you can afford to let your competitors have it to themselves."</p>
+  </div>
+
+  <hr>
+
+  <h2>The part most brands miss: the halo effect</h2>
+
+  <p>If you sell on Amazon, this is the piece that matters most. When creators post videos about a product on TikTok, a measurable percentage of viewers go directly to Amazon and search for that product by name. They saw it on TikTok, they want it, and they search on the channel they already trust for buying.</p>
+
+  <p>Your competitors running TikTok Shop are not just making sales on TikTok. They are generating branded search volume on Amazon that raises their organic ranking, improves their conversion history, and makes their listings more competitive against yours.</p>
+
+  <p>You are paying more in PPC to compete against listings that are getting a free traffic boost from a channel you are not on yet.</p>
+
+  <div class="halo">
+    <div class="halo-label">How the halo effect works in practice</div>
+    <div class="halo-flow">
+      <div class="halo-node">
+        <div class="halo-node-title">Creator posts video</div>
+        <div class="halo-node-sub">Organic, commission-based</div>
+      </div>
+      <div class="halo-arr">→</div>
+      <div class="halo-node">
+        <div class="halo-node-title">Viewer discovers product</div>
+        <div class="halo-node-sub">On TikTok, zero ad spend</div>
+      </div>
+      <div class="halo-arr">→</div>
+      <div class="halo-node lit">
+        <div class="halo-node-title">Searches on Amazon</div>
+        <div class="halo-node-sub">Branded search spike</div>
+      </div>
+      <div class="halo-arr">→</div>
+      <div class="halo-node lit">
+        <div class="halo-node-title">Amazon ranking lifts</div>
+        <div class="halo-node-sub">Organic traffic compounds</div>
+      </div>
+    </div>
+    <div class="halo-note">Amazon sellers running TikTok Shop consistently report spikes in branded search volume and organic rank improvements tied directly to creator content going live. TikTok Shop doesn't just sell on TikTok. It makes your Amazon listing more competitive too.</div>
+  </div>
+
+  <hr>
+
+  <h2>This is not a channel for trending products</h2>
+
+  <p>The most common reason DTC founders hesitate on TikTok Shop is the assumption that it only works for viral or trend-driven products. The brands discovering that assumption is wrong are doing so at their competitors' expense.</p>
+
+  <div class="callout">
+    <div class="callout-tag">Real brand. Not a viral product.</div>
+    <h4>Like Air: a popcorn brand that now launches flavors in weeks, not months</h4>
+    <p>Like Air was selling at Kroger and Albertsons before adding TikTok Shop. Popcorn. Not a viral trend. Not a breakout ingredient. A real food brand with real retail distribution. When they added TikTok Shop and brought on creator affiliates for weekly live shopping events, they gained something retail shelf space can never give: the ability to develop a new flavor and have it in customers' hands within weeks instead of waiting 6 to 12 months for retail approval cycles. Their co-founder now describes TikTok Shop as "the future way to retail the product." (Source: Retail Dive)</p>
+  </div>
+
+  <p>If TikTok Shop works for popcorn at Kroger, the real question is what it would do for your product.</p>
+
+  <hr>
+
+  <h2>Who this is specifically for</h2>
+
+  <p>TikTok Shop is not right for every brand at every stage. But if you recognize yourself in either of these, the window is open right now.</p>
+
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-tag">Shopify Sellers</div>
+      <h4>You have a proven product and you're paying too much to acquire customers</h4>
+      <p>Your conversion rate is fine. Your product works. But every new customer costs more than it did two years ago and that trend is not reversing. TikTok Shop is the only channel where distribution cost scales with revenue, not with reach.</p>
+    </div>
+    <div class="who-card">
+      <div class="who-tag">Amazon Sellers</div>
+      <h4>Your competitors are getting free Amazon traffic from a channel you're not on</h4>
+      <p>Every creator video a competitor posts about their product on TikTok generates branded searches on Amazon. That lifts their organic rank. You're paying PPC to compete against that lift. TikTok Shop closes that gap and turns it in your direction.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>The window that's actually closing</h2>
+
+  <p>TikTok Shop reached over $100 million in single-day sales on Black Friday 2024, tripling results from the year before. That growth is accelerating. More sellers are entering every month. The creator affiliates who produce the best results are building ongoing relationships with the brands they work with regularly.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-n">$100<span>M+</span></div>
+      <div class="stat-d">Single-day TikTok Shop sales on Black Friday 2024, triple the year before</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">3<span>x</span></div>
+      <div class="stat-d">Year-over-year growth rate on TikTok Shop's largest sales events</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">27<span>%</span></div>
+      <div class="stat-d">Of TikTok Shop buyers return within 5 months, higher than any competing platform</div>
+    </div>
+  </div>
+
+  <p>The brands entering now are building creator relationships, content libraries, and organic ranking before the platform matures. The brands that wait will enter a more competitive space, pay more to attract the same creators, and spend months building what early movers built for free.</p>
+
+  <p>Every month without TikTok Shop is a month your competitors are getting further ahead on a channel where being first still matters.</p>
+
+</div>
+
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-label">Next Step</div>
+    <h2>We've already mapped this out for your brand</h2>
+    <p>The growth plan we sent you covers exactly what TikTok Shop looks like for your specific product, category, and where your competitors currently stand.</p>
+    <a href="#growth-plan" class="btn">Go to Your Growth Plan →</a>
+    <p class="btn-note">Takes you to the page built specifically for your brand</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Avanta Brands · avantabrands.co</p>
+</footer>
+
+</body>
+</html>
