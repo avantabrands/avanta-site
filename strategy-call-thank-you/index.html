@@ -4,304 +4,587 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>You're Booked — Avanta Brands</title>
-<meta name="description" content="Your strategy call with Avanta Brands is booked. Review what we will cover, common TikTok Shop questions, proof, and useful reads before the call.">
+<meta name="description" content="Your strategy call with Avanta Brands is booked. Review what we will cover, common TikTok Shop questions, case study proof, and useful reads before the call.">
 <link rel="canonical" href="https://avantabrands.co/strategy-call-thank-you/">
 <meta name="robots" content="noindex,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg: #080808;
+    --panel: #111111;
+    --panel-2: #151515;
+    --text: #f7f7f7;
+    --body: #d7d7dc;
+    --muted: #9b9ba3;
+    --faint: #6f6f78;
+    --line: rgba(255,255,255,0.10);
+    --line-strong: rgba(255,255,255,0.16);
+    --red: #ff2f24;
+    --red-soft: rgba(255,47,36,0.12);
+    --max: 980px;
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    background: #0a0a0a;
-    color: #fff;
-    font-family: 'Figtree', Inter, sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
+    background:
+      radial-gradient(circle at top, rgba(255,47,36,0.10), transparent 380px),
+      var(--bg);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
+
+  a { color: inherit; }
+  .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
   nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(10,10,10,0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    padding: 0 40px; height: 64px;
-    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(8,8,8,0.94);
+    display: flex;
+    align-items: center;
   }
-  .logo { font-size: 1rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; text-decoration: none; }
-  .logo::after { content: "."; color: #e63927; }
-  .wrap { max-width: 840px; margin: 0 auto; padding: 0 32px; }
-  section { padding: 72px 0; }
-  section + section { border-top: 1px solid rgba(255,255,255,0.07); }
-  .hero { padding: 72px 0 64px; text-align: center; }
+
+  .nav-inner {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.98rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  .logo::after { content: "."; color: var(--red); }
+
+  .nav-link {
+    color: #cfcfd5;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  .hero {
+    padding: 70px 0 58px;
+    border-bottom: 1px solid var(--line);
+  }
+
   .booked-pill {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(230,57,39,0.12); border: 1px solid rgba(230,57,39,0.3);
-    border-radius: 100px; padding: 6px 16px; margin-bottom: 28px;
-    font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #ff6a5b;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(255,47,36,0.32);
+    border-radius: 999px;
+    background: var(--red-soft);
+    color: #ffb8b3;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
   }
-  .booked-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: #e63927; }
-  .hero h1 { font-size: clamp(2.35rem, 5vw, 3.75rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 18px; }
-  .hero p { font-size: 1.06rem; color: rgba(255,255,255,0.52); max-width: 570px; margin: 0 auto; line-height: 1.7; }
-  .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; margin-top: 44px; }
-  .stat { background: #111; padding: 26px 20px; text-align: center; }
-  .stat-num { font-size: 2rem; font-weight: 900; line-height: 1; color: #fff; margin-bottom: 7px; letter-spacing: -0.03em; }
-  .stat-num span { color: #e63927; font-size: 1.15rem; }
-  .stat-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.34); margin-bottom: 5px; }
-  .stat-desc { font-size: 0.83rem; color: rgba(255,255,255,0.42); line-height: 1.45; }
-  .section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 12px; }
-  h2 { font-size: clamp(1.7rem, 3vw, 2.35rem); font-weight: 850; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 12px; }
-  .section-sub { color: rgba(255,255,255,0.44); font-size: 0.96rem; max-width: 560px; line-height: 1.7; margin-bottom: 32px; }
-  .flow-list { display: flex; flex-direction: column; margin-top: 24px; }
-  .flow-item { display: flex; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.07); align-items: flex-start; }
-  .flow-item:last-child { border-bottom: none; }
-  .flow-n { flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px; background: rgba(230,57,39,0.1); border: 1px solid rgba(230,57,39,0.18); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 900; color: #ff6a5b; margin-top: 2px; }
-  .flow-body h3 { font-size: 1rem; font-weight: 800; margin-bottom: 5px; color: #fff; }
-  .flow-body p { font-size: 0.89rem; color: rgba(255,255,255,0.43); line-height: 1.65; }
-  .concern-list { display: flex; flex-direction: column; gap: 8px; margin-top: 30px; }
-  .concern-row { background: #111; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 20px 22px; }
-  .concern-eyebrow { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #e63927; margin-bottom: 7px; }
-  .concern-row h3 { font-size: 1rem; font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 5px; }
-  .concern-row p { font-size: 0.88rem; color: rgba(255,255,255,0.42); line-height: 1.62; }
-  .proof-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
-  .proof-card { background: #111; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 24px; transition: border-color 0.2s; }
-  .proof-card:hover { border-color: rgba(230,57,39,0.3); }
-  .proof-tag { display: inline-block; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #e63927; background: rgba(230,57,39,0.1); border: 1px solid rgba(230,57,39,0.18); border-radius: 4px; padding: 3px 8px; margin-bottom: 14px; }
-  .proof-number { font-size: 2rem; font-weight: 900; line-height: 1; color: #fff; margin-bottom: 6px; letter-spacing: -0.02em; }
-  .proof-desc { font-size: 0.82rem; color: rgba(255,255,255,0.38); line-height: 1.5; margin-bottom: 16px; }
-  .proof-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .proof-chip { font-size: 0.72rem; font-weight: 650; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 3px 8px; color: rgba(255,255,255,0.45); }
-  .full-case-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; font-size: 0.88rem; font-weight: 800; color: rgba(255,255,255,0.48); text-decoration: none; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 11px 20px; transition: border-color 0.2s, color 0.2s; }
-  .full-case-link:hover { border-color: rgba(255,255,255,0.28); color: #fff; }
-  .articles-list { display: flex; flex-direction: column; gap: 8px; margin-top: 32px; }
-  .article-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: #111; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 20px 24px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
-  .article-row:hover { border-color: rgba(230,57,39,0.3); background: #141414; }
-  .article-row-left { flex: 1; }
-  .article-eyebrow { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 5px; }
-  .article-title { font-size: 0.95rem; font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 3px; }
-  .article-summary { font-size: 0.82rem; color: rgba(255,255,255,0.38); line-height: 1.5; }
-  .article-arrow { flex-shrink: 0; width: 34px; height: 34px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.35); font-size: 1rem; transition: background 0.2s, border-color 0.2s, color 0.2s; }
-  .article-row:hover .article-arrow { background: #e63927; border-color: #e63927; color: #fff; }
-  footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 32px 0 48px; }
-  footer .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-size: 0.85rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.32); }
-  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
-  @media (max-width: 640px) {
-    .stats { grid-template-columns: 1fr; }
-    .proof-cards { grid-template-columns: 1fr; }
-    nav { padding: 0 20px; }
-    .wrap { padding: 0 20px; }
-    section { padding: 54px 0; }
-    .hero { padding: 50px 0 48px; }
-    .article-row { align-items: flex-start; padding: 18px; }
+  .booked-pill span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 0 5px rgba(255,47,36,0.10);
+  }
+
+  h1 {
+    max-width: 780px;
+    margin-bottom: 16px;
+    font-size: clamp(2.45rem, 5vw, 4.7rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    font-weight: 900;
+  }
+
+  .hero-copy {
+    max-width: 680px;
+    color: var(--body);
+    font-size: 1.08rem;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 34px;
+  }
+
+  .stat {
+    min-height: 138px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  }
+
+  .stat-num {
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 2.1rem;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+  }
+  .stat-num span { color: var(--red); font-size: 1.1rem; letter-spacing: -0.02em; }
+  .stat-label {
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 0.86rem;
+    font-weight: 800;
+  }
+  .stat-desc {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  section { padding: 66px 0; }
+  section + section { border-top: 1px solid var(--line); }
+
+  .section-label {
+    margin-bottom: 12px;
+    color: var(--red);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    max-width: 720px;
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: clamp(1.7rem, 3vw, 2.45rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    font-weight: 850;
+  }
+
+  .section-sub {
+    max-width: 650px;
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+
+  .flow-list, .concern-list, .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .flow-item {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 16px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #101010;
+  }
+
+  .flow-n {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--red-soft);
+    border: 1px solid rgba(255,47,36,0.24);
+    color: #ffb8b3;
+    font-size: 0.86rem;
+    font-weight: 900;
+  }
+
+  h3 {
+    margin-bottom: 6px;
+    color: #fff;
+    font-size: 1.02rem;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .flow-body p, .concern-row p, .proof-desc, .article-summary {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.62;
+  }
+
+  .concern-row {
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: linear-gradient(180deg, #121212, #0f0f0f);
+  }
+
+  .concern-eyebrow {
+    margin-bottom: 8px;
+    color: #ff8f86;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+
+  .proof-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .proof-card {
+    min-height: 210px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #101010;
+  }
+
+  .proof-tag {
+    display: inline-flex;
+    margin-bottom: 14px;
+    padding: 4px 8px;
+    border: 1px solid rgba(255,47,36,0.22);
+    border-radius: 6px;
+    background: var(--red-soft);
+    color: #ffb8b3;
+    font-size: 0.66rem;
+    font-weight: 900;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .proof-number {
+    margin-bottom: 7px;
+    color: #fff;
+    font-size: 2.25rem;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+  }
+
+  .proof-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .proof-chip {
+    padding: 4px 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    color: #bebec6;
+    font-size: 0.73rem;
+    font-weight: 700;
+  }
+
+  .full-case-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 22px;
+    padding: 12px 18px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+
+  .article-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 36px;
+    gap: 16px;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #101010;
+    text-decoration: none;
+  }
+
+  .article-row:hover { border-color: rgba(255,47,36,0.35); }
+  .article-eyebrow {
+    margin-bottom: 6px;
+    color: var(--faint);
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .article-title {
+    margin-bottom: 4px;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.35;
+    font-weight: 800;
+  }
+  .article-arrow {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: #fff;
+  }
+
+  footer {
+    padding: 34px 0 46px;
+    border-top: 1px solid var(--line);
+    color: var(--faint);
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+  }
+  .footer-logo {
+    color: #bdbdc4;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .footer-logo::after { content: "."; color: var(--red); }
+
+  @media (max-width: 700px) {
+    .wrap, .nav-inner { width: min(100% - 28px, var(--max)); }
+    .hero { padding: 48px 0; }
+    section { padding: 52px 0; }
+    .stats, .proof-cards { grid-template-columns: 1fr; }
+    .flow-item, .article-row { padding: 18px; }
+    .article-row { grid-template-columns: 1fr; }
     .article-arrow { display: none; }
+    .nav-link { display: none; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="https://avantabrands.co" class="logo">Avanta Brands</a>
+  <div class="nav-inner">
+    <a href="https://avantabrands.co" class="logo">Avanta Brands</a>
+    <a href="https://avantabrands.co/case-studies/beauty-brand-tiktok-shop-scale/" class="nav-link">View case study</a>
+  </div>
 </nav>
 
-<section class="hero">
+<header class="hero">
   <div class="wrap">
-    <div class="booked-pill">
-      <div class="dot"></div>
-      Call Confirmed
-    </div>
+    <div class="booked-pill"><span></span> Call Confirmed</div>
     <h1>You are booked for your call.</h1>
-    <p>Your strategy call has been scheduled with Avanta Brands. Before we speak, skim this page so the call can focus on your brand, your numbers, and whether TikTok Shop is the right move.</p>
+    <p class="hero-copy">Your strategy call has been scheduled with Avanta Brands. Before we speak, review the short sections below so we can spend the call on your brand, your numbers, and whether TikTok Shop is the right move.</p>
     <div class="stats">
       <div class="stat">
-        <div class="stat-num">30<span>min</span></div>
-        <div class="stat-label">Call Length</div>
+        <div class="stat-num">60<span>min</span></div>
+        <div class="stat-label">Strategy Call</div>
         <div class="stat-desc">A focused conversation about your brand and TikTok Shop fit.</div>
       </div>
       <div class="stat">
         <div class="stat-num">0</div>
         <div class="stat-label">Generic Pitch</div>
-        <div class="stat-desc">We diagnose fit first, then talk next steps if it makes sense.</div>
+        <div class="stat-desc">We diagnose fit first, then discuss next steps only if they make sense.</div>
       </div>
       <div class="stat">
         <div class="stat-num">1</div>
         <div class="stat-label">Main Question</div>
-        <div class="stat-desc">Can TikTok Shop become a serious revenue channel for you?</div>
+        <div class="stat-desc">Can TikTok Shop become a serious revenue channel for your brand?</div>
       </div>
     </div>
   </div>
-</section>
+</header>
 
-<section>
-  <div class="wrap">
-    <p class="section-label">In this meeting</p>
-    <h2>What we are going to cover</h2>
-    <p class="section-sub">The call is meant to be practical. We want to understand the business first, then give you an honest read on what TikTok Shop could look like for your brand.</p>
-    <div class="flow-list">
-      <div class="flow-item">
-        <div class="flow-n">1</div>
-        <div class="flow-body">
-          <h3>Where your brand is right now</h3>
-          <p>Current channels, monthly revenue, hero SKUs, margins, inventory, and what is already working across Amazon, Shopify, Meta, or TikTok.</p>
+<main>
+  <section>
+    <div class="wrap">
+      <p class="section-label">In this meeting</p>
+      <h2>What we are going to cover</h2>
+      <p class="section-sub">The call is meant to be practical. We want to understand the business first, then give you an honest read on what TikTok Shop could look like for your brand.</p>
+      <div class="flow-list">
+        <div class="flow-item">
+          <div class="flow-n">1</div>
+          <div class="flow-body">
+            <h3>Where your brand is right now</h3>
+            <p>Current channels, monthly revenue, hero SKUs, margins, inventory, and what is already working across Amazon, Shopify, Meta, or TikTok.</p>
+          </div>
         </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-n">2</div>
-        <div class="flow-body">
-          <h3>Your TikTok Shop history</h3>
-          <p>Whether you are already live, tried creators before, ran TikTok ads to Shopify, or are looking at the channel for the first time.</p>
+        <div class="flow-item">
+          <div class="flow-n">2</div>
+          <div class="flow-body">
+            <h3>Your TikTok Shop history</h3>
+            <p>Whether you are already live, tried creators before, ran TikTok ads to Shopify, or are looking at the channel for the first time.</p>
+          </div>
         </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-n">3</div>
-        <div class="flow-body">
-          <h3>An honest read on fit</h3>
-          <p>If TikTok Shop makes sense now, we will explain why. If the product, margins, inventory, or timing are not right yet, we will tell you that too.</p>
+        <div class="flow-item">
+          <div class="flow-n">3</div>
+          <div class="flow-body">
+            <h3>An honest read on fit</h3>
+            <p>If TikTok Shop makes sense now, we will explain why. If the product, margins, inventory, or timing are not right yet, we will tell you that too.</p>
+          </div>
         </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-n">4</div>
-        <div class="flow-body">
-          <h3>What the first 90 days would look like</h3>
-          <p>Product focus, creator strategy, listing fixes, content direction, sample economics, and the first signals we would look for before scaling.</p>
+        <div class="flow-item">
+          <div class="flow-n">4</div>
+          <div class="flow-body">
+            <h3>What the first 90 days would look like</h3>
+            <p>Product focus, creator strategy, listing fixes, content direction, sample economics, and the first signals we would look for before scaling.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <p class="section-label">Common concerns</p>
-    <h2>Questions brands usually ask before working with us</h2>
-    <p class="section-sub">These came up repeatedly across Avanta prospect calls and Fireflies meeting notes. We will cover whichever ones matter most to your situation.</p>
-    <div class="concern-list">
-      <div class="concern-row">
-        <div class="concern-eyebrow">Creator Fit</div>
-        <h3>Will creators actually work for our category?</h3>
-        <p>We look at whether the product can be demonstrated clearly, whether creators have a natural angle, and whether commission plus sample economics are strong enough to produce useful content.</p>
-      </div>
-      <div class="concern-row">
-        <div class="concern-eyebrow">Budget</div>
-        <h3>What should we expect to invest?</h3>
-        <p>The real budget is not just ad spend. It includes samples, commissions, promotions, listing work, and management. We will pressure-test whether the numbers support the goal.</p>
-      </div>
-      <div class="concern-row">
-        <div class="concern-eyebrow">Proof</div>
-        <h3>How do we know TikTok Shop can work for us?</h3>
-        <p>Proof has to match your situation. Amazon-native, Shopify-native, niche, seasonal, and early-stage brands each need a different path to signal.</p>
-      </div>
-      <div class="concern-row">
-        <div class="concern-eyebrow">Channel Fit</div>
-        <h3>Why is TikTok Shop different from TikTok ads to Shopify?</h3>
-        <p>TikTok Shop keeps discovery, creator proof, offer, and checkout inside the same platform. That reduces friction, but the listing and creator system still have to be right.</p>
-      </div>
-      <div class="concern-row">
-        <div class="concern-eyebrow">Execution</div>
-        <h3>What does Avanta actually handle?</h3>
-        <p>Creator recruitment, affiliate workflow, listing optimization, content direction, Spark Ads, reporting, and the weekly operating decisions that keep the channel moving.</p>
-      </div>
-      <div class="concern-row">
-        <div class="concern-eyebrow">Readiness</div>
-        <h3>What if our listing, offer, or inventory is not ready?</h3>
-        <p>Then we fix that first or recommend waiting. Weak images, confusing variants, poor bundles, low inventory, or bad margins can make even strong creator attention underperform.</p>
+  <section>
+    <div class="wrap">
+      <p class="section-label">Common concerns</p>
+      <h2>Questions brands usually ask before working with us</h2>
+      <p class="section-sub">You may already be thinking through some of these. We will cover the ones most relevant to your brand during the call.</p>
+      <div class="concern-list">
+        <div class="concern-row">
+          <div class="concern-eyebrow">Creator Fit</div>
+          <h3>Will creators actually work for our category?</h3>
+          <p>We look at whether the product can be demonstrated clearly, whether creators have a natural angle, and whether commission plus sample economics are strong enough to produce useful content.</p>
+        </div>
+        <div class="concern-row">
+          <div class="concern-eyebrow">Budget</div>
+          <h3>What should we expect to invest?</h3>
+          <p>The real budget is not just ad spend. It includes samples, commissions, promotions, listing work, and management. We will pressure-test whether the numbers support the goal.</p>
+        </div>
+        <div class="concern-row">
+          <div class="concern-eyebrow">Proof</div>
+          <h3>How do we know TikTok Shop can work for us?</h3>
+          <p>Proof has to match your situation. Amazon-native, Shopify-native, niche, seasonal, and early-stage brands each need a different path to signal.</p>
+        </div>
+        <div class="concern-row">
+          <div class="concern-eyebrow">Channel Fit</div>
+          <h3>Why is TikTok Shop different from TikTok ads to Shopify?</h3>
+          <p>TikTok Shop keeps discovery, creator proof, offer, and checkout inside the same platform. That reduces friction, but the listing and creator system still have to be right.</p>
+        </div>
+        <div class="concern-row">
+          <div class="concern-eyebrow">Execution</div>
+          <h3>What does Avanta actually handle?</h3>
+          <p>Creator recruitment, affiliate workflow, listing optimization, content direction, Spark Ads, reporting, and the weekly operating decisions that keep the channel moving.</p>
+        </div>
+        <div class="concern-row">
+          <div class="concern-eyebrow">Readiness</div>
+          <h3>What if our listing, offer, or inventory is not ready?</h3>
+          <p>Then we fix that first or recommend waiting. Weak images, confusing variants, poor bundles, low inventory, or bad margins can make even strong creator attention underperform.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <p class="section-label">Case study</p>
-    <h2>What this can look like in numbers</h2>
-    <p class="section-sub">One beauty brand. Real TikTok Shop dashboard proof. This gives you a useful reference point before we talk through your brand.</p>
-    <div class="proof-cards">
-      <div class="proof-card">
-        <div class="proof-tag">Annual Campaign</div>
-        <div class="proof-number">$672K</div>
-        <div class="proof-desc">GMV across 3 campaigns. 41,330 orders. 44,784 items sold.</div>
-        <div class="proof-tags">
-          <span class="proof-chip">$672,343 GMV</span>
-          <span class="proof-chip">41,330 Orders</span>
-          <span class="proof-chip">3 Campaigns</span>
+  <section>
+    <div class="wrap">
+      <p class="section-label">Case study</p>
+      <h2>What this can look like in numbers</h2>
+      <p class="section-sub">One beauty brand. Real TikTok Shop dashboard proof. This gives you a useful reference point before we talk through your brand.</p>
+      <div class="proof-cards">
+        <div class="proof-card">
+          <div class="proof-tag">Annual Campaign</div>
+          <div class="proof-number">$672K</div>
+          <div class="proof-desc">GMV across 3 campaigns. 41,330 orders. 44,784 items sold.</div>
+          <div class="proof-tags">
+            <span class="proof-chip">$672,343 GMV</span>
+            <span class="proof-chip">41,330 Orders</span>
+            <span class="proof-chip">3 Campaigns</span>
+          </div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-tag">Store Growth</div>
+          <div class="proof-number">$358K</div>
+          <div class="proof-desc">Gross sales. 18K+ first-time buyers. 163% growth vs prior period.</div>
+          <div class="proof-tags">
+            <span class="proof-chip">18,634 Orders</span>
+            <span class="proof-chip">18,015 New Buyers</span>
+            <span class="proof-chip">$19.24 AOV</span>
+          </div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-tag">28-Day Window</div>
+          <div class="proof-number">$155K</div>
+          <div class="proof-desc">GMV in 28 days. 169K visitors. $66K from affiliates alone.</div>
+          <div class="proof-tags">
+            <span class="proof-chip">169,058 Visitors</span>
+            <span class="proof-chip">$66K Affiliate GMV</span>
+            <span class="proof-chip">5,196 SKUs</span>
+          </div>
+        </div>
+        <div class="proof-card">
+          <div class="proof-tag">Paid Efficiency</div>
+          <div class="proof-number">7.58 ROI</div>
+          <div class="proof-desc">GMV Max snapshot showing profitable amplification after signal.</div>
+          <div class="proof-tags">
+            <span class="proof-chip">10,563 Orders</span>
+            <span class="proof-chip">$2 CPA</span>
+            <span class="proof-chip">$159K Revenue</span>
+          </div>
         </div>
       </div>
-      <div class="proof-card">
-        <div class="proof-tag">Store Growth</div>
-        <div class="proof-number">$358K</div>
-        <div class="proof-desc">Gross sales. 18K+ first-time buyers. 163% growth vs prior period.</div>
-        <div class="proof-tags">
-          <span class="proof-chip">18,634 Orders</span>
-          <span class="proof-chip">18,015 New Buyers</span>
-          <span class="proof-chip">$19.24 AOV</span>
-        </div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-tag">28-Day Window</div>
-        <div class="proof-number">$155K</div>
-        <div class="proof-desc">GMV in 28 days. 169K visitors. $66K from affiliates alone.</div>
-        <div class="proof-tags">
-          <span class="proof-chip">169,058 Visitors</span>
-          <span class="proof-chip">$66K Affiliate GMV</span>
-          <span class="proof-chip">5,196 SKUs</span>
-        </div>
-      </div>
-      <div class="proof-card">
-        <div class="proof-tag">Paid Efficiency</div>
-        <div class="proof-number">7.58 ROI</div>
-        <div class="proof-desc">GMV Max snapshot showing profitable amplification after signal.</div>
-        <div class="proof-tags">
-          <span class="proof-chip">10,563 Orders</span>
-          <span class="proof-chip">$2 CPA</span>
-          <span class="proof-chip">$159K Revenue</span>
-        </div>
-      </div>
+      <a href="https://avantabrands.co/case-studies/beauty-brand-tiktok-shop-scale/" class="full-case-link" target="_blank" rel="noreferrer">See the full case study with screenshots -></a>
     </div>
-    <a href="https://avantabrands.co/case-studies/beauty-brand-tiktok-shop-scale/" class="full-case-link" target="_blank" rel="noreferrer">
-      See the full case study with screenshots →
-    </a>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <p class="section-label">Helpful reads</p>
-    <h2>Read these before the call if TikTok Shop is new to you</h2>
-    <p class="section-sub">Three short reads from the Avanta site. If you skim them first, we can skip the basics and spend more time on your actual brand.</p>
-    <div class="articles-list">
-      <a href="https://avantabrands.co/article1/" class="article-row" target="_blank" rel="noreferrer">
-        <div class="article-row-left">
-          <div class="article-eyebrow">Article 01 · The Opportunity</div>
-          <div class="article-title">If You're Selling Online and Not on TikTok Shop, You're Funding Your Competitors</div>
-          <div class="article-summary">Why existing channels are getting more expensive and why TikTok Shop changes the acquisition model.</div>
-        </div>
-        <div class="article-arrow">→</div>
-      </a>
-      <a href="https://avantabrands.co/article2/" class="article-row" target="_blank" rel="noreferrer">
-        <div class="article-row-left">
-          <div class="article-eyebrow">Article 02 · The Mechanism</div>
-          <div class="article-title">Why TikTok Shop Has Nothing to Do With Going Viral</div>
-          <div class="article-summary">How the affiliate creator model works and why established brands have a structural advantage.</div>
-        </div>
-        <div class="article-arrow">→</div>
-      </a>
-      <a href="https://avantabrands.co/article3/" class="article-row" target="_blank" rel="noreferrer">
-        <div class="article-row-left">
-          <div class="article-eyebrow">Article 03 · The Process</div>
-          <div class="article-title">What Running TikTok Shop Actually Looks Like Week to Week</div>
-          <div class="article-summary">The weekly operating cadence, what your team brings, and what Avanta handles.</div>
-        </div>
-        <div class="article-arrow">→</div>
-      </a>
+  <section>
+    <div class="wrap">
+      <p class="section-label">Helpful reads</p>
+      <h2>Read these before the call if TikTok Shop is new to you</h2>
+      <p class="section-sub">Three short reads from the Avanta site. If you skim them first, we can skip the basics and spend more time on your actual brand.</p>
+      <div class="articles-list">
+        <a href="https://avantabrands.co/article1/" class="article-row" target="_blank" rel="noreferrer">
+          <div>
+            <div class="article-eyebrow">Article 01 · The Opportunity</div>
+            <div class="article-title">If You're Selling Online and Not on TikTok Shop, You're Funding Your Competitors</div>
+            <div class="article-summary">Why existing channels are getting more expensive and why TikTok Shop changes the acquisition model.</div>
+          </div>
+          <div class="article-arrow">-></div>
+        </a>
+        <a href="https://avantabrands.co/article2/" class="article-row" target="_blank" rel="noreferrer">
+          <div>
+            <div class="article-eyebrow">Article 02 · The Mechanism</div>
+            <div class="article-title">Why TikTok Shop Has Nothing to Do With Going Viral</div>
+            <div class="article-summary">How the affiliate creator model works and why established brands have a structural advantage.</div>
+          </div>
+          <div class="article-arrow">-></div>
+        </a>
+        <a href="https://avantabrands.co/article3/" class="article-row" target="_blank" rel="noreferrer">
+          <div>
+            <div class="article-eyebrow">Article 03 · The Process</div>
+            <div class="article-title">What Running TikTok Shop Actually Looks Like Week to Week</div>
+            <div class="article-summary">The weekly operating cadence, what your team brings, and what Avanta handles.</div>
+          </div>
+          <div class="article-arrow">-></div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
-  <div class="wrap">
-    <div class="footer-logo">Avanta Brands.</div>
-    <div class="footer-copy">© 2026 Avanta Brands · avantabrands.co</div>
+  <div class="wrap footer-row">
+    <div class="footer-logo">Avanta Brands</div>
+    <div>© 2026 Avanta Brands · avantabrands.co</div>
   </div>
 </footer>
 
