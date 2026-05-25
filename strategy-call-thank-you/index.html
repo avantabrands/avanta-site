@@ -23,7 +23,7 @@
     --line-strong: rgba(255,255,255,0.16);
     --red: #ff2f24;
     --red-soft: rgba(255,47,36,0.12);
-    --max: 980px;
+    --max: 1180px;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -76,8 +76,15 @@
   }
 
   .hero {
-    padding: 70px 0 58px;
+    padding: 82px 0 74px;
     border-bottom: 1px solid var(--line);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.68fr);
+    gap: 56px;
+    align-items: center;
   }
 
   .booked-pill {
@@ -104,7 +111,7 @@
   }
 
   h1 {
-    max-width: 780px;
+    max-width: 760px;
     margin-bottom: 16px;
     font-size: clamp(2.45rem, 5vw, 4.7rem);
     line-height: 0.98;
@@ -128,6 +135,55 @@
     color: #e4e4e8;
     font-size: 0.98rem;
     font-weight: 600;
+  }
+
+  .agenda-card {
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background:
+      linear-gradient(135deg, rgba(255,47,36,0.12), transparent 46%),
+      linear-gradient(180deg, var(--panel-2), var(--panel));
+  }
+
+  .agenda-card h2 {
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+    letter-spacing: -0.035em;
+  }
+
+  .agenda-card p {
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+
+  .agenda-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .agenda-list div {
+    display: flex;
+    gap: 10px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #e4e4e8;
+    font-size: 0.94rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .agenda-list div::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 9px;
+    height: 9px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 0 5px rgba(255,47,36,0.10);
   }
 
   section { padding: 66px 0; }
@@ -159,17 +215,28 @@
     font-size: 0.98rem;
   }
 
-  .flow-list, .concern-list, .articles-list {
+  .flow-list, .concern-list, .articles-list { gap: 12px; }
+
+  .flow-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .concern-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .articles-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
   }
 
   .flow-item {
     display: grid;
     grid-template-columns: 38px minmax(0, 1fr);
     gap: 16px;
-    padding: 20px;
+    padding: 22px;
     border: 1px solid var(--line);
     border-radius: 16px;
     background: #101010;
@@ -204,7 +271,7 @@
   }
 
   .concern-row {
-    padding: 20px;
+    padding: 22px;
     border: 1px solid var(--line);
     border-radius: 16px;
     background: linear-gradient(180deg, #121212, #0f0f0f);
@@ -221,7 +288,7 @@
 
   .proof-cards {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 12px;
   }
 
@@ -231,6 +298,18 @@
     border: 1px solid var(--line);
     border-radius: 16px;
     background: #101010;
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.38fr) minmax(0, 1fr);
+    gap: 42px;
+    align-items: start;
+  }
+
+  .section-intro {
+    position: sticky;
+    top: 92px;
   }
 
   .proof-tag {
@@ -350,7 +429,12 @@
     .wrap, .nav-inner { width: min(100% - 28px, var(--max)); }
     .hero { padding: 48px 0; }
     section { padding: 52px 0; }
+    .hero-grid,
+    .section-grid,
+    .flow-list,
+    .concern-list,
     .proof-cards { grid-template-columns: 1fr; }
+    .section-intro { position: static; }
     .flow-item, .article-row { padding: 18px; }
     .article-row { grid-template-columns: 1fr; }
     .article-arrow { display: none; }
@@ -368,20 +452,34 @@
 </nav>
 
 <header class="hero">
-  <div class="wrap">
-    <div class="booked-pill"><span></span> Call Confirmed</div>
-    <h1>You are booked for your call.</h1>
-    <p class="hero-copy">Your strategy call has been scheduled with Avanta Brands. Before we speak, review the short sections below so we can spend the call on your brand, your numbers, and whether TikTok Shop is the right move.</p>
-    <div class="hero-note">This is a 60-minute strategy call. We will use the time to understand your brand, diagnose whether TikTok Shop makes sense, and outline what the first 90 days would look like if there is a fit.</div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="booked-pill"><span></span> Call Confirmed</div>
+      <h1>You are booked for your call.</h1>
+      <p class="hero-copy">Your strategy call has been scheduled with Avanta Brands. Before we speak, review the short sections below so we can spend the call on your brand, your numbers, and whether TikTok Shop is the right move.</p>
+      <div class="hero-note">This is a 60-minute strategy call. We will use the time to understand your brand, diagnose whether TikTok Shop makes sense, and outline what the first 90 days would look like if there is a fit.</div>
+    </div>
+    <aside class="agenda-card">
+      <h2>Quick pre-call brief</h2>
+      <p>You do not need to prepare a deck. These are the only things worth having nearby if you know them.</p>
+      <div class="agenda-list">
+        <div>Your best-selling product or hero SKU</div>
+        <div>Current monthly revenue by channel</div>
+        <div>Gross margin, inventory, and fulfillment constraints</div>
+        <div>Any TikTok Shop, creator, or ad history</div>
+      </div>
+    </aside>
   </div>
 </header>
 
 <main>
   <section>
-    <div class="wrap">
-      <p class="section-label">In this meeting</p>
-      <h2>What we are going to cover</h2>
-      <p class="section-sub">The call is meant to be practical. We want to understand the business first, then give you an honest read on what TikTok Shop could look like for your brand.</p>
+    <div class="wrap section-grid">
+      <div class="section-intro">
+        <p class="section-label">In this meeting</p>
+        <h2>What we are going to cover</h2>
+        <p class="section-sub">The call is meant to be practical. We want to understand the business first, then give you an honest read on what TikTok Shop could look like for your brand.</p>
+      </div>
       <div class="flow-list">
         <div class="flow-item">
           <div class="flow-n">1</div>
@@ -416,10 +514,12 @@
   </section>
 
   <section>
-    <div class="wrap">
-      <p class="section-label">Common concerns</p>
-      <h2>Questions brands usually ask before working with us</h2>
-      <p class="section-sub">You may already be thinking through some of these. We will cover the ones most relevant to your brand during the call.</p>
+    <div class="wrap section-grid">
+      <div class="section-intro">
+        <p class="section-label">Common concerns</p>
+        <h2>Questions brands usually ask before working with us</h2>
+        <p class="section-sub">You may already be thinking through some of these. We will cover the ones most relevant to your brand during the call.</p>
+      </div>
       <div class="concern-list">
         <div class="concern-row">
           <div class="concern-eyebrow">Creator Fit</div>
@@ -457,60 +557,28 @@
 
   <section>
     <div class="wrap">
-      <p class="section-label">Case study</p>
-      <h2>What this can look like in numbers</h2>
-      <p class="section-sub">One beauty brand. Real TikTok Shop dashboard proof. This gives you a useful reference point before we talk through your brand.</p>
+      <div class="section-intro" style="position:static; max-width: 680px; margin-bottom: 26px;">
+        <p class="section-label">Case study</p>
+        <h2>What this can look like in numbers</h2>
+        <p class="section-sub">One beauty brand. Real TikTok Shop dashboard proof. This gives you a useful reference point before we talk through your brand.</p>
+      </div>
       <div class="proof-cards">
-        <div class="proof-card">
-          <div class="proof-tag">Annual Campaign</div>
-          <div class="proof-number">$672K</div>
-          <div class="proof-desc">GMV across 3 campaigns. 41,330 orders. 44,784 items sold.</div>
-          <div class="proof-tags">
-            <span class="proof-chip">$672,343 GMV</span>
-            <span class="proof-chip">41,330 Orders</span>
-            <span class="proof-chip">3 Campaigns</span>
-          </div>
-        </div>
-        <div class="proof-card">
-          <div class="proof-tag">Store Growth</div>
-          <div class="proof-number">$358K</div>
-          <div class="proof-desc">Gross sales. 18K+ first-time buyers. 163% growth vs prior period.</div>
-          <div class="proof-tags">
-            <span class="proof-chip">18,634 Orders</span>
-            <span class="proof-chip">18,015 New Buyers</span>
-            <span class="proof-chip">$19.24 AOV</span>
-          </div>
-        </div>
-        <div class="proof-card">
-          <div class="proof-tag">28-Day Window</div>
-          <div class="proof-number">$155K</div>
-          <div class="proof-desc">GMV in 28 days. 169K visitors. $66K from affiliates alone.</div>
-          <div class="proof-tags">
-            <span class="proof-chip">169,058 Visitors</span>
-            <span class="proof-chip">$66K Affiliate GMV</span>
-            <span class="proof-chip">5,196 SKUs</span>
-          </div>
-        </div>
-        <div class="proof-card">
-          <div class="proof-tag">Paid Efficiency</div>
-          <div class="proof-number">7.58 ROI</div>
-          <div class="proof-desc">GMV Max snapshot showing profitable amplification after signal.</div>
-          <div class="proof-tags">
-            <span class="proof-chip">10,563 Orders</span>
-            <span class="proof-chip">$2 CPA</span>
-            <span class="proof-chip">$159K Revenue</span>
-          </div>
-        </div>
+        <div class="proof-card"><div class="proof-tag">Annual Campaign</div><div class="proof-number">$672K</div><div class="proof-desc">GMV across 3 campaigns. 41,330 orders. 44,784 items sold.</div><div class="proof-tags"><span class="proof-chip">$672,343 GMV</span><span class="proof-chip">41,330 Orders</span></div></div>
+        <div class="proof-card"><div class="proof-tag">Store Growth</div><div class="proof-number">$358K</div><div class="proof-desc">Gross sales. 18K+ first-time buyers. 163% growth vs prior period.</div><div class="proof-tags"><span class="proof-chip">18,634 Orders</span><span class="proof-chip">$19.24 AOV</span></div></div>
+        <div class="proof-card"><div class="proof-tag">28-Day Window</div><div class="proof-number">$155K</div><div class="proof-desc">GMV in 28 days. 169K visitors. $66K from affiliates alone.</div><div class="proof-tags"><span class="proof-chip">169,058 Visitors</span><span class="proof-chip">$66K Affiliate GMV</span></div></div>
+        <div class="proof-card"><div class="proof-tag">Paid Efficiency</div><div class="proof-number">7.58 ROI</div><div class="proof-desc">GMV Max snapshot showing profitable amplification after signal.</div><div class="proof-tags"><span class="proof-chip">10,563 Orders</span><span class="proof-chip">$2 CPA</span></div></div>
       </div>
       <a href="https://avantabrands.co/case-studies/beauty-brand-tiktok-shop-scale/" class="full-case-link" target="_blank" rel="noreferrer">See the full case study with screenshots -></a>
     </div>
   </section>
 
   <section>
-    <div class="wrap">
-      <p class="section-label">Helpful reads</p>
-      <h2>Read these before the call if TikTok Shop is new to you</h2>
-      <p class="section-sub">Three short reads from the Avanta site. If you skim them first, we can skip the basics and spend more time on your actual brand.</p>
+    <div class="wrap section-grid">
+      <div class="section-intro">
+        <p class="section-label">Helpful reads</p>
+        <h2>Read these before the call if TikTok Shop is new to you</h2>
+        <p class="section-sub">Three short reads from the Avanta site. If you skim them first, we can skip the basics and spend more time on your actual brand.</p>
+      </div>
       <div class="articles-list">
         <a href="https://avantabrands.co/article1/" class="article-row" target="_blank" rel="noreferrer">
           <div>
