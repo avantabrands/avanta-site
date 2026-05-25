@@ -4,41 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Avanta Brands Strategy Call Is Booked</title>
-  <meta name="description" content="Your Avanta Brands strategy call is booked. Accept the calendar invite and review the key TikTok Shop questions before the call." />
+  <meta name="description" content="Your Avanta Brands strategy call is booked. Accept the calendar invite and review a few key questions before the call." />
   <link rel="canonical" href="https://avantabrands.co/strategy-call-thank-you/" />
   <meta name="robots" content="noindex,follow" />
-  <meta property="og:title" content="Your Avanta Brands Strategy Call Is Booked" />
-  <meta property="og:description" content="Accept the invite and review the key questions before your Avanta Brands strategy call." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://avantabrands.co/strategy-call-thank-you/" />
-  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #080808;
-      --panel: #111111;
-      --panel-2: #171717;
-      --text: #f7f7f7;
-      --muted: #a4a4ad;
+      --panel: #111;
+      --panel-light: #171717;
+      --text: #f6f6f6;
+      --muted: #a8a8b0;
       --line: rgba(255,255,255,.1);
       --red: #ff2e24;
       --red-soft: rgba(255,46,36,.12);
-      --max: 1060px;
-      --radius: 18px;
-      --shadow: 0 24px 70px rgba(0,0,0,.38);
+      --max: 860px;
     }
 
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(255,46,36,.16), transparent 360px),
-        linear-gradient(180deg, #0a0a0a 0%, #060606 100%);
-      line-height: 1.55;
+      background: var(--bg);
+      line-height: 1.62;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -47,16 +39,16 @@
     .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
 
     .nav {
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      background: rgba(8,8,8,.92);
+      border-bottom: 1px solid var(--line);
+      background: #070707;
     }
 
     .nav-inner {
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      min-height: 76px;
+      gap: 16px;
     }
 
     .brand {
@@ -65,46 +57,19 @@
       font-weight: 900;
       letter-spacing: -.045em;
       text-transform: uppercase;
-      white-space: nowrap;
     }
 
     .brand::after { content: "."; color: var(--red); }
-    .nav-links { display: flex; gap: 20px; align-items: center; }
-    .nav-links a {
-      color: #b8b8c0;
+
+    .nav a:not(.brand) {
+      color: #d8d8dd;
       font-size: .92rem;
       font-weight: 800;
       text-decoration: none;
     }
 
-    .nav-links a:hover { color: #fff; }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: var(--red);
-      color: #fff;
-      text-decoration: none;
-      font-size: .92rem;
-      font-weight: 900;
-    }
-
-    .button.secondary { background: rgba(255,255,255,.045); }
-
     .hero {
-      padding: 56px 0 28px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(340px, .82fr);
-      gap: 28px;
-      align-items: start;
+      padding: 48px 0 26px;
     }
 
     .eyebrow {
@@ -113,9 +78,9 @@
       gap: 8px;
       padding: 7px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,46,36,.32);
+      border: 1px solid rgba(255,46,36,.3);
       background: var(--red-soft);
-      color: #ffd1ce;
+      color: #ffd0cc;
       font-size: .72rem;
       font-weight: 900;
       letter-spacing: .1em;
@@ -133,270 +98,162 @@
     h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      max-width: 680px;
+      max-width: 720px;
       margin: 16px 0 14px;
-      font-size: clamp(2.4rem, 5vw, 4.7rem);
-      line-height: .96;
-      letter-spacing: -.06em;
+      font-size: clamp(2.35rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.055em;
     }
 
     .lead {
-      max-width: 680px;
+      max-width: 700px;
       color: #d6d6dc;
-      font-size: clamp(1rem, 1.35vw, 1.14rem);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .invite-card,
-    .panel,
-    .answer,
-    .proof-strip,
-    .final-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(24,24,24,.96), rgba(12,12,12,.98));
-      box-shadow: var(--shadow);
-    }
-
-    .invite-card {
-      overflow: hidden;
-    }
-
-    .invite-top {
-      padding: 20px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      background: linear-gradient(135deg, rgba(255,46,36,.16), rgba(255,255,255,.025));
-    }
-
-    .invite-top h2 {
-      margin-bottom: 8px;
-      font-size: 1.35rem;
-      line-height: 1.12;
-      letter-spacing: -.035em;
-    }
-
-    .invite-top p {
+      font-size: 1.08rem;
       margin-bottom: 0;
-      color: #dedee4;
-      font-size: .98rem;
-    }
-
-    .invite-steps {
-      padding: 18px 20px 20px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 30px minmax(0, 1fr);
-      gap: 10px;
-      align-items: start;
-      color: #e6e6eb;
-      font-weight: 750;
-      line-height: 1.35;
-    }
-
-    .step b {
-      display: grid;
-      place-items: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: var(--red);
-      color: #fff;
-      font-size: .82rem;
-    }
-
-    .invite-image {
-      margin: 0 20px 20px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 14px;
-      overflow: hidden;
-      background: #eee;
-    }
-
-    .invite-image img {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      object-position: center 60%;
     }
 
     .section {
-      padding: 34px 0;
+      padding: 18px 0;
     }
 
-    .section-head {
-      max-width: 780px;
-      margin-bottom: 18px;
-    }
-
-    h2 {
-      margin-bottom: 9px;
-      font-size: clamp(1.7rem, 3vw, 3rem);
-      line-height: 1;
-      letter-spacing: -.05em;
-    }
-
-    .section-head p,
-    .panel p,
-    .answer p,
-    .proof-strip p,
-    .final-card p {
-      color: var(--muted);
-    }
-
-    .answer-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .answer {
-      padding: 20px;
-    }
-
-    .label {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: #ffb9b5;
-      font-size: .72rem;
-      font-weight: 900;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    h3 {
-      margin-bottom: 8px;
-      font-size: 1.18rem;
-      line-height: 1.12;
-      letter-spacing: -.03em;
-    }
-
-    .answer p { margin-bottom: 0; }
-
-    .call-prep {
-      display: grid;
-      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-      gap: 14px;
-      align-items: stretch;
-    }
-
-    .panel {
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, var(--panel-light), var(--panel));
       padding: 22px;
     }
 
-    .check-list {
+    .calendar-card {
+      border-color: rgba(255,46,36,.28);
+      background:
+        linear-gradient(135deg, rgba(255,46,36,.14), rgba(255,255,255,.025)),
+        var(--panel);
+    }
+
+    h2 {
+      margin-bottom: 8px;
+      font-size: clamp(1.45rem, 2.6vw, 2.25rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    h3 {
+      margin-bottom: 6px;
+      font-size: 1.08rem;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .steps,
+    .questions,
+    .prep-list {
       display: grid;
-      gap: 10px;
-      margin-top: 16px;
+      gap: 12px;
+      margin-top: 18px;
     }
 
-    .check {
-      display: flex;
-      gap: 10px;
-      color: #e6e6eb;
-      font-weight: 750;
-      line-height: 1.35;
+    .step,
+    .question,
+    .prep-item {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
     }
 
-    .check::before {
-      content: "";
-      flex: 0 0 auto;
+    .num {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .dot {
       width: 9px;
       height: 9px;
-      margin-top: 6px;
+      margin: 8px auto 0;
       border-radius: 50%;
       background: var(--red);
       box-shadow: 0 0 0 5px rgba(255,46,36,.1);
     }
 
-    .proof-strip {
-      padding: 20px;
+    .question {
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .question:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .image-note {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 18px;
+      align-items: center;
+      margin-top: 18px;
     }
 
-    .proof-item strong {
-      display: block;
-      margin-bottom: 5px;
+    .image-note img {
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center 62%;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: var(--red);
       color: #fff;
-      font-size: 1rem;
-      line-height: 1.15;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 900;
     }
 
-    .proof-item p {
-      margin-bottom: 0;
-      font-size: .92rem;
-      line-height: 1.45;
-    }
-
-    .final-card {
-      padding: 28px;
-      text-align: center;
-      background:
-        linear-gradient(135deg, rgba(255,46,36,.16), rgba(255,255,255,.025)),
-        #111;
-    }
-
-    .final-card h2 {
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .final-card p {
-      max-width: 660px;
-      margin-left: auto;
-      margin-right: auto;
+    .button.secondary {
+      background: rgba(255,255,255,.045);
     }
 
     .footer {
-      padding: 30px 0;
-      border-top: 1px solid rgba(255,255,255,.08);
-      color: #8f8f98;
-      background: #050505;
+      margin-top: 24px;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: #8e8e96;
+      font-size: .92rem;
     }
 
-    .footer-grid {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .footer a {
-      color: #d8d8dd;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .answer-grid,
-      .call-prep,
-      .proof-strip {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .nav-links { display: none; }
+    @media (max-width: 720px) {
       .hero { padding-top: 36px; }
-      h1 { font-size: clamp(2.55rem, 13vw, 3.9rem); }
-      .invite-image { display: none; }
+      .nav a:not(.brand) { display: none; }
+      .image-note { grid-template-columns: 1fr; }
+      .image-note img { display: none; }
       .button { width: 100%; }
-      .hero-actions { width: 100%; }
-      .footer-grid { display: grid; }
     }
   </style>
 </head>
@@ -404,101 +261,51 @@
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="/">AVANTA BRANDS</a>
-      <div class="nav-links">
-        <a href="/process/">Process</a>
-        <a href="/case-studies/">Case Studies</a>
-        <a href="/services/">Services</a>
-        <a href="/resources/">Resources</a>
-      </div>
-      <a class="button secondary" href="/case-studies/beauty-brand-tiktok-shop-scale/">See Proof</a>
+      <a href="/case-studies/beauty-brand-tiktok-shop-scale/">See proof</a>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Strategy Call Booked</div>
-        <h1>You are booked with Avanta.</h1>
-        <p class="lead">Before the call, there are two useful things to do: accept the Google Calendar invite so the meeting actually shows on your calendar, then skim the key questions below so we can spend the call on strategy instead of basics.</p>
-        <div class="hero-actions">
-          <a class="button" href="#calendar-invite">Accept the invite</a>
-          <a class="button secondary" href="#questions">Review common questions</a>
-        </div>
-      </div>
-
-      <aside id="calendar-invite" class="invite-card">
-        <div class="invite-top">
-          <h2>Important: accept the calendar invite.</h2>
-          <p>Google may hide invitations from new senders. If you do not accept it, the call may not appear on your calendar.</p>
-        </div>
-        <div class="invite-steps">
-          <div class="step"><b>1</b><span>Go back to your inbox and open the Avanta/Calendly invite.</span></div>
-          <div class="step"><b>2</b><span>If Google shows an unknown-sender notice, click <strong>I know the sender</strong>.</span></div>
-          <div class="step"><b>3</b><span>Click <strong>Yes</strong> or <strong>Accept</strong> on the calendar event.</span></div>
-        </div>
-        <div class="invite-image">
-          <img src="../assets/google-calendar-invite-warning.png" alt="Example of Google's unknown sender calendar invitation warning" />
-        </div>
-      </aside>
+    <div class="container">
+      <div class="eyebrow">Strategy Call Booked</div>
+      <h1>You are booked with Avanta.</h1>
+      <p class="lead">This page is just here to make sure the call lands on your calendar and to answer the few questions most brand owners have before speaking with us.</p>
     </div>
   </header>
 
   <main>
-    <section id="questions" class="section">
+    <section class="section" id="calendar-invite">
       <div class="container">
-        <div class="section-head">
-          <h2>The questions we will help you answer.</h2>
-          <p>These are the concerns most brand owners bring into the call. They are the right questions. TikTok Shop only works when the product, economics, creators, and operations line up.</p>
-        </div>
-        <div class="answer-grid">
-          <article class="answer">
-            <span class="label">Creator Fit</span>
-            <h3>Will creators actually work for our category?</h3>
-            <p>We look at whether the product can be demonstrated clearly, whether creators have a natural angle, and whether commission plus sample economics are strong enough to attract useful content.</p>
-          </article>
-          <article class="answer">
-            <span class="label">Budget</span>
-            <h3>What should we expect to invest?</h3>
-            <p>The real budget is not just ad spend. It includes samples, commissions, promotional room, listing work, and management. We will pressure-test whether the numbers support the goal before recommending scale.</p>
-          </article>
-          <article class="answer">
-            <span class="label">Proof</span>
-            <h3>How do we know TikTok Shop can work for us?</h3>
-            <p>Proof has to match your situation. Amazon-native, Shopify-native, niche, seasonal, and early-stage brands need different paths to signal. We will not force your brand into a generic playbook.</p>
-          </article>
-          <article class="answer">
-            <span class="label">Channel Fit</span>
-            <h3>Why is TikTok Shop different from TikTok ads to Shopify?</h3>
-            <p>TikTok Shop keeps discovery, creator proof, offer, and checkout inside the platform. That reduces purchase friction, but it still needs the right SKU, offer, listing, and creator system.</p>
-          </article>
-          <article class="answer">
-            <span class="label">Execution</span>
-            <h3>What does Avanta actually handle?</h3>
-            <p>Creator recruitment, affiliate workflow, content direction, listing optimization, Spark Ads, reporting, and the weekly operating decisions that keep the channel moving.</p>
-          </article>
-          <article class="answer">
-            <span class="label">Readiness</span>
-            <h3>What if our listing or offer is not ready?</h3>
-            <p>Then we fix that first. Weak images, confusing variants, poor bundles, low inventory, or bad margins can make even strong creator attention underperform.</p>
-          </article>
+        <div class="card calendar-card">
+          <h2>First, accept the calendar invite.</h2>
+          <p>Google sometimes hides invites from new senders. If you do not accept the invite, the call may not show on your calendar.</p>
+
+          <div class="steps">
+            <div class="step"><span class="num">1</span><div><h3>Go back to your inbox.</h3><p>Open the calendar invite from Avanta or Calendly.</p></div></div>
+            <div class="step"><span class="num">2</span><div><h3>Click “I know the sender” if Google asks.</h3><p>This tells Google the invite is legitimate and lets the event show properly.</p></div></div>
+            <div class="step"><span class="num">3</span><div><h3>Accept the event.</h3><p>Click Yes or Accept so the meeting is locked into your calendar.</p></div></div>
+          </div>
+
+          <div class="image-note">
+            <p>If you see a warning like this, it does not mean anything is wrong. It is just Google’s newer invite protection for senders you have not interacted with before.</p>
+            <img src="../assets/google-calendar-invite-warning.png" alt="Google calendar unknown sender warning example" />
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container call-prep">
-        <div class="panel">
-          <span class="label">Bring This</span>
-          <h2>What makes the call useful.</h2>
-          <p>You do not need a polished deck. You just need the core facts so we can give you a grounded recommendation.</p>
-        </div>
-        <div class="panel">
-          <div class="check-list">
-            <div class="check">Your best-selling SKU or product line</div>
-            <div class="check">Retail price, gross margin, and landed cost</div>
-            <div class="check">Current Amazon, Shopify, or TikTok Shop sales</div>
-            <div class="check">Inventory depth and fulfillment constraints</div>
-            <div class="check">Any creator content, UGC, or ad performance you already have</div>
+    <section class="section" id="questions">
+      <div class="container">
+        <div class="card">
+          <h2>What we will talk through on the call.</h2>
+          <p>These are the main questions worth thinking about before we speak.</p>
+
+          <div class="questions">
+            <div class="question"><span class="dot"></span><div><h3>Is TikTok Shop actually a fit for your product?</h3><p>We will look at your category, price point, margin, inventory, and whether creators can explain the product clearly in short-form content.</p></div></div>
+            <div class="question"><span class="dot"></span><div><h3>Which product should lead the launch?</h3><p>Most brands should not push the entire catalog first. We will identify the SKU or bundle most likely to create early signal.</p></div></div>
+            <div class="question"><span class="dot"></span><div><h3>Can the numbers support creator growth?</h3><p>Samples, commissions, discounts, shipping, and ad spend all affect profitability. We will pressure-test the economics before talking about scale.</p></div></div>
+            <div class="question"><span class="dot"></span><div><h3>Why would this work if TikTok ads to Shopify did not?</h3><p>TikTok Shop keeps discovery, social proof, offer, and checkout inside the same platform. That reduces friction, but the listing and creator system still have to be right.</p></div></div>
+            <div class="question"><span class="dot"></span><div><h3>What does Avanta actually handle?</h3><p>Creator recruitment, affiliate workflow, listing optimization, content direction, Spark Ads, reporting, and the weekly operating decisions that keep the channel moving.</p></div></div>
           </div>
         </div>
       </div>
@@ -506,18 +313,15 @@
 
     <section class="section">
       <div class="container">
-        <div class="proof-strip">
-          <div class="proof-item">
-            <strong>TikTok Shop Partner agency</strong>
-            <p>Avanta runs TikTok Shop as an operating channel, not a disconnected influencer campaign.</p>
-          </div>
-          <div class="proof-item">
-            <strong>Creator systems first</strong>
-            <p>The goal is repeatable creator output, not random one-off posts.</p>
-          </div>
-          <div class="proof-item">
-            <strong>Scale after signal</strong>
-            <p>We increase pressure only after the SKU, listing, creator angle, and economics start to make sense.</p>
+        <div class="card">
+          <h2>Helpful to have nearby.</h2>
+          <p>You do not need a polished deck. These basics are enough to make the call more useful.</p>
+          <div class="prep-list">
+            <div class="prep-item"><span class="dot"></span><div>Your best-selling product or the SKU you want to scale.</div></div>
+            <div class="prep-item"><span class="dot"></span><div>Retail price, gross margin, and landed cost.</div></div>
+            <div class="prep-item"><span class="dot"></span><div>Current Amazon, Shopify, or TikTok Shop sales.</div></div>
+            <div class="prep-item"><span class="dot"></span><div>Inventory depth and fulfillment constraints.</div></div>
+            <div class="prep-item"><span class="dot"></span><div>Any creator content, UGC, or ad data you already have.</div></div>
           </div>
         </div>
       </div>
@@ -525,12 +329,11 @@
 
     <section class="section">
       <div class="container">
-        <div class="final-card">
-          <div class="eyebrow">Before The Call</div>
-          <h2>If TikTok Shop worked properly for your brand, what would need to be true 90 days from now?</h2>
-          <p>Bring that answer to the call. We will use it to work backward into the channel strategy, the constraints, and the first decisions worth making.</p>
-          <div class="hero-actions" style="justify-content:center;">
-            <a class="button" href="#calendar-invite">Make sure the invite is accepted</a>
+        <div class="card">
+          <h2>One question before the call.</h2>
+          <p>If TikTok Shop worked properly for your brand, what would need to be true 90 days from now? Bring that answer to the call. We will work backward from there.</p>
+          <div class="button-row">
+            <a class="button" href="#calendar-invite">Accept the invite first</a>
             <a class="button secondary" href="/case-studies/beauty-brand-tiktok-shop-scale/">Review client proof</a>
           </div>
         </div>
@@ -539,11 +342,7 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-grid">
-      <a class="brand" href="/">AVANTA BRANDS</a>
-      <span>See you on the strategy call.</span>
-      <a href="/process/">Review the Avanta process</a>
-    </div>
+    <div class="container">Avanta Brands. See you on the strategy call.</div>
   </footer>
 </body>
 </html>
