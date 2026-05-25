@@ -118,40 +118,16 @@
     font-size: 1.08rem;
   }
 
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 34px;
-  }
-
-  .stat {
-    min-height: 138px;
-    padding: 20px;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    background: linear-gradient(180deg, var(--panel-2), var(--panel));
-  }
-
-  .stat-num {
-    margin-bottom: 12px;
-    color: #fff;
-    font-size: 2.1rem;
-    line-height: 1;
-    font-weight: 900;
-    letter-spacing: -0.05em;
-  }
-  .stat-num span { color: var(--red); font-size: 1.1rem; letter-spacing: -0.02em; }
-  .stat-label {
-    margin-bottom: 5px;
-    color: #fff;
-    font-size: 0.86rem;
-    font-weight: 800;
-  }
-  .stat-desc {
-    color: var(--muted);
-    font-size: 0.88rem;
-    line-height: 1.5;
+  .hero-note {
+    max-width: 680px;
+    margin-top: 26px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--red);
+    border-radius: 0 14px 14px 0;
+    background: linear-gradient(90deg, rgba(255,47,36,0.13), rgba(255,255,255,0.025));
+    color: #e4e4e8;
+    font-size: 0.98rem;
+    font-weight: 600;
   }
 
   section { padding: 66px 0; }
@@ -374,7 +350,7 @@
     .wrap, .nav-inner { width: min(100% - 28px, var(--max)); }
     .hero { padding: 48px 0; }
     section { padding: 52px 0; }
-    .stats, .proof-cards { grid-template-columns: 1fr; }
+    .proof-cards { grid-template-columns: 1fr; }
     .flow-item, .article-row { padding: 18px; }
     .article-row { grid-template-columns: 1fr; }
     .article-arrow { display: none; }
@@ -396,23 +372,7 @@
     <div class="booked-pill"><span></span> Call Confirmed</div>
     <h1>You are booked for your call.</h1>
     <p class="hero-copy">Your strategy call has been scheduled with Avanta Brands. Before we speak, review the short sections below so we can spend the call on your brand, your numbers, and whether TikTok Shop is the right move.</p>
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-num">60<span>min</span></div>
-        <div class="stat-label">Strategy Call</div>
-        <div class="stat-desc">A focused conversation about your brand and TikTok Shop fit.</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">0</div>
-        <div class="stat-label">Generic Pitch</div>
-        <div class="stat-desc">We diagnose fit first, then discuss next steps only if they make sense.</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">1</div>
-        <div class="stat-label">Main Question</div>
-        <div class="stat-desc">Can TikTok Shop become a serious revenue channel for your brand?</div>
-      </div>
-    </div>
+    <div class="hero-note">This is a 60-minute strategy call. We will use the time to understand your brand, diagnose whether TikTok Shop makes sense, and outline what the first 90 days would look like if there is a fit.</div>
   </div>
 </header>
 
