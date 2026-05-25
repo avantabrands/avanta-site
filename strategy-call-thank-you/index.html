@@ -264,7 +264,7 @@
     letter-spacing: -0.01em;
   }
 
-  .flow-body p, .concern-row p, .proof-desc, .article-summary {
+  .flow-body p, .concern-row p, .article-summary {
     color: var(--muted);
     font-size: 0.92rem;
     line-height: 1.62;
@@ -286,20 +286,6 @@
     text-transform: uppercase;
   }
 
-  .proof-cards {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .proof-card {
-    min-height: 210px;
-    padding: 22px;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    background: #101010;
-  }
-
   .section-grid {
     display: grid;
     grid-template-columns: minmax(260px, 0.38fr) minmax(0, 1fr);
@@ -310,46 +296,6 @@
   .section-intro {
     position: sticky;
     top: 92px;
-  }
-
-  .proof-tag {
-    display: inline-flex;
-    margin-bottom: 14px;
-    padding: 4px 8px;
-    border: 1px solid rgba(255,47,36,0.22);
-    border-radius: 6px;
-    background: var(--red-soft);
-    color: #ffb8b3;
-    font-size: 0.66rem;
-    font-weight: 900;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-  }
-
-  .proof-number {
-    margin-bottom: 7px;
-    color: #fff;
-    font-size: 2.25rem;
-    line-height: 1;
-    font-weight: 900;
-    letter-spacing: -0.05em;
-  }
-
-  .proof-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 16px;
-  }
-
-  .proof-chip {
-    padding: 4px 8px;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 6px;
-    background: rgba(255,255,255,0.04);
-    color: #bebec6;
-    font-size: 0.73rem;
-    font-weight: 700;
   }
 
   .full-case-link {
@@ -365,25 +311,21 @@
     font-weight: 800;
   }
 
-  .screenshot-grid {
+  .proof-showcase {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 12px;
-    margin-top: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 24px;
   }
 
-  .screenshot-card {
+  .proof-shot {
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 16px;
     background: #101010;
   }
 
-  .screenshot-card.large {
-    grid-row: span 2;
-  }
-
-  .screenshot-card img {
+  .proof-shot img {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -392,17 +334,25 @@
     background: #fff;
   }
 
-  .screenshot-card.large img {
-    aspect-ratio: 16 / 10;
+  .proof-caption {
+    padding: 16px;
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
 
-  .screenshot-caption {
-    padding: 12px 14px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    color: #d7d7dc;
-    font-size: 0.84rem;
-    font-weight: 700;
+  .proof-caption strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #fff;
+    font-size: 0.98rem;
     line-height: 1.35;
+    font-weight: 900;
+  }
+
+  .proof-caption span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
   }
 
   .article-row {
@@ -473,9 +423,7 @@
     .section-grid,
     .flow-list,
     .concern-list,
-    .proof-cards,
-    .screenshot-grid { grid-template-columns: 1fr; }
-    .screenshot-card.large { grid-row: auto; }
+    .proof-showcase { grid-template-columns: 1fr; }
     .section-intro { position: static; }
     .flow-item, .article-row { padding: 18px; }
     .article-row { grid-template-columns: 1fr; }
@@ -602,26 +550,22 @@
       <div class="section-intro" style="position:static; max-width: 680px; margin-bottom: 26px;">
         <p class="section-label">Case study</p>
         <h2>What this can look like in numbers</h2>
-        <p class="section-sub">One beauty brand. Real TikTok Shop dashboard proof. This gives you a useful reference point before we talk through your brand.</p>
+        <p class="section-sub">A simple reference point before the call. We will talk through what is realistic for your brand based on your category, margins, offer, inventory, and current traction.</p>
       </div>
-      <div class="proof-cards">
-        <div class="proof-card"><div class="proof-tag">Annual Campaign</div><div class="proof-number">$672K</div><div class="proof-desc">GMV across 3 campaigns. 41,330 orders. 44,784 items sold.</div><div class="proof-tags"><span class="proof-chip">$672,343 GMV</span><span class="proof-chip">41,330 Orders</span></div></div>
-        <div class="proof-card"><div class="proof-tag">Store Growth</div><div class="proof-number">$358K</div><div class="proof-desc">Gross sales. 18K+ first-time buyers. 163% growth vs prior period.</div><div class="proof-tags"><span class="proof-chip">18,634 Orders</span><span class="proof-chip">$19.24 AOV</span></div></div>
-        <div class="proof-card"><div class="proof-tag">28-Day Window</div><div class="proof-number">$155K</div><div class="proof-desc">GMV in 28 days. 169K visitors. $66K from affiliates alone.</div><div class="proof-tags"><span class="proof-chip">169,058 Visitors</span><span class="proof-chip">$66K Affiliate GMV</span></div></div>
-        <div class="proof-card"><div class="proof-tag">Paid Efficiency</div><div class="proof-number">7.58 ROI</div><div class="proof-desc">GMV Max snapshot showing profitable amplification after signal.</div><div class="proof-tags"><span class="proof-chip">10,563 Orders</span><span class="proof-chip">$2 CPA</span></div></div>
-      </div>
-      <div class="screenshot-grid">
-        <figure class="screenshot-card large">
+      <div class="proof-showcase">
+        <figure class="proof-shot">
           <img src="/assets/case-studies/annual-performance.jpeg" alt="TikTok Shop annual campaign performance showing $672K GMV and 41,330 orders">
-          <figcaption class="screenshot-caption">Annual campaign view: $672K GMV, 41,330 orders, 44,784 items sold.</figcaption>
+          <figcaption class="proof-caption">
+            <strong>$672K GMV across three campaigns.</strong>
+            <span>41,330 orders and 44,784 items sold from a TikTok Shop campaign system.</span>
+          </figcaption>
         </figure>
-        <figure class="screenshot-card">
+        <figure class="proof-shot">
           <img src="/assets/case-studies/store-growth-grid.jpeg" alt="TikTok Shop store growth dashboard showing gross sales, GMV, orders, and buyers">
-          <figcaption class="screenshot-caption">Store growth dashboard: gross sales, orders, buyers, and GMV lift.</figcaption>
-        </figure>
-        <figure class="screenshot-card">
-          <img src="/assets/case-studies/gmv-max-1.jpeg" alt="GMV Max reporting dashboard showing 7.58 ROI and paid performance">
-          <figcaption class="screenshot-caption">GMV Max reporting: 7.58 ROI with $2 cost per order.</figcaption>
+          <figcaption class="proof-caption">
+            <strong>$358K gross sales with 18K+ buyers.</strong>
+            <span>A store-growth view showing orders, first-time buyers, GMV, and average order value.</span>
+          </figcaption>
         </figure>
       </div>
       <a href="https://avantabrands.co/case-studies/beauty-brand-tiktok-shop-scale/" class="full-case-link" target="_blank" rel="noreferrer">See the full case study with screenshots -></a>
