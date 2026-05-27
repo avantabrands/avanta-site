@@ -57,33 +57,26 @@
 
   <style>
     .forecaster-hero {
-      padding-bottom: 2rem;
+      padding: 3.1rem 0 1.25rem;
+      text-align: center;
     }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.85rem;
-      margin-top: 1.2rem;
+    .forecaster-hero .container {
+      max-width: 860px;
     }
-    .hero-stat {
-      padding: 1rem;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.03);
+    .forecaster-hero .eyebrow {
+      margin-inline: auto;
     }
-    .hero-stat strong {
-      display: block;
-      font-size: 1.35rem;
-      letter-spacing: -0.04em;
+    .forecaster-hero .page-title {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
     }
-    .hero-stat span {
-      display: block;
-      margin-top: 0.2rem;
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+    .forecaster-hero .lead {
+      margin-inline: auto;
+      max-width: 760px;
+      font-size: 1rem;
+    }
+    .forecaster-hero .hero-actions {
+      justify-content: center;
+      margin-top: 1.35rem;
     }
     .forecaster-shell {
       display: grid;
@@ -204,13 +197,13 @@
     }
     .summary-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.8rem;
       margin-bottom: 1rem;
     }
     .summary-card {
-      min-height: 118px;
-      padding: 1rem;
+      min-height: 104px;
+      padding: 0.9rem;
       border: 1px solid var(--border);
       border-radius: 18px;
       background: rgba(255, 255, 255, 0.025);
@@ -285,9 +278,9 @@
       font-weight: 900;
     }
     .recommendation {
-      padding: 1rem;
+      padding: 0.9rem 1rem;
       border: 1px solid rgba(255, 59, 48, 0.34);
-      border-radius: 18px;
+      border-radius: 14px;
       background: linear-gradient(180deg, rgba(255, 59, 48, 0.1), rgba(255, 255, 255, 0.02));
       margin-bottom: 1rem;
     }
@@ -298,6 +291,38 @@
     .recommendation p {
       margin: 0;
       color: #d4d4d8;
+    }
+    .forecast-details {
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.015);
+    }
+    .forecast-details summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.95rem 1rem;
+      color: #f4f4f5;
+      font-weight: 900;
+      cursor: pointer;
+      list-style: none;
+    }
+    .forecast-details summary::-webkit-details-marker {
+      display: none;
+    }
+    .forecast-details summary::after {
+      content: "+";
+      color: var(--muted);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    .forecast-details[open] summary::after {
+      content: "-";
+    }
+    .forecast-details-body {
+      padding: 0 1rem 1rem;
     }
     .chart-wrap {
       display: grid;
@@ -351,7 +376,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.85rem;
-      margin: 0.75rem 0 1.2rem;
+      margin: 0.75rem 0 0.9rem;
       color: var(--muted);
       font-size: 0.82rem;
       font-weight: 800;
@@ -482,7 +507,6 @@
       }
     }
     @media (max-width: 760px) {
-      .hero-stats,
       .field-grid,
       .summary-grid,
       .scenario-grid,
@@ -553,29 +577,14 @@
   </nav>
 
   <header class="hero forecaster-hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Free TikTok Shop Tool</div>
-        <h1 class="page-title">TikTok Shop Launch Forecaster</h1>
-        <p class="lead">How much can your brand make on TikTok Shop in the first 6 months? Forecast GMV, creator sampling costs, ad spend, profit, breakeven timing, and the operating pressure behind each launch strategy.</p>
-        <div class="hero-actions no-print">
-          <a class="cta" href="#forecaster">Run the Forecast</a>
-          <a class="cta secondary" href="/resources/free-tiktok-shop-growth-plan/">Get Free Growth Plan</a>
-        </div>
+    <div class="container">
+      <div class="eyebrow">Free TikTok Shop Tool</div>
+      <h1 class="page-title">TikTok Shop Launch Forecaster</h1>
+      <p class="lead">Estimate 6-month TikTok Shop GMV, profit, and breakeven timing from a few core launch assumptions.</p>
+      <div class="hero-actions no-print">
+        <a class="cta" href="#forecaster">Run the Forecast</a>
+        <a class="cta secondary" href="/resources/free-tiktok-shop-growth-plan/">Get Free Growth Plan</a>
       </div>
-      <aside class="hero-panel card">
-        <h2 style="margin-top:0;font-size:1.15rem;">What this forecast includes</h2>
-        <ul class="panel-list">
-          <li>6-month TikTok Shop GMV projection</li>
-          <li>Creator samples, active creators, and video volume</li>
-          <li>Ad spend, ROAS, commission, fees, and margin pressure</li>
-          <li>Breakeven timing and scenario comparison</li>
-        </ul>
-        <div class="hero-stats">
-          <div class="hero-stat"><strong>3</strong><span>Scenarios</span></div>
-          <div class="hero-stat"><strong>6 mo.</strong><span>Forecast</span></div>
-        </div>
-      </aside>
     </div>
   </header>
 
@@ -721,29 +730,32 @@
         <section class="scenario-grid" id="scenarioCards" aria-label="Scenario comparison"></section>
 
         <section>
-          <h2 style="margin-bottom:0.6rem;">Monthly Forecast</h2>
-          <div class="chart-wrap" id="chart" aria-label="Monthly GMV and profit chart"></div>
-          <div class="legend">
-            <span><i class="gmv-dot"></i>GMV</span>
-            <span><i class="profit-dot"></i>Profit</span>
+        <details class="forecast-details">
+          <summary>Monthly forecast details</summary>
+          <div class="forecast-details-body">
+            <div class="chart-wrap" id="chart" aria-label="Monthly GMV and profit chart"></div>
+            <div class="legend">
+              <span><i class="gmv-dot"></i>GMV</span>
+              <span><i class="profit-dot"></i>Profit</span>
+            </div>
+            <div class="table-scroll">
+              <table class="monthly-table">
+                <thead>
+                  <tr>
+                    <th>Month</th>
+                    <th>GMV</th>
+                    <th>Orders</th>
+                    <th>Ad Spend</th>
+                    <th>ROAS</th>
+                    <th>Profit</th>
+                    <th>Breakeven GMV</th>
+                  </tr>
+                </thead>
+                <tbody id="monthlyRows"></tbody>
+              </table>
+            </div>
           </div>
-          <div class="table-scroll">
-            <table class="monthly-table">
-              <thead>
-                <tr>
-                  <th>Month</th>
-                  <th>GMV</th>
-                  <th>Orders</th>
-                  <th>Ad Spend</th>
-                  <th>ROAS</th>
-                  <th>Profit</th>
-                  <th>Breakeven GMV</th>
-                </tr>
-              </thead>
-              <tbody id="monthlyRows"></tbody>
-            </table>
-          </div>
-        </section>
+        </details>
 
         <div class="cta-strip no-print">
           <p>Want Avanta to pressure-test this forecast against your actual product, margin, and creator plan?</p>
@@ -1006,7 +1018,7 @@
       document.getElementById("netProfitSub").textContent = `${money(scenario.totals.adSpend)} in TikTok ad spend`;
       document.getElementById("breakeven").textContent = scenario.totals.breakevenMonth ? `Month ${scenario.totals.breakevenMonth.month}` : "Not in 6 mo.";
       document.getElementById("breakevenSub").textContent = scenario.totals.breakevenMonth ? `${money(scenario.totals.breakevenMonth.breakevenGmv)} modeled breakeven GMV` : "Improve margin, ROAS, or sample efficiency";
-      document.getElementById("recommendation").innerHTML = `<strong>${scenario.name} launch selected</strong><p>${scenario.rationale} ${scenario.totals.netProfit >= 0 ? "The model reaches positive total profit across the forecast." : "The model needs better contribution margin, ROAS, creator productivity, or lower fixed launch costs."}</p>`;
+      document.getElementById("recommendation").innerHTML = `<strong>${scenario.name} launch selected</strong><p>${scenario.totals.netProfit >= 0 ? "Projected to finish profitable across 6 months." : "Needs better margin, ROAS, or sample efficiency."}</p>`;
     }
 
     function renderChart(scenario) {
