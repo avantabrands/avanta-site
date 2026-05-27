@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TikTok Shop Launch Forecaster | Avanta Brands</title>
+  <meta name="description" content="Forecast TikTok Shop GMV, creator sampling costs, ad spend, profit, and breakeven timing with Avanta Brands' free TikTok Shop launch forecaster." />
+  <link rel="canonical" href="https://avantabrands.co/resources/tiktok-shop-launch-forecaster/" />
+  <meta property="og:title" content="TikTok Shop Launch Forecaster | Avanta Brands" />
+  <meta property="og:description" content="Forecast TikTok Shop GMV, creator sampling costs, ad spend, profit, and breakeven timing with Avanta Brands' free TikTok Shop launch forecaster." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avantabrands.co/resources/tiktok-shop-launch-forecaster/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/assets/seo.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TikTok Shop Launch Forecaster",
+    "url": "https://avantabrands.co/resources/tiktok-shop-launch-forecaster/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "description": "A free TikTok Shop launch forecasting tool for estimating GMV, creator sampling costs, ad spend, profit, and breakeven timing.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Avanta Brands",
+      "url": "https://avantabrands.co/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2V1N1J2J2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2V1N1J2J2');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wfthm8hveu");
+  </script>
+
+  <style>
+    .forecaster-hero {
+      padding-bottom: 2rem;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.2rem;
+    }
+    .hero-stat {
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .hero-stat strong {
+      display: block;
+      font-size: 1.35rem;
+      letter-spacing: -0.04em;
+    }
+    .hero-stat span {
+      display: block;
+      margin-top: 0.2rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .forecaster-shell {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.36fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+    .assumption-panel,
+    .dashboard-panel,
+    .scenario-card,
+    .insight-card {
+      background: linear-gradient(180deg, rgba(22, 22, 22, 0.98), rgba(12, 12, 12, 0.98));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .assumption-panel {
+      position: sticky;
+      top: 6rem;
+      padding: 1.2rem;
+    }
+    .dashboard-panel {
+      padding: 1.25rem;
+    }
+    .field-group {
+      padding: 1rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .field-group:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+    .field-group h2 {
+      margin: 0 0 0.85rem;
+      font-size: 1rem;
+      letter-spacing: -0.03em;
+    }
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+    .field-wide {
+      grid-column: 1 / -1;
+    }
+    .forecast-field label,
+    .preset-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      margin-bottom: 0.35rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .forecast-field small {
+      color: #77777f;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .forecast-field input,
+    .forecast-field select {
+      width: 100%;
+      min-height: 44px;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #080808;
+      color: var(--text);
+      font: inherit;
+      font-weight: 800;
+      outline: none;
+    }
+    .forecast-field input:focus,
+    .forecast-field select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 59, 48, 0.13);
+    }
+    .preset-row,
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+    .preset-button,
+    .tool-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #090909;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+    .preset-button:hover,
+    .tool-button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+    .preset-button.active,
+    .tool-button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .summary-card {
+      min-height: 118px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+    .summary-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .summary-card strong {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: clamp(1.35rem, 2.3vw, 2rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+    .summary-card small {
+      display: block;
+      margin-top: 0.55rem;
+      color: #b4b4bb;
+      line-height: 1.35;
+    }
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    .scenario-card {
+      padding: 1rem;
+      box-shadow: none;
+      cursor: pointer;
+    }
+    .scenario-card.active {
+      border-color: rgba(255, 59, 48, 0.72);
+      background: linear-gradient(180deg, rgba(255, 59, 48, 0.15), rgba(15, 15, 15, 0.98));
+    }
+    .scenario-card h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1rem;
+    }
+    .scenario-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+    .scenario-card dl {
+      display: grid;
+      gap: 0.4rem;
+      margin: 0.9rem 0 0;
+    }
+    .scenario-card div {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      font-size: 0.88rem;
+    }
+    .scenario-card dt {
+      color: var(--muted);
+    }
+    .scenario-card dd {
+      margin: 0;
+      font-weight: 900;
+    }
+    .recommendation {
+      padding: 1rem;
+      border: 1px solid rgba(255, 59, 48, 0.34);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 59, 48, 0.1), rgba(255, 255, 255, 0.02));
+      margin-bottom: 1rem;
+    }
+    .recommendation strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .recommendation p {
+      margin: 0;
+      color: #d4d4d8;
+    }
+    .chart-wrap {
+      display: grid;
+      align-items: end;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.55rem;
+      min-height: 220px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #080808;
+    }
+    .chart-column {
+      display: grid;
+      align-content: end;
+      gap: 0.45rem;
+      min-width: 0;
+      height: 190px;
+    }
+    .bar-pair {
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      gap: 0.18rem;
+      height: 150px;
+    }
+    .bar {
+      width: 40%;
+      min-height: 4px;
+      border-radius: 999px 999px 4px 4px;
+    }
+    .bar.gmv {
+      background: linear-gradient(180deg, #ff3b30, #8f1712);
+    }
+    .bar.profit {
+      background: linear-gradient(180deg, #f4f4f5, #737373);
+    }
+    .bar.loss {
+      background: linear-gradient(180deg, #52525b, #27272a);
+    }
+    .chart-label {
+      overflow: hidden;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin: 0.75rem 0 1.2rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .legend i {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 999px;
+    }
+    .legend .gmv-dot {
+      background: var(--accent);
+    }
+    .legend .profit-dot {
+      background: #e4e4e7;
+    }
+    .monthly-table {
+      width: 100%;
+      min-width: 880px;
+      border-collapse: collapse;
+    }
+    .monthly-table th,
+    .monthly-table td {
+      padding: 0.85rem 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .monthly-table th:first-child,
+    .monthly-table td:first-child {
+      text-align: left;
+    }
+    .monthly-table th {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .profit-positive {
+      color: #f4f4f5;
+      font-weight: 900;
+    }
+    .profit-negative {
+      color: #ff7a72;
+      font-weight: 900;
+    }
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .insight-card {
+      padding: 1.1rem;
+      box-shadow: none;
+    }
+    .insight-card h2,
+    .insight-card h3 {
+      margin-top: 0;
+      font-size: 1.08rem;
+    }
+    .insight-card p,
+    .insight-card li {
+      color: var(--muted);
+    }
+    .no-print {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    @media (max-width: 1020px) {
+      .forecaster-shell,
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .assumption-panel {
+        position: static;
+      }
+      .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 760px) {
+      .hero-stats,
+      .field-grid,
+      .summary-grid,
+      .scenario-grid,
+      .insight-grid {
+        grid-template-columns: 1fr;
+      }
+      .dashboard-panel,
+      .assumption-panel {
+        padding: 1rem;
+      }
+      .chart-wrap {
+        overflow-x: auto;
+      }
+      .chart-column {
+        min-width: 62px;
+      }
+    }
+    @media print {
+      .site-nav,
+      .no-print,
+      .assumption-panel,
+      .cta-strip,
+      .site-footer {
+        display: none !important;
+      }
+      body {
+        background: #fff;
+        color: #111;
+      }
+      .forecaster-shell {
+        display: block;
+      }
+      .dashboard-panel,
+      .summary-card,
+      .scenario-card,
+      .recommendation,
+      .table-scroll {
+        box-shadow: none;
+        border-color: #ddd;
+        background: #fff;
+        color: #111;
+      }
+      .section p,
+      .section li,
+      .scenario-card p,
+      .recommendation p,
+      .summary-card small {
+        color: #333;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a class="brand" href="/">AVANTA BRANDS</a>
+      <div class="nav-links">
+        <a href="/services/">Services</a>
+        <a href="/guides/">Guides</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a class="active" href="/resources/">Resources</a>
+      </div>
+      <a class="cta" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Strategy Call</a>
+    </div>
+  </nav>
+
+  <header class="hero forecaster-hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Free TikTok Shop Tool</div>
+        <h1 class="page-title">TikTok Shop Launch Forecaster</h1>
+        <p class="lead">How much can your brand make on TikTok Shop in the first 6 months? Forecast GMV, creator sampling costs, ad spend, profit, breakeven timing, and the operating pressure behind each launch strategy.</p>
+        <div class="hero-actions no-print">
+          <a class="cta" href="#forecaster">Run the Forecast</a>
+          <a class="cta secondary" href="/resources/free-tiktok-shop-growth-plan/">Get Free Growth Plan</a>
+        </div>
+      </div>
+      <aside class="hero-panel card">
+        <h2 style="margin-top:0;font-size:1.15rem;">What this forecast includes</h2>
+        <ul class="panel-list">
+          <li>6-month TikTok Shop GMV projection</li>
+          <li>Creator samples, active creators, and video volume</li>
+          <li>Ad spend, ROAS, commission, fees, and margin pressure</li>
+          <li>Breakeven timing and scenario comparison</li>
+        </ul>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>3</strong><span>Scenarios</span></div>
+          <div class="hero-stat"><strong>6 mo.</strong><span>Forecast</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main id="forecaster" class="section">
+    <div class="container forecaster-shell">
+      <aside class="assumption-panel no-print">
+        <div class="field-group">
+          <div class="preset-label">Launch strategy</div>
+          <div class="preset-row" role="group" aria-label="Launch strategy">
+            <button class="preset-button" type="button" data-preset="conservative">Conservative</button>
+            <button class="preset-button active" type="button" data-preset="balanced">Balanced</button>
+            <button class="preset-button" type="button" data-preset="aggressive">Aggressive</button>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <h2>Brand Economics</h2>
+          <div class="field-grid">
+            <div class="forecast-field field-wide">
+              <label for="brandName">Brand name <small>optional</small></label>
+              <input id="brandName" type="text" value="Your Brand" />
+            </div>
+            <div class="forecast-field">
+              <label for="aov">AOV</label>
+              <input id="aov" type="number" value="45" min="1" step="1" />
+            </div>
+            <div class="forecast-field">
+              <label for="cogsPct">COGS %</label>
+              <input id="cogsPct" type="number" value="28" min="0" max="100" step="1" />
+            </div>
+            <div class="forecast-field">
+              <label for="shipping">Shipping</label>
+              <input id="shipping" type="number" value="5" min="0" step="0.5" />
+            </div>
+            <div class="forecast-field">
+              <label for="commissionPct">Commission %</label>
+              <input id="commissionPct" type="number" value="15" min="0" max="80" step="1" />
+            </div>
+            <div class="forecast-field">
+              <label for="platformFeePct">Platform fee %</label>
+              <input id="platformFeePct" type="number" value="8" min="0" max="40" step="0.5" />
+            </div>
+            <div class="forecast-field">
+              <label for="agencyFeePct">Agency fee %</label>
+              <input id="agencyFeePct" type="number" value="0" min="0" max="30" step="0.5" />
+            </div>
+            <div class="forecast-field field-wide">
+              <label for="retainer">Monthly operating fee</label>
+              <input id="retainer" type="number" value="0" min="0" step="250" />
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <h2>Creator System</h2>
+          <div class="field-grid">
+            <div class="forecast-field">
+              <label for="samples">Samples / month</label>
+              <input id="samples" type="number" value="150" min="0" step="10" />
+            </div>
+            <div class="forecast-field">
+              <label for="sampleCost">Sample cost</label>
+              <input id="sampleCost" type="number" value="17.6" min="0" step="0.5" />
+            </div>
+            <div class="forecast-field">
+              <label for="postRate">Post rate %</label>
+              <input id="postRate" type="number" value="80" min="0" max="100" step="1" />
+            </div>
+            <div class="forecast-field">
+              <label for="videosPerCreator">Videos / creator</label>
+              <input id="videosPerCreator" type="number" value="3" min="0" step="0.5" />
+            </div>
+            <div class="forecast-field">
+              <label for="gmvPerVideo">GMV / video</label>
+              <input id="gmvPerVideo" type="number" value="20" min="0" step="5" />
+            </div>
+            <div class="forecast-field">
+              <label for="creatorRetention">Creator retention %</label>
+              <input id="creatorRetention" type="number" value="30" min="0" max="100" step="1" />
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <h2>Paid Growth</h2>
+          <div class="field-grid">
+            <div class="forecast-field">
+              <label for="adSpend">Month 1 ads</label>
+              <input id="adSpend" type="number" value="10000" min="0" step="500" />
+            </div>
+            <div class="forecast-field">
+              <label for="adGrowthPct">Ad growth %</label>
+              <input id="adGrowthPct" type="number" value="10" min="-50" max="100" step="1" />
+            </div>
+            <div class="forecast-field">
+              <label for="roas">Starting ROAS</label>
+              <input id="roas" type="number" value="3" min="0" step="0.1" />
+            </div>
+            <div class="forecast-field">
+              <label for="roasGrowthPct">ROAS growth %</label>
+              <input id="roasGrowthPct" type="number" value="12.5" min="-50" max="100" step="0.5" />
+            </div>
+            <div class="forecast-field">
+              <label for="incentiveFund">Creator fund M1</label>
+              <input id="incentiveFund" type="number" value="5000" min="0" step="250" />
+            </div>
+            <div class="forecast-field">
+              <label for="fundGrowthPct">Fund growth %</label>
+              <input id="fundGrowthPct" type="number" value="10" min="-50" max="100" step="1" />
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <h2>Halo Revenue</h2>
+          <div class="field-grid">
+            <div class="forecast-field">
+              <label for="dtcSpend">DTC spend M1</label>
+              <input id="dtcSpend" type="number" value="15000" min="0" step="500" />
+            </div>
+            <div class="forecast-field">
+              <label for="dtcRoas">DTC ROAS</label>
+              <input id="dtcRoas" type="number" value="2.5" min="0" step="0.1" />
+            </div>
+            <div class="forecast-field">
+              <label for="amazonSpend">Amazon spend M1</label>
+              <input id="amazonSpend" type="number" value="0" min="0" step="500" />
+            </div>
+            <div class="forecast-field">
+              <label for="amazonRoas">Amazon ROAS</label>
+              <input id="amazonRoas" type="number" value="3" min="0" step="0.1" />
+            </div>
+            <div class="forecast-field field-wide">
+              <label for="haloPct">Halo lift %</label>
+              <input id="haloPct" type="number" value="15" min="0" max="100" step="1" />
+            </div>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <button class="tool-button primary" type="button" id="exportCsv">Export CSV</button>
+          <button class="tool-button" type="button" id="printReport">Print Report</button>
+        </div>
+      </aside>
+
+      <article class="dashboard-panel">
+        <div class="recommendation" id="recommendation">
+          <strong>Balanced launch selected</strong>
+          <p>Adjust the assumptions to see whether speed, margin, or creator volume is creating the biggest constraint.</p>
+        </div>
+
+        <section class="summary-grid" aria-label="Forecast summary">
+          <div class="summary-card">
+            <span>6-month TikTok GMV</span>
+            <strong id="totalGmv">$0</strong>
+            <small id="totalGmvSub">Across TikTok Shop sales only</small>
+          </div>
+          <div class="summary-card">
+            <span>Net Profit</span>
+            <strong id="netProfit">$0</strong>
+            <small id="netProfitSub">After modeled launch costs</small>
+          </div>
+          <div class="summary-card">
+            <span>Breakeven</span>
+            <strong id="breakeven">-</strong>
+            <small id="breakevenSub">First profitable month</small>
+          </div>
+          <div class="summary-card">
+            <span>Total Reach Value</span>
+            <strong id="mediaValue">$0</strong>
+            <small>Estimated earned media value from creator views</small>
+          </div>
+        </section>
+
+        <section class="scenario-grid" id="scenarioCards" aria-label="Scenario comparison"></section>
+
+        <section>
+          <h2 style="margin-bottom:0.6rem;">Monthly Forecast</h2>
+          <div class="chart-wrap" id="chart" aria-label="Monthly GMV and profit chart"></div>
+          <div class="legend">
+            <span><i class="gmv-dot"></i>GMV</span>
+            <span><i class="profit-dot"></i>Profit</span>
+          </div>
+          <div class="table-scroll">
+            <table class="monthly-table">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>GMV</th>
+                  <th>Orders</th>
+                  <th>Ad Spend</th>
+                  <th>ROAS</th>
+                  <th>Samples</th>
+                  <th>Videos</th>
+                  <th>Profit</th>
+                  <th>Breakeven GMV</th>
+                </tr>
+              </thead>
+              <tbody id="monthlyRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="cta-strip no-print">
+          <p>Want Avanta to pressure-test this forecast against your actual product, margin, and creator plan?</p>
+          <a class="cta" href="/resources/free-tiktok-shop-growth-plan/">Get Free Growth Plan</a>
+          <a class="cta secondary" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Free Strategy Call</a>
+        </div>
+      </article>
+    </div>
+
+    <section class="container insight-grid">
+      <article class="insight-card">
+        <h2>How to use the TikTok Shop launch forecaster</h2>
+        <p>Start with your real AOV, product cost, commission, and fulfillment cost. Then pressure-test creator sample volume and ad spend. If net profit gets worse as GMV rises, the issue is usually contribution margin, sample efficiency, or paid ROAS.</p>
+      </article>
+      <article class="insight-card">
+        <h3>What the output means</h3>
+        <p>GMV shows launch scale. Profit shows whether the operating model can support that scale. Breakeven GMV shows how much monthly TikTok Shop volume is needed before fixed launch costs stop dragging the model down.</p>
+      </article>
+      <article class="insight-card">
+        <h3>Best next step</h3>
+        <p>Use this forecast as a first pass, then compare it against inventory, fulfillment capacity, creator pipeline quality, listing conversion, and cash timing before making a final launch budget decision.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">AVANTA BRANDS</div>
+        <p>Built for brands that want clearer TikTok Shop launch decisions before they spend.</p>
+      </div>
+      <div>
+        <h3>Related Tools</h3>
+        <a href="/resources/tiktok-shop-profit-calculator/">Profit Calculator</a><br />
+        <a href="/resources/tiktok-shop-roas-calculator/">ROAS Calculator</a><br />
+        <a href="/resources/tiktok-shop-cpa-calculator/">CPA Calculator</a>
+      </div>
+      <div>
+        <h3>Next Step</h3>
+        <a href="/services/tiktok-shop-launch/">TikTok Shop Launch</a><br />
+        <a href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book a strategy call</a>
+      </div>
+    </div>
+    <div class="container footer-note">This forecaster is directional and does not guarantee sales, profit, creator output, or TikTok Shop performance.</div>
+  </footer>
+
+  <script>
+    const presets = {
+      conservative: {
+        label: "Conservative",
+        samples: 80,
+        adSpend: 5000,
+        adGrowthPct: 5,
+        roas: 2.2,
+        roasGrowthPct: 8,
+        incentiveFund: 2500,
+        fundGrowthPct: 5,
+        gmvPerVideo: 14,
+        rationale: "Conservative launch selected: lower risk, slower learning, and less cash pressure."
+      },
+      balanced: {
+        label: "Balanced",
+        samples: 150,
+        adSpend: 10000,
+        adGrowthPct: 10,
+        roas: 3,
+        roasGrowthPct: 12.5,
+        incentiveFund: 5000,
+        fundGrowthPct: 10,
+        gmvPerVideo: 20,
+        rationale: "Balanced launch selected: enough volume to learn quickly without forcing an overly expensive first push."
+      },
+      aggressive: {
+        label: "Aggressive",
+        samples: 250,
+        adSpend: 20000,
+        adGrowthPct: 15,
+        roas: 4,
+        roasGrowthPct: 15,
+        incentiveFund: 10000,
+        fundGrowthPct: 15,
+        gmvPerVideo: 28,
+        rationale: "Aggressive launch selected: faster GMV ramp, heavier cash requirements, and more pressure on operations."
+      }
+    };
+
+    const inputIds = [
+      "brandName", "aov", "cogsPct", "shipping", "commissionPct", "platformFeePct", "agencyFeePct", "retainer",
+      "samples", "sampleCost", "postRate", "videosPerCreator", "gmvPerVideo", "creatorRetention",
+      "adSpend", "adGrowthPct", "roas", "roasGrowthPct", "incentiveFund", "fundGrowthPct",
+      "dtcSpend", "dtcRoas", "amazonSpend", "amazonRoas", "haloPct"
+    ];
+
+    let selectedScenario = "balanced";
+    let latestScenarios = {};
+
+    function numberValue(id) {
+      return parseFloat(document.getElementById(id).value) || 0;
+    }
+
+    function getInputs() {
+      return {
+        brandName: document.getElementById("brandName").value || "Your Brand",
+        aov: Math.max(numberValue("aov"), 1),
+        cogsPct: numberValue("cogsPct"),
+        shipping: numberValue("shipping"),
+        commissionPct: numberValue("commissionPct"),
+        platformFeePct: numberValue("platformFeePct"),
+        agencyFeePct: numberValue("agencyFeePct"),
+        retainer: numberValue("retainer"),
+        samples: numberValue("samples"),
+        sampleCost: numberValue("sampleCost"),
+        postRate: numberValue("postRate") / 100,
+        videosPerCreator: numberValue("videosPerCreator"),
+        gmvPerVideo: numberValue("gmvPerVideo"),
+        creatorRetention: numberValue("creatorRetention") / 100,
+        adSpend: numberValue("adSpend"),
+        adGrowthPct: numberValue("adGrowthPct") / 100,
+        roas: numberValue("roas"),
+        roasGrowthPct: numberValue("roasGrowthPct") / 100,
+        incentiveFund: numberValue("incentiveFund"),
+        fundGrowthPct: numberValue("fundGrowthPct") / 100,
+        dtcSpend: numberValue("dtcSpend"),
+        dtcRoas: numberValue("dtcRoas"),
+        amazonSpend: numberValue("amazonSpend"),
+        amazonRoas: numberValue("amazonRoas"),
+        haloPct: numberValue("haloPct") / 100
+      };
+    }
+
+    function buildScenario(baseInputs, key) {
+      const preset = presets[key];
+      const scenarioInputs = {
+        ...baseInputs,
+        samples: key === selectedScenario ? baseInputs.samples : preset.samples,
+        adSpend: key === selectedScenario ? baseInputs.adSpend : preset.adSpend,
+        adGrowthPct: key === selectedScenario ? baseInputs.adGrowthPct : preset.adGrowthPct / 100,
+        roas: key === selectedScenario ? baseInputs.roas : preset.roas,
+        roasGrowthPct: key === selectedScenario ? baseInputs.roasGrowthPct : preset.roasGrowthPct / 100,
+        incentiveFund: key === selectedScenario ? baseInputs.incentiveFund : preset.incentiveFund,
+        fundGrowthPct: key === selectedScenario ? baseInputs.fundGrowthPct : preset.fundGrowthPct / 100,
+        gmvPerVideo: key === selectedScenario ? baseInputs.gmvPerVideo : preset.gmvPerVideo
+      };
+
+      const months = [];
+      let priorActiveCreators = 0;
+      let cumulativeProfit = 0;
+
+      for (let index = 0; index < 6; index += 1) {
+        const month = index + 1;
+        const adSpend = scenarioInputs.adSpend * Math.pow(1 + scenarioInputs.adGrowthPct, index);
+        const roas = scenarioInputs.roas * Math.pow(1 + scenarioInputs.roasGrowthPct, index);
+        const incentiveFund = scenarioInputs.incentiveFund * Math.pow(1 + scenarioInputs.fundGrowthPct, index);
+        const newPostingCreators = scenarioInputs.samples * scenarioInputs.postRate;
+        const activeCreators = (priorActiveCreators * scenarioInputs.creatorRetention) + newPostingCreators;
+        const videos = activeCreators * scenarioInputs.videosPerCreator;
+        const creatorGmv = videos * scenarioInputs.gmvPerVideo;
+        const adGmv = adSpend * roas;
+        const totalGmv = creatorGmv + adGmv;
+        const orders = totalGmv / scenarioInputs.aov;
+        const sampleCost = scenarioInputs.samples * scenarioInputs.sampleCost;
+        const cogsCost = totalGmv * (scenarioInputs.cogsPct / 100);
+        const shippingCost = orders * scenarioInputs.shipping;
+        const commissionCost = totalGmv * (scenarioInputs.commissionPct / 100);
+        const platformFee = totalGmv * (scenarioInputs.platformFeePct / 100);
+        const agencyFee = totalGmv * (scenarioInputs.agencyFeePct / 100);
+        const totalCosts = cogsCost + shippingCost + commissionCost + platformFee + agencyFee + sampleCost + incentiveFund + adSpend + scenarioInputs.retainer;
+        const netProfit = totalGmv - totalCosts;
+        const variableRate = (scenarioInputs.cogsPct + scenarioInputs.commissionPct + scenarioInputs.platformFeePct + scenarioInputs.agencyFeePct) / 100;
+        const shippingRate = scenarioInputs.shipping / scenarioInputs.aov;
+        const adRate = totalGmv > 0 ? adSpend / totalGmv : 0;
+        const contributionMargin = 1 - variableRate - shippingRate - adRate;
+        const fixedCosts = sampleCost + incentiveFund + scenarioInputs.retainer;
+        const breakevenGmv = contributionMargin > 0 ? fixedCosts / contributionMargin : Infinity;
+        const dtcHalo = scenarioInputs.dtcSpend * Math.pow(1 + scenarioInputs.adGrowthPct, index) * scenarioInputs.dtcRoas * scenarioInputs.haloPct;
+        const amazonHalo = scenarioInputs.amazonSpend * Math.pow(1 + scenarioInputs.adGrowthPct, index) * scenarioInputs.amazonRoas * scenarioInputs.haloPct;
+        const views = videos * 9000;
+
+        cumulativeProfit += netProfit;
+        priorActiveCreators = activeCreators;
+
+        months.push({
+          month,
+          adSpend,
+          roas,
+          adGmv,
+          creatorGmv,
+          totalGmv,
+          orders,
+          samples: scenarioInputs.samples,
+          activeCreators,
+          videos,
+          views,
+          sampleCost,
+          incentiveFund,
+          totalCosts,
+          netProfit,
+          cumulativeProfit,
+          breakevenGmv,
+          haloGmv: dtcHalo + amazonHalo,
+          totalGmvWithHalo: totalGmv + dtcHalo + amazonHalo
+        });
+      }
+
+      const totals = months.reduce((acc, month) => {
+        acc.totalGmv += month.totalGmv;
+        acc.totalGmvWithHalo += month.totalGmvWithHalo;
+        acc.adSpend += month.adSpend;
+        acc.netProfit += month.netProfit;
+        acc.orders += month.orders;
+        acc.videos += month.videos;
+        acc.views += month.views;
+        acc.haloGmv += month.haloGmv;
+        return acc;
+      }, { totalGmv: 0, totalGmvWithHalo: 0, adSpend: 0, netProfit: 0, orders: 0, videos: 0, views: 0, haloGmv: 0 });
+
+      totals.avgRoas = totals.adSpend > 0 ? totals.totalGmv / totals.adSpend : 0;
+      totals.mediaValue = (totals.views / 1000) * 30;
+      totals.breakevenMonth = months.find((month) => month.netProfit >= 0);
+
+      return {
+        key,
+        name: preset.label,
+        rationale: preset.rationale,
+        inputs: scenarioInputs,
+        months,
+        totals
+      };
+    }
+
+    function money(value, compact = true) {
+      if (!Number.isFinite(value)) return "No breakeven";
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0,
+        notation: compact && Math.abs(value) >= 100000 ? "compact" : "standard"
+      }).format(value);
+    }
+
+    function whole(value) {
+      return new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(value);
+    }
+
+    function renderScenarioCards() {
+      const wrap = document.getElementById("scenarioCards");
+      wrap.innerHTML = Object.values(latestScenarios).map((scenario) => `
+        <button class="scenario-card ${scenario.key === selectedScenario ? "active" : ""}" type="button" data-scenario="${scenario.key}">
+          <h3>${scenario.name}</h3>
+          <p>${scenario.key === "conservative" ? "Lower spend and a slower creator ramp." : scenario.key === "balanced" ? "A practical mix of learning speed and cash control." : "Faster scale with heavier upfront investment."}</p>
+          <dl>
+            <div><dt>GMV</dt><dd>${money(scenario.totals.totalGmv)}</dd></div>
+            <div><dt>Profit</dt><dd>${money(scenario.totals.netProfit)}</dd></div>
+            <div><dt>Avg ROAS</dt><dd>${scenario.totals.avgRoas.toFixed(1)}x</dd></div>
+          </dl>
+        </button>
+      `).join("");
+
+      wrap.querySelectorAll("[data-scenario]").forEach((button) => {
+        button.addEventListener("click", () => {
+          selectedScenario = button.dataset.scenario;
+          applyPreset(selectedScenario);
+        });
+      });
+    }
+
+    function renderSummary(scenario) {
+      const profitClass = scenario.totals.netProfit < 0 ? "profit-negative" : "profit-positive";
+      document.getElementById("totalGmv").textContent = money(scenario.totals.totalGmv);
+      document.getElementById("totalGmvSub").textContent = `${money(scenario.totals.haloGmv)} estimated halo GMV`;
+      document.getElementById("netProfit").textContent = money(scenario.totals.netProfit);
+      document.getElementById("netProfit").className = profitClass;
+      document.getElementById("netProfitSub").textContent = `${money(scenario.totals.adSpend)} in TikTok ad spend`;
+      document.getElementById("breakeven").textContent = scenario.totals.breakevenMonth ? `Month ${scenario.totals.breakevenMonth.month}` : "Not in 6 mo.";
+      document.getElementById("breakevenSub").textContent = scenario.totals.breakevenMonth ? `${money(scenario.totals.breakevenMonth.breakevenGmv)} modeled breakeven GMV` : "Improve margin, ROAS, or sample efficiency";
+      document.getElementById("mediaValue").textContent = money(scenario.totals.mediaValue);
+      document.getElementById("recommendation").innerHTML = `<strong>${scenario.name} launch selected</strong><p>${scenario.rationale} ${scenario.totals.netProfit >= 0 ? "The model reaches positive total profit across the forecast." : "The model needs better contribution margin, ROAS, creator productivity, or lower fixed launch costs."}</p>`;
+    }
+
+    function renderChart(scenario) {
+      const chart = document.getElementById("chart");
+      const maxGmv = Math.max(...scenario.months.map((month) => month.totalGmv), 1);
+      const maxProfit = Math.max(...scenario.months.map((month) => Math.abs(month.netProfit)), 1);
+      chart.innerHTML = scenario.months.map((month) => {
+        const gmvHeight = Math.max((month.totalGmv / maxGmv) * 150, 4);
+        const profitHeight = Math.max((Math.abs(month.netProfit) / maxProfit) * 150, 4);
+        return `
+          <div class="chart-column" title="Month ${month.month}: ${money(month.totalGmv, false)} GMV, ${money(month.netProfit, false)} profit">
+            <div class="bar-pair">
+              <div class="bar gmv" style="height:${gmvHeight}px"></div>
+              <div class="bar ${month.netProfit < 0 ? "loss" : "profit"}" style="height:${profitHeight}px"></div>
+            </div>
+            <div class="chart-label">M${month.month}</div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderTable(scenario) {
+      document.getElementById("monthlyRows").innerHTML = scenario.months.map((month) => `
+        <tr>
+          <td>Month ${month.month}</td>
+          <td>${money(month.totalGmv, false)}</td>
+          <td>${whole(month.orders)}</td>
+          <td>${money(month.adSpend, false)}</td>
+          <td>${month.roas.toFixed(2)}x</td>
+          <td>${whole(month.samples)}</td>
+          <td>${whole(month.videos)}</td>
+          <td class="${month.netProfit < 0 ? "profit-negative" : "profit-positive"}">${money(month.netProfit, false)}</td>
+          <td>${money(month.breakevenGmv, false)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function updateForecast() {
+      const inputs = getInputs();
+      latestScenarios = {
+        conservative: buildScenario(inputs, "conservative"),
+        balanced: buildScenario(inputs, "balanced"),
+        aggressive: buildScenario(inputs, "aggressive")
+      };
+
+      const scenario = latestScenarios[selectedScenario];
+      renderSummary(scenario);
+      renderScenarioCards();
+      renderChart(scenario);
+      renderTable(scenario);
+    }
+
+    function applyPreset(key) {
+      selectedScenario = key;
+      const preset = presets[key];
+      ["samples", "adSpend", "adGrowthPct", "roas", "roasGrowthPct", "incentiveFund", "fundGrowthPct", "gmvPerVideo"].forEach((id) => {
+        document.getElementById(id).value = preset[id];
+      });
+      document.querySelectorAll("[data-preset]").forEach((button) => {
+        button.classList.toggle("active", button.dataset.preset === key);
+      });
+      updateForecast();
+    }
+
+    function exportCsv() {
+      const scenario = latestScenarios[selectedScenario];
+      if (!scenario) return;
+      const rows = [
+        ["Brand", getInputs().brandName],
+        ["Scenario", scenario.name],
+        [],
+        ["Month", "GMV", "Orders", "Ad Spend", "ROAS", "Samples", "Active Creators", "Videos", "Views", "Net Profit", "Breakeven GMV", "Halo GMV"],
+        ...scenario.months.map((month) => [
+          `Month ${month.month}`,
+          month.totalGmv.toFixed(0),
+          month.orders.toFixed(0),
+          month.adSpend.toFixed(0),
+          month.roas.toFixed(2),
+          month.samples.toFixed(0),
+          month.activeCreators.toFixed(0),
+          month.videos.toFixed(0),
+          month.views.toFixed(0),
+          month.netProfit.toFixed(0),
+          Number.isFinite(month.breakevenGmv) ? month.breakevenGmv.toFixed(0) : "No breakeven",
+          month.haloGmv.toFixed(0)
+        ])
+      ];
+      const csv = rows.map((row) => row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      const brandSlug = getInputs().brandName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "brand";
+      link.href = URL.createObjectURL(blob);
+      link.download = `avanta-tiktok-shop-launch-forecast-${brandSlug}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    }
+
+    inputIds.forEach((id) => {
+      document.getElementById(id).addEventListener("input", updateForecast);
+    });
+
+    document.querySelectorAll("[data-preset]").forEach((button) => {
+      button.addEventListener("click", () => applyPreset(button.dataset.preset));
+    });
+
+    document.getElementById("exportCsv").addEventListener("click", exportCsv);
+    document.getElementById("printReport").addEventListener("click", () => window.print());
+
+    updateForecast();
+  </script>
+</body>
+</html>
