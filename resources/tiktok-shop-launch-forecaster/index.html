@@ -87,9 +87,12 @@
     }
     .forecaster-shell {
       display: grid;
-      grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.36fr);
-      gap: 1.25rem;
+      grid-template-columns: minmax(320px, 480px) minmax(0, 1fr);
+      gap: 1.5rem;
       align-items: start;
+    }
+    .container.forecaster-shell {
+      width: min(1500px, calc(100% - 2rem));
     }
     .assumption-panel,
     .dashboard-panel,
@@ -371,15 +374,54 @@
     }
     .monthly-table {
       width: 100%;
-      min-width: 880px;
+      min-width: 940px;
       border-collapse: collapse;
+      table-layout: fixed;
+    }
+    .dashboard-panel .table-scroll {
+      max-width: 100%;
+      margin-top: 1rem;
+      overflow-x: auto;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.01);
+      scrollbar-color: rgba(255, 255, 255, 0.28) rgba(255, 255, 255, 0.05);
+      scrollbar-width: thin;
     }
     .monthly-table th,
     .monthly-table td {
-      padding: 0.85rem 0.75rem;
+      overflow: hidden;
+      padding: 0.85rem 0.55rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      font-size: 0.94rem;
       text-align: right;
+      text-overflow: ellipsis;
       white-space: nowrap;
+    }
+    .monthly-table th:nth-child(1),
+    .monthly-table td:nth-child(1) {
+      width: 12%;
+    }
+    .monthly-table th:nth-child(2),
+    .monthly-table td:nth-child(2),
+    .monthly-table th:nth-child(4),
+    .monthly-table td:nth-child(4),
+    .monthly-table th:nth-child(8),
+    .monthly-table td:nth-child(8) {
+      width: 12%;
+    }
+    .monthly-table th:nth-child(3),
+    .monthly-table td:nth-child(3),
+    .monthly-table th:nth-child(5),
+    .monthly-table td:nth-child(5),
+    .monthly-table th:nth-child(6),
+    .monthly-table td:nth-child(6),
+    .monthly-table th:nth-child(7),
+    .monthly-table td:nth-child(7) {
+      width: 9%;
+    }
+    .monthly-table th:nth-child(9),
+    .monthly-table td:nth-child(9) {
+      width: 15%;
     }
     .monthly-table th:first-child,
     .monthly-table td:first-child {
@@ -428,6 +470,9 @@
       .hero-grid {
         grid-template-columns: 1fr;
       }
+      .container.forecaster-shell {
+        width: min(var(--max), calc(100% - 2rem));
+      }
       .assumption-panel {
         position: static;
       }
@@ -449,6 +494,9 @@
       }
       .chart-wrap {
         overflow-x: auto;
+      }
+      .monthly-table {
+        min-width: 900px;
       }
       .chart-column {
         min-width: 62px;
