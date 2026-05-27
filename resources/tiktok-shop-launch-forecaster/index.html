@@ -374,7 +374,7 @@
     }
     .monthly-table {
       width: 100%;
-      min-width: 940px;
+      min-width: 760px;
       border-collapse: collapse;
       table-layout: fixed;
     }
@@ -405,23 +405,19 @@
     .monthly-table td:nth-child(2),
     .monthly-table th:nth-child(4),
     .monthly-table td:nth-child(4),
-    .monthly-table th:nth-child(8),
-    .monthly-table td:nth-child(8) {
-      width: 12%;
+    .monthly-table th:nth-child(6),
+    .monthly-table td:nth-child(6) {
+      width: 15%;
     }
     .monthly-table th:nth-child(3),
     .monthly-table td:nth-child(3),
     .monthly-table th:nth-child(5),
-    .monthly-table td:nth-child(5),
-    .monthly-table th:nth-child(6),
-    .monthly-table td:nth-child(6),
+    .monthly-table td:nth-child(5) {
+      width: 11%;
+    }
     .monthly-table th:nth-child(7),
     .monthly-table td:nth-child(7) {
-      width: 9%;
-    }
-    .monthly-table th:nth-child(9),
-    .monthly-table td:nth-child(9) {
-      width: 15%;
+      width: 21%;
     }
     .monthly-table th:first-child,
     .monthly-table td:first-child {
@@ -496,7 +492,7 @@
         overflow-x: auto;
       }
       .monthly-table {
-        min-width: 900px;
+        min-width: 760px;
       }
       .chart-column {
         min-width: 62px;
@@ -688,35 +684,8 @@
           </div>
         </div>
 
-        <div class="field-group">
-          <h2>Halo Revenue</h2>
-          <div class="field-grid">
-            <div class="forecast-field">
-              <label for="dtcSpend">DTC spend M1</label>
-              <input id="dtcSpend" type="number" value="15000" min="0" step="500" />
-            </div>
-            <div class="forecast-field">
-              <label for="dtcRoas">DTC ROAS</label>
-              <input id="dtcRoas" type="number" value="2.5" min="0" step="0.1" />
-            </div>
-            <div class="forecast-field">
-              <label for="amazonSpend">Amazon spend M1</label>
-              <input id="amazonSpend" type="number" value="0" min="0" step="500" />
-            </div>
-            <div class="forecast-field">
-              <label for="amazonRoas">Amazon ROAS</label>
-              <input id="amazonRoas" type="number" value="3" min="0" step="0.1" />
-            </div>
-            <div class="forecast-field field-wide">
-              <label for="haloPct">Halo lift %</label>
-              <input id="haloPct" type="number" value="15" min="0" max="100" step="1" />
-            </div>
-          </div>
-        </div>
-
         <div class="action-row">
           <button class="tool-button primary" type="button" id="exportCsv">Export CSV</button>
-          <button class="tool-button" type="button" id="printReport">Print Report</button>
         </div>
       </aside>
 
@@ -742,11 +711,6 @@
             <strong id="breakeven">-</strong>
             <small id="breakevenSub">First profitable month</small>
           </div>
-          <div class="summary-card">
-            <span>Total Reach Value</span>
-            <strong id="mediaValue">$0</strong>
-            <small>Estimated earned media value from creator views</small>
-          </div>
         </section>
 
         <section class="scenario-grid" id="scenarioCards" aria-label="Scenario comparison"></section>
@@ -767,8 +731,6 @@
                   <th>Orders</th>
                   <th>Ad Spend</th>
                   <th>ROAS</th>
-                  <th>Samples</th>
-                  <th>Videos</th>
                   <th>Profit</th>
                   <th>Breakeven GMV</th>
                 </tr>
@@ -866,8 +828,7 @@
     const inputIds = [
       "brandName", "aov", "cogsPct", "shipping", "commissionPct", "platformFeePct", "agencyFeePct", "retainer",
       "samples", "sampleCost", "postRate", "videosPerCreator", "gmvPerVideo", "creatorRetention",
-      "adSpend", "adGrowthPct", "roas", "roasGrowthPct", "incentiveFund", "fundGrowthPct",
-      "dtcSpend", "dtcRoas", "amazonSpend", "amazonRoas", "haloPct"
+      "adSpend", "adGrowthPct", "roas", "roasGrowthPct", "incentiveFund", "fundGrowthPct"
     ];
 
     let selectedScenario = "balanced";
@@ -898,12 +859,7 @@
         roas: numberValue("roas"),
         roasGrowthPct: numberValue("roasGrowthPct") / 100,
         incentiveFund: numberValue("incentiveFund"),
-        fundGrowthPct: numberValue("fundGrowthPct") / 100,
-        dtcSpend: numberValue("dtcSpend"),
-        dtcRoas: numberValue("dtcRoas"),
-        amazonSpend: numberValue("amazonSpend"),
-        amazonRoas: numberValue("amazonRoas"),
-        haloPct: numberValue("haloPct") / 100
+        fundGrowthPct: numberValue("fundGrowthPct") / 100
       };
     }
 
@@ -951,8 +907,6 @@
         const contributionMargin = 1 - variableRate - shippingRate - adRate;
         const fixedCosts = sampleCost + incentiveFund + scenarioInputs.retainer;
         const breakevenGmv = contributionMargin > 0 ? fixedCosts / contributionMargin : Infinity;
-        const dtcHalo = scenarioInputs.dtcSpend * Math.pow(1 + scenarioInputs.adGrowthPct, index) * scenarioInputs.dtcRoas * scenarioInputs.haloPct;
-        const amazonHalo = scenarioInputs.amazonSpend * Math.pow(1 + scenarioInputs.adGrowthPct, index) * scenarioInputs.amazonRoas * scenarioInputs.haloPct;
         const views = videos * 9000;
 
         cumulativeProfit += netProfit;
@@ -975,26 +929,21 @@
           totalCosts,
           netProfit,
           cumulativeProfit,
-          breakevenGmv,
-          haloGmv: dtcHalo + amazonHalo,
-          totalGmvWithHalo: totalGmv + dtcHalo + amazonHalo
+          breakevenGmv
         });
       }
 
       const totals = months.reduce((acc, month) => {
         acc.totalGmv += month.totalGmv;
-        acc.totalGmvWithHalo += month.totalGmvWithHalo;
         acc.adSpend += month.adSpend;
         acc.netProfit += month.netProfit;
         acc.orders += month.orders;
         acc.videos += month.videos;
         acc.views += month.views;
-        acc.haloGmv += month.haloGmv;
         return acc;
-      }, { totalGmv: 0, totalGmvWithHalo: 0, adSpend: 0, netProfit: 0, orders: 0, videos: 0, views: 0, haloGmv: 0 });
+      }, { totalGmv: 0, adSpend: 0, netProfit: 0, orders: 0, videos: 0, views: 0 });
 
       totals.avgRoas = totals.adSpend > 0 ? totals.totalGmv / totals.adSpend : 0;
-      totals.mediaValue = (totals.views / 1000) * 30;
       totals.breakevenMonth = months.find((month) => month.netProfit >= 0);
 
       return {
@@ -1046,13 +995,12 @@
     function renderSummary(scenario) {
       const profitClass = scenario.totals.netProfit < 0 ? "profit-negative" : "profit-positive";
       document.getElementById("totalGmv").textContent = money(scenario.totals.totalGmv);
-      document.getElementById("totalGmvSub").textContent = `${money(scenario.totals.haloGmv)} estimated halo GMV`;
+      document.getElementById("totalGmvSub").textContent = `${whole(scenario.totals.orders)} projected orders`;
       document.getElementById("netProfit").textContent = money(scenario.totals.netProfit);
       document.getElementById("netProfit").className = profitClass;
       document.getElementById("netProfitSub").textContent = `${money(scenario.totals.adSpend)} in TikTok ad spend`;
       document.getElementById("breakeven").textContent = scenario.totals.breakevenMonth ? `Month ${scenario.totals.breakevenMonth.month}` : "Not in 6 mo.";
       document.getElementById("breakevenSub").textContent = scenario.totals.breakevenMonth ? `${money(scenario.totals.breakevenMonth.breakevenGmv)} modeled breakeven GMV` : "Improve margin, ROAS, or sample efficiency";
-      document.getElementById("mediaValue").textContent = money(scenario.totals.mediaValue);
       document.getElementById("recommendation").innerHTML = `<strong>${scenario.name} launch selected</strong><p>${scenario.rationale} ${scenario.totals.netProfit >= 0 ? "The model reaches positive total profit across the forecast." : "The model needs better contribution margin, ROAS, creator productivity, or lower fixed launch costs."}</p>`;
     }
 
@@ -1083,8 +1031,6 @@
           <td>${whole(month.orders)}</td>
           <td>${money(month.adSpend, false)}</td>
           <td>${month.roas.toFixed(2)}x</td>
-          <td>${whole(month.samples)}</td>
-          <td>${whole(month.videos)}</td>
           <td class="${month.netProfit < 0 ? "profit-negative" : "profit-positive"}">${money(month.netProfit, false)}</td>
           <td>${money(month.breakevenGmv, false)}</td>
         </tr>
@@ -1125,20 +1071,15 @@
         ["Brand", getInputs().brandName],
         ["Scenario", scenario.name],
         [],
-        ["Month", "GMV", "Orders", "Ad Spend", "ROAS", "Samples", "Active Creators", "Videos", "Views", "Net Profit", "Breakeven GMV", "Halo GMV"],
+        ["Month", "GMV", "Orders", "Ad Spend", "ROAS", "Net Profit", "Breakeven GMV"],
         ...scenario.months.map((month) => [
           `Month ${month.month}`,
           month.totalGmv.toFixed(0),
           month.orders.toFixed(0),
           month.adSpend.toFixed(0),
           month.roas.toFixed(2),
-          month.samples.toFixed(0),
-          month.activeCreators.toFixed(0),
-          month.videos.toFixed(0),
-          month.views.toFixed(0),
           month.netProfit.toFixed(0),
-          Number.isFinite(month.breakevenGmv) ? month.breakevenGmv.toFixed(0) : "No breakeven",
-          month.haloGmv.toFixed(0)
+          Number.isFinite(month.breakevenGmv) ? month.breakevenGmv.toFixed(0) : "No breakeven"
         ])
       ];
       const csv = rows.map((row) => row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\n");
@@ -1162,7 +1103,6 @@
     });
 
     document.getElementById("exportCsv").addEventListener("click", exportCsv);
-    document.getElementById("printReport").addEventListener("click", () => window.print());
 
     updateForecast();
   </script>
