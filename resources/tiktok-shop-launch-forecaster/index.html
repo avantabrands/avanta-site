@@ -80,7 +80,7 @@
     }
     .forecaster-shell {
       display: grid;
-      grid-template-columns: minmax(320px, 480px) minmax(0, 1fr);
+      grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
       gap: 1.5rem;
       align-items: start;
     }
@@ -89,7 +89,6 @@
     }
     .assumption-panel,
     .dashboard-panel,
-    .scenario-card,
     .insight-card {
       background: linear-gradient(180deg, rgba(22, 22, 22, 0.98), rgba(12, 12, 12, 0.98));
       border: 1px solid var(--border);
@@ -105,7 +104,7 @@
       padding: 1.25rem;
     }
     .field-group {
-      padding: 1rem 0;
+      padding: 0.8rem 0;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
     .field-group:first-of-type {
@@ -114,7 +113,7 @@
     }
     .field-group h2 {
       margin: 0 0 0.85rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
       letter-spacing: -0.03em;
     }
     .field-grid {
@@ -146,8 +145,8 @@
     .forecast-field input,
     .forecast-field select {
       width: 100%;
-      min-height: 44px;
-      padding: 0.8rem 0.9rem;
+      min-height: 38px;
+      padding: 0.68rem 0.8rem;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: #080808;
@@ -179,7 +178,7 @@
       background: #090909;
       color: var(--text);
       font: inherit;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 900;
       cursor: pointer;
       transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
@@ -228,54 +227,6 @@
       margin-top: 0.55rem;
       color: #b4b4bb;
       line-height: 1.35;
-    }
-    .scenario-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.8rem;
-      margin: 1rem 0;
-    }
-    .scenario-card {
-      padding: 1rem;
-      box-shadow: none;
-      color: var(--text);
-      cursor: pointer;
-      text-align: left;
-    }
-    .scenario-card.active {
-      border-color: rgba(255, 59, 48, 0.72);
-      background: linear-gradient(180deg, rgba(255, 59, 48, 0.24), rgba(18, 18, 18, 0.98));
-      box-shadow: 0 18px 55px rgba(255, 59, 48, 0.12);
-    }
-    .scenario-card h3 {
-      margin: 0 0 0.25rem;
-      color: #fff;
-      font-size: 1rem;
-    }
-    .scenario-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.45;
-    }
-    .scenario-card dl {
-      display: grid;
-      gap: 0.4rem;
-      margin: 0.9rem 0 0;
-    }
-    .scenario-card div {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.7rem;
-      font-size: 0.88rem;
-    }
-    .scenario-card dt {
-      color: #c9c9d1;
-    }
-    .scenario-card dd {
-      margin: 0;
-      color: #fff;
-      font-weight: 900;
     }
     .recommendation {
       padding: 0.9rem 1rem;
@@ -509,7 +460,6 @@
     @media (max-width: 760px) {
       .field-grid,
       .summary-grid,
-      .scenario-grid,
       .insight-grid {
         grid-template-columns: 1fr;
       }
@@ -544,7 +494,6 @@
       }
       .dashboard-panel,
       .summary-card,
-      .scenario-card,
       .recommendation,
       .table-scroll {
         box-shadow: none;
@@ -554,7 +503,6 @@
       }
       .section p,
       .section li,
-      .scenario-card p,
       .recommendation p,
       .summary-card small {
         color: #333;
@@ -603,10 +551,6 @@
         <div class="field-group">
           <h2>Brand Economics</h2>
           <div class="field-grid">
-            <div class="forecast-field field-wide">
-              <label for="brandName">Brand name <small>optional</small></label>
-              <input id="brandName" type="text" value="Your Brand" />
-            </div>
             <div class="forecast-field">
               <label for="aov">AOV</label>
               <input id="aov" type="number" value="45" min="1" step="1" />
@@ -622,18 +566,6 @@
             <div class="forecast-field">
               <label for="commissionPct">Commission %</label>
               <input id="commissionPct" type="number" value="15" min="0" max="80" step="1" />
-            </div>
-            <div class="forecast-field">
-              <label for="platformFeePct">Platform fee %</label>
-              <input id="platformFeePct" type="number" value="8" min="0" max="40" step="0.5" />
-            </div>
-            <div class="forecast-field">
-              <label for="agencyFeePct">Agency fee %</label>
-              <input id="agencyFeePct" type="number" value="0" min="0" max="30" step="0.5" />
-            </div>
-            <div class="forecast-field field-wide">
-              <label for="retainer">Monthly operating fee</label>
-              <input id="retainer" type="number" value="0" min="0" step="250" />
             </div>
           </div>
         </div>
@@ -654,16 +586,8 @@
               <input id="postRate" type="number" value="80" min="0" max="100" step="1" />
             </div>
             <div class="forecast-field">
-              <label for="videosPerCreator">Videos / creator</label>
-              <input id="videosPerCreator" type="number" value="3" min="0" step="0.5" />
-            </div>
-            <div class="forecast-field">
               <label for="gmvPerVideo">GMV / video</label>
               <input id="gmvPerVideo" type="number" value="20" min="0" step="5" />
-            </div>
-            <div class="forecast-field">
-              <label for="creatorRetention">Creator retention %</label>
-              <input id="creatorRetention" type="number" value="30" min="0" max="100" step="1" />
             </div>
           </div>
         </div>
@@ -686,14 +610,6 @@
             <div class="forecast-field">
               <label for="roasGrowthPct">ROAS growth %</label>
               <input id="roasGrowthPct" type="number" value="12.5" min="-50" max="100" step="0.5" />
-            </div>
-            <div class="forecast-field">
-              <label for="incentiveFund">Creator fund M1</label>
-              <input id="incentiveFund" type="number" value="5000" min="0" step="250" />
-            </div>
-            <div class="forecast-field">
-              <label for="fundGrowthPct">Fund growth %</label>
-              <input id="fundGrowthPct" type="number" value="10" min="-50" max="100" step="1" />
             </div>
           </div>
         </div>
@@ -727,9 +643,6 @@
           </div>
         </section>
 
-        <section class="scenario-grid" id="scenarioCards" aria-label="Scenario comparison"></section>
-
-        <section>
         <details class="forecast-details">
           <summary>Monthly forecast details</summary>
           <div class="forecast-details-body">
@@ -843,9 +756,9 @@
     };
 
     const inputIds = [
-      "brandName", "aov", "cogsPct", "shipping", "commissionPct", "platformFeePct", "agencyFeePct", "retainer",
-      "samples", "sampleCost", "postRate", "videosPerCreator", "gmvPerVideo", "creatorRetention",
-      "adSpend", "adGrowthPct", "roas", "roasGrowthPct", "incentiveFund", "fundGrowthPct"
+      "aov", "cogsPct", "shipping", "commissionPct",
+      "samples", "sampleCost", "postRate", "gmvPerVideo",
+      "adSpend", "adGrowthPct", "roas", "roasGrowthPct"
     ];
 
     let selectedScenario = "balanced";
@@ -857,26 +770,26 @@
 
     function getInputs() {
       return {
-        brandName: document.getElementById("brandName").value || "Your Brand",
+        brandName: "Your Brand",
         aov: Math.max(numberValue("aov"), 1),
         cogsPct: numberValue("cogsPct"),
         shipping: numberValue("shipping"),
         commissionPct: numberValue("commissionPct"),
-        platformFeePct: numberValue("platformFeePct"),
-        agencyFeePct: numberValue("agencyFeePct"),
-        retainer: numberValue("retainer"),
+        platformFeePct: 8,
+        agencyFeePct: 0,
+        retainer: 0,
         samples: numberValue("samples"),
         sampleCost: numberValue("sampleCost"),
         postRate: numberValue("postRate") / 100,
-        videosPerCreator: numberValue("videosPerCreator"),
+        videosPerCreator: 3,
         gmvPerVideo: numberValue("gmvPerVideo"),
-        creatorRetention: numberValue("creatorRetention") / 100,
+        creatorRetention: 0.3,
         adSpend: numberValue("adSpend"),
         adGrowthPct: numberValue("adGrowthPct") / 100,
         roas: numberValue("roas"),
         roasGrowthPct: numberValue("roasGrowthPct") / 100,
-        incentiveFund: numberValue("incentiveFund"),
-        fundGrowthPct: numberValue("fundGrowthPct") / 100
+        incentiveFund: 0,
+        fundGrowthPct: 0
       };
     }
 
@@ -987,28 +900,6 @@
       return new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(value);
     }
 
-    function renderScenarioCards() {
-      const wrap = document.getElementById("scenarioCards");
-      wrap.innerHTML = Object.values(latestScenarios).map((scenario) => `
-        <button class="scenario-card ${scenario.key === selectedScenario ? "active" : ""}" type="button" data-scenario="${scenario.key}">
-          <h3>${scenario.name}</h3>
-          <p>${scenario.key === "conservative" ? "Lower spend and a slower creator ramp." : scenario.key === "balanced" ? "A practical mix of learning speed and cash control." : "Faster scale with heavier upfront investment."}</p>
-          <dl>
-            <div><dt>GMV</dt><dd>${money(scenario.totals.totalGmv)}</dd></div>
-            <div><dt>Profit</dt><dd>${money(scenario.totals.netProfit)}</dd></div>
-            <div><dt>Avg ROAS</dt><dd>${scenario.totals.avgRoas.toFixed(1)}x</dd></div>
-          </dl>
-        </button>
-      `).join("");
-
-      wrap.querySelectorAll("[data-scenario]").forEach((button) => {
-        button.addEventListener("click", () => {
-          selectedScenario = button.dataset.scenario;
-          applyPreset(selectedScenario);
-        });
-      });
-    }
-
     function renderSummary(scenario) {
       const profitClass = scenario.totals.netProfit < 0 ? "profit-negative" : "profit-positive";
       document.getElementById("totalGmv").textContent = money(scenario.totals.totalGmv);
@@ -1064,7 +955,6 @@
 
       const scenario = latestScenarios[selectedScenario];
       renderSummary(scenario);
-      renderScenarioCards();
       renderChart(scenario);
       renderTable(scenario);
     }
@@ -1072,7 +962,7 @@
     function applyPreset(key) {
       selectedScenario = key;
       const preset = presets[key];
-      ["samples", "adSpend", "adGrowthPct", "roas", "roasGrowthPct", "incentiveFund", "fundGrowthPct", "gmvPerVideo"].forEach((id) => {
+      ["samples", "adSpend", "adGrowthPct", "roas", "roasGrowthPct", "gmvPerVideo"].forEach((id) => {
         document.getElementById(id).value = preset[id];
       });
       document.querySelectorAll("[data-preset]").forEach((button) => {
