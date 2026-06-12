@@ -579,11 +579,13 @@ code {
 
 @media (max-width: 640px) {
   .site-nav-inner {
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
     padding: 0.85rem 0;
   }
 
   .nav-links {
+    order: 3;
     width: 100%;
     gap: 0.8rem;
     flex-wrap: nowrap;
@@ -613,8 +615,10 @@ code {
 
   .site-nav .cta {
     width: auto;
+    flex: 0 0 auto;
     min-height: 46px;
     padding: 0.8rem 1rem;
+    white-space: nowrap;
   }
 
   .section-intro p,

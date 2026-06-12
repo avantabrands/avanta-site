@@ -4,57 +4,446 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TikTok Shop Profit Calculator | Avanta Brands</title>
-  <meta name="description" content="Use this TikTok Shop profit calculator to estimate contribution margin after creator commissions, CAC, product cost, and fulfillment." />
+  <meta name="description" content="Calculate TikTok Shop profit per order after discounts, shipping, TikTok platform fees, creator commission, COGS, fulfillment, and Spark Ads spend." />
   <link rel="canonical" href="https://avantabrands.co/resources/tiktok-shop-profit-calculator/" />
   <meta property="og:title" content="TikTok Shop Profit Calculator | Avanta Brands" />
-  <meta property="og:description" content="Estimate profit per order and margin before scaling your TikTok Shop spend." />
+  <meta property="og:description" content="Estimate TikTok Shop net profit, ROI, fee base, creator payout, and Spark Ads break-even spend per order." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://avantabrands.co/resources/tiktok-shop-profit-calculator/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="/assets/seo.css" />
+  <link rel="stylesheet" href="/assets/seo.css?v=20260612" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TikTok Shop Profit Calculator",
+    "url": "https://avantabrands.co/resources/tiktok-shop-profit-calculator/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "description": "Free TikTok Shop profit calculator for estimating per-order net profit after discounts, fees, creator payout, fulfillment, and ad spend."
+  }
+  </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2V1N1J2J2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2V1N1J2J2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2V1N1J2J2');
+  </script>
 
-  gtag('config', 'G-Q2V1N1J2J2');
-</script>
-
-<!-- Microsoft Clarity -->
-<script>
+  <!-- Microsoft Clarity -->
+  <script>
     (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wfthm8hveu");
-</script>
+  </script>
+
+  <style>
+    .profit-tool {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .tool-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(1.1rem, 2vw, 1.75rem);
+      box-shadow: var(--shadow);
+    }
+
+    .tool-panel h2,
+    .results-panel h2 {
+      margin-top: 0;
+    }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .calc-field {
+      min-width: 0;
+    }
+
+    .calc-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .calc-field label {
+      display: block;
+      min-height: 2.6rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .calc-field input,
+    .calc-field select {
+      width: 100%;
+      min-height: 3rem;
+      background: #090909;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font: inherit;
+      font-weight: 800;
+      outline: none;
+      padding: 0.8rem 0.9rem;
+    }
+
+    .calc-field input:focus,
+    .calc-field select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 59, 48, 0.14);
+    }
+
+    .results-panel {
+      position: sticky;
+      top: 6rem;
+    }
+
+    .primary-result {
+      padding: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: #090909;
+      margin-bottom: 1rem;
+    }
+
+    .primary-result .label,
+    .metric .label {
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .primary-result .value {
+      margin: 0.15rem 0 0.25rem;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    .result-note {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .metric {
+      min-width: 0;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .metric .value {
+      display: block;
+      margin-top: 0.2rem;
+      font-size: 1.3rem;
+      font-weight: 900;
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    .metric.emphasis .value {
+      color: var(--accent);
+    }
+
+    .cost-table {
+      width: 100%;
+      margin-top: 1rem;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .cost-table th,
+    .cost-table td {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      text-align: left;
+    }
+
+    .cost-table th {
+      color: var(--muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .cost-table td:last-child,
+    .cost-table th:last-child {
+      text-align: right;
+      font-weight: 900;
+    }
+
+    .status-profit {
+      color: #22c55e;
+    }
+
+    .status-loss {
+      color: #ef4444;
+    }
+
+    .helper-copy {
+      color: var(--muted);
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      .profit-tool {
+        grid-template-columns: 1fr;
+      }
+
+      .results-panel {
+        position: static;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .input-grid,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calc-field label {
+        min-height: auto;
+        margin-bottom: 0.35rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="site-nav"><div class="container site-nav-inner"><a class="brand" href="/">AVANTA BRANDS</a><div class="nav-links"><a href="/services/">Services</a><a href="/guides/">Guides</a><a href="/case-studies/">Case Studies</a><a class="active" href="/resources/">Resources</a></div><a class="cta" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book Strategy Call</a></div></nav>
-  <header class="hero"><div class="container hero-grid"><div><div class="eyebrow">Calculator</div><h1>Estimate TikTok Shop contribution margin before you scale.</h1><p>Use this calculator as a quick operator-level check on what is left after creator commission, CAC, product cost, and fulfillment. It is simple by design, but useful for spotting margin pressure before spend or creator volume rises.</p></div><aside class="hero-panel card"><ul class="panel-list"><li>Revenue per order</li><li>Creator commission</li><li>Ad spend or blended CAC</li><li>Product and fulfillment cost</li></ul></aside></div></header>
-  <main class="section"><div class="container content-grid"><article><div class="calculator"><div class="field"><label for="aov">Average order value</label><input id="aov" type="number" value="45" /></div><div class="field"><label for="productCost">Product cost</label><input id="productCost" type="number" value="14" /></div><div class="field"><label for="fulfillment">Fulfillment cost</label><input id="fulfillment" type="number" value="5" /></div><div class="field"><label for="commission">Creator commission %</label><input id="commission" type="number" value="15" /></div><div class="field"><label for="cac">Paid CAC / blended traffic cost</label><input id="cac" type="number" value="8" /></div></div></article><aside class="toc"><div class="sidebar-card calc-result"><h3>Estimated result</h3><p id="profitValue" class="stat">$11.25</p><p id="marginValue">25.0% contribution margin</p><p>Use this as a quick operator estimate, not a replacement for full P&L modeling.</p></div></aside></div></main>
-  <footer class="site-footer"><div class="container footer-grid"><div><div class="brand">AVANTA BRANDS</div><p>Margin clarity usually makes the next strategic decision much easier.</p></div><div><a href="/services/tiktok-shop-management/">Management service</a></div><div><a href="/guides/tiktok-shop-seo/">TikTok Shop SEO guide</a></div></div></footer>
+
+  <header class="hero"><div class="container hero-grid"><div><div class="eyebrow">Free Tool</div><h1>TikTok Shop Profit Calculator</h1><p>Estimate net profit per order after TikTok Shop discounts, shipping, platform fees, creator payout, product cost, fulfillment, and Spark Ads spend. This web version follows the same logic as the uploaded workbook.</p></div><aside class="hero-panel card"><ul class="panel-list"><li>Affiliate, Spark, or direct orders</li><li>Fees on items only or items plus shipping</li><li>Net profit and ROI per order</li><li>Spark break-even ad spend</li></ul></aside></div></header>
+
+  <main class="section">
+    <div class="container profit-tool">
+      <section class="tool-panel">
+        <h2>Inputs</h2>
+        <div class="input-grid">
+          <div class="calc-field full">
+            <label for="orderType">Order type</label>
+            <select id="orderType">
+              <option value="Affiliate">Affiliate</option>
+              <option value="Spark" selected>Spark</option>
+              <option value="Direct">Direct</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="itemPrice">Item price before discount</label>
+            <input id="itemPrice" type="number" value="24.99" min="0" step="0.01" />
+          </div>
+          <div class="calc-field">
+            <label for="discountPct">Discount percent</label>
+            <input id="discountPct" type="number" value="25" min="0" max="100" step="0.1" />
+          </div>
+          <div class="calc-field">
+            <label for="shippingCharged">Shipping charged to customer</label>
+            <input id="shippingCharged" type="number" value="0" min="0" step="0.01" />
+          </div>
+          <div class="calc-field">
+            <label for="feeBaseMode">Fees calculated on</label>
+            <select id="feeBaseMode">
+              <option value="Items only">Items only</option>
+              <option value="Items+Shipping" selected>Items plus shipping</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="cogs">COGS</label>
+            <input id="cogs" type="number" value="5.25" min="0" step="0.01" />
+          </div>
+          <div class="calc-field">
+            <label for="shippingCost">Shipping cost you pay</label>
+            <input id="shippingCost" type="number" value="6" min="0" step="0.01" />
+          </div>
+          <div class="calc-field">
+            <label for="platformFeePct">TikTok platform fee percent</label>
+            <input id="platformFeePct" type="number" value="7" min="0" max="100" step="0.1" />
+          </div>
+          <div class="calc-field">
+            <label for="affiliateCommissionPct">Affiliate commission percent</label>
+            <input id="affiliateCommissionPct" type="number" value="25" min="0" max="100" step="0.1" />
+          </div>
+          <div class="calc-field">
+            <label for="sparkCreatorPct">Spark creator percent</label>
+            <input id="sparkCreatorPct" type="number" value="5" min="0" max="100" step="0.1" />
+          </div>
+          <div class="calc-field">
+            <label for="adSpend">Spark ad spend per order</label>
+            <input id="adSpend" type="number" value="6" min="0" step="0.01" />
+          </div>
+        </div>
+        <p class="helper-copy">Fill the blue cells from the workbook here: item price, discount percent, COGS, shipping cost, fee base, and order type. Leave shipping charged at $0 when the customer gets free shipping.</p>
+      </section>
+
+      <aside class="tool-panel results-panel">
+        <h2>Outputs</h2>
+        <div class="primary-result">
+          <span class="label">Net profit</span>
+          <div id="netProfit" class="value status-profit">$0.00</div>
+          <p id="profitNote" class="result-note">Profit per order after all selected costs.</p>
+        </div>
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="label">Revenue collected</span>
+            <span id="revenueCollected" class="value">$0.00</span>
+          </div>
+          <div class="metric">
+            <span class="label">Fee base</span>
+            <span id="feeBase" class="value">$0.00</span>
+          </div>
+          <div class="metric">
+            <span class="label">Total cost</span>
+            <span id="totalCost" class="value">$0.00</span>
+          </div>
+          <div class="metric">
+            <span class="label">ROI</span>
+            <span id="roi" class="value">0.0%</span>
+          </div>
+          <div class="metric emphasis">
+            <span class="label">Spark break-even ad spend</span>
+            <span id="breakEvenAd" class="value">$0.00</span>
+          </div>
+          <div class="metric">
+            <span class="label">Net item price</span>
+            <span id="netItemPrice" class="value">$0.00</span>
+          </div>
+        </div>
+        <table class="cost-table" aria-label="Per-order cost breakdown">
+          <thead><tr><th>Cost item</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>TikTok fee</td><td id="tiktokFee">$0.00</td></tr>
+            <tr><td>Creator payout</td><td id="creatorPayout">$0.00</td></tr>
+            <tr><td>Ad spend</td><td id="adSpendOut">$0.00</td></tr>
+            <tr><td>COGS</td><td id="cogsOut">$0.00</td></tr>
+            <tr><td>Shipping cost</td><td id="shippingCostOut">$0.00</td></tr>
+          </tbody>
+        </table>
+      </aside>
+    </div>
+
+    <div class="container content-grid" style="margin-top:3rem;">
+      <article>
+        <h2>What this calculator includes</h2>
+        <p>The calculator starts with item price after discount, adds shipping charged to the customer, then subtracts TikTok fees, creator payout, ad spend, COGS, and shipping cost.</p>
+        <p>Affiliate orders use the affiliate commission. Spark orders use the Spark creator percentage plus ad spend per order. Direct orders remove creator payout and ad spend.</p>
+        <h2>How to use the result</h2>
+        <p>If net profit is thin or negative, the fastest fixes are usually discount level, shipping economics, creator payout, or Spark CPA. A positive ROI means the order is contributing profit after the selected costs.</p>
+      </article>
+      <aside class="toc">
+        <div class="sidebar-card">
+          <h3>More free tools</h3>
+          <ul class="link-list">
+            <li><a href="/resources/tiktok-shop-roas-calculator/">ROAS Calculator</a></li>
+            <li><a href="/resources/tiktok-shop-cpa-calculator/">CPA Calculator</a></li>
+            <li><a href="/resources/tiktok-shop-sample-budget-calculator/">Sample Budget Calculator</a></li>
+            <li><a href="/resources/free-tiktok-shop-growth-plan/">Free Growth Plan</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="container cta-strip">
+      <p>Want a direct read on whether your product economics can support TikTok Shop scale?</p>
+      <a class="cta" href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book a Strategy Call</a>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><div class="brand">AVANTA BRANDS</div><p>Free tools and calculators for TikTok Shop operators.</p></div><div><a href="/resources/">All resources</a><br /><a href="/services/tiktok-shop-management/">TikTok Shop management</a></div><div><a href="https://calendly.com/avantabrands/30min" target="_blank" rel="noreferrer">Book a strategy call</a></div></div></footer>
+
   <script>
-    const ids = ["aov", "productCost", "fulfillment", "commission", "cac"];
-    const calc = () => {
-      const aov = Number(document.getElementById("aov").value || 0);
-      const productCost = Number(document.getElementById("productCost").value || 0);
-      const fulfillment = Number(document.getElementById("fulfillment").value || 0);
-      const commission = Number(document.getElementById("commission").value || 0) / 100;
-      const cac = Number(document.getElementById("cac").value || 0);
-      const profit = aov - productCost - fulfillment - cac - (aov * commission);
-      const margin = aov ? (profit / aov) * 100 : 0;
-      document.getElementById("profitValue").textContent = `$${profit.toFixed(2)}`;
-      document.getElementById("marginValue").textContent = `${margin.toFixed(1)}% contribution margin`;
-    };
-    ids.forEach((id) => document.getElementById(id).addEventListener("input", calc));
-    calc();
+    const money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+
+    function numberFrom(id) {
+      return Number(document.getElementById(id).value || 0);
+    }
+
+    function setText(id, value) {
+      document.getElementById(id).textContent = value;
+    }
+
+    function calculate() {
+      const orderType = document.getElementById("orderType").value;
+      const itemPrice = numberFrom("itemPrice");
+      const discountPct = numberFrom("discountPct") / 100;
+      const shippingCharged = numberFrom("shippingCharged");
+      const cogs = numberFrom("cogs");
+      const shippingCost = numberFrom("shippingCost");
+      const platformFeePct = numberFrom("platformFeePct") / 100;
+      const affiliateCommissionPct = numberFrom("affiliateCommissionPct") / 100;
+      const sparkCreatorPct = numberFrom("sparkCreatorPct") / 100;
+      const sparkAdSpendInput = numberFrom("adSpend");
+      const feeBaseMode = document.getElementById("feeBaseMode").value;
+
+      const netItemPrice = itemPrice * (1 - discountPct);
+      const revenueCollected = netItemPrice + shippingCharged;
+      const feeBase = feeBaseMode === "Items only" ? netItemPrice : revenueCollected;
+      const tiktokFee = feeBase * platformFeePct;
+      const creatorPayout = orderType === "Affiliate"
+        ? feeBase * affiliateCommissionPct
+        : orderType === "Spark"
+          ? feeBase * sparkCreatorPct
+          : 0;
+      const adSpend = orderType === "Spark" ? sparkAdSpendInput : 0;
+      const totalCost = tiktokFee + creatorPayout + adSpend + cogs + shippingCost;
+      const netProfit = revenueCollected - totalCost;
+      const roi = totalCost ? netProfit / totalCost : 0;
+      const breakEvenAd = orderType === "Spark"
+        ? Math.max(0, revenueCollected - (tiktokFee + creatorPayout + cogs + shippingCost))
+        : null;
+
+      setText("netItemPrice", money.format(netItemPrice));
+      setText("revenueCollected", money.format(revenueCollected));
+      setText("feeBase", money.format(feeBase));
+      setText("tiktokFee", money.format(tiktokFee));
+      setText("creatorPayout", money.format(creatorPayout));
+      setText("adSpendOut", money.format(adSpend));
+      setText("cogsOut", money.format(cogs));
+      setText("shippingCostOut", money.format(shippingCost));
+      setText("totalCost", money.format(totalCost));
+      setText("netProfit", money.format(netProfit));
+      setText("roi", `${(roi * 100).toFixed(1)}%`);
+      setText("breakEvenAd", breakEvenAd === null ? "-" : money.format(breakEvenAd));
+
+      const netProfitEl = document.getElementById("netProfit");
+      netProfitEl.classList.toggle("status-profit", netProfit >= 0);
+      netProfitEl.classList.toggle("status-loss", netProfit < 0);
+      setText("profitNote", netProfit >= 0 ? "Profit per order after all selected costs." : "This order loses money with the current inputs.");
+    }
+
+    document.querySelectorAll("input, select").forEach((element) => {
+      element.addEventListener("input", calculate);
+      element.addEventListener("change", calculate);
+    });
+
+    calculate();
   </script>
 </body>
 </html>
