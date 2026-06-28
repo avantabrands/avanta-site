@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# Allow AI browsing agents for citation (real-time crawl, not training)
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
 Sitemap: https://avantabrands.co/sitemap.xml
